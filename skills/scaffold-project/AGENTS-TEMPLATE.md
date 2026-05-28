@@ -1,0 +1,18 @@
+# AGENTS.md Template
+
+Keep `AGENTS.md` as short as possible. Agents load it into context, so use it as an index and routing layer, not a full policy document.
+
+Prefer 5-8 high-signal bullets. Link to deeper docs for details.
+
+```md
+# Agent Guidance
+
+- Read `LANGUAGE.md` before naming or changing project concepts.
+- Read `docs/architecture.md` before changing structure or cross-cutting behavior.
+- Store implementation plans in `plans/`.
+- Use [issue tracker] for feature issues; issues represent user-recognizable features, not technical tasks.
+- Do not touch production, secrets, migrations, auth, paid services, or broad refactors without asking.
+- Commands and environment notes: see [README.md or docs path].
+```
+
+If a detail needs more explanation, link to a focused doc instead of expanding `AGENTS.md`.

@@ -39,6 +39,17 @@ Lazy creation:
 
 Keep generated placeholders short. The scaffold should invite useful documentation, not create empty bureaucracy.
 
+## AGENTS.md Style
+
+Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
+
+`AGENTS.md` must stay short because agents load it into context. Treat it as an index and routing layer, not a full policy document.
+
+- Prefer 5-8 high-signal bullets.
+- Link to deeper docs for details.
+- Include only what an agent must know before choosing what to read next.
+- Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
+
 ## Audit Categories
 
 In existing projects, discover and document the project's actual operating environment. Do not introduce preferred tooling just because it is absent.
