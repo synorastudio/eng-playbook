@@ -1,0 +1,57 @@
+# Language
+
+Vocabulary for this personal AI skills repo. These terms describe the operating model for planning, building, documenting, and handing off agent-assisted software work.
+
+## Terms
+
+**Skill**:
+A portable Markdown operating procedure that teaches an agent how to perform one focused workflow.
+_Avoid_: Prompt, script, automation
+
+**Agent Operating System**:
+The repo-level guidance, artifacts, and conventions that help future agents work safely and consistently in a project.
+_Avoid_: Project scaffold, tech stack, tooling setup
+
+**Agent Guidance**:
+Durable instructions that tell agents how to operate in a repo, including safety rules, issue tracker choices, environment notes, and command discovery.
+_Avoid_: Documentation, preferences, config
+
+**External Project Brief**:
+Project context created outside the coding agent, such as Notion notes, pasted planning docs, user flows, screen ideas, or links.
+_Avoid_: Requirements, PRD, context dump
+
+**Grilling Session**:
+A design-tree interview that stress-tests a concrete plan or design before implementation.
+_Avoid_: Planning session, review, brainstorming
+
+**Design Tree**:
+The set of dependent decisions inside a plan or design, walked from broad choices to downstream details.
+_Avoid_: Checklist, questionnaire, decision matrix
+
+**Language**:
+The project-specific vocabulary that agents and humans must use consistently.
+_Avoid_: Context, glossary, domain model
+
+**ADR**:
+A short architecture decision record for a hard-to-reverse, surprising trade-off decision.
+_Avoid_: Design doc, plan, decision log
+
+**Living Doc**:
+A durable explanatory document that describes current system shape, operations, onboarding, or project-specific guidance.
+_Avoid_: Scratchpad, spec, glossary
+
+**Feature Issue**:
+An issue that represents a user-recognizable feature or system-owner-visible capability, not a technical task.
+_Avoid_: Task, ticket, implementation step
+
+**Sub-Issue**:
+A smaller feature issue nested under a larger feature when the parent is too big.
+_Avoid_: Subtask, checklist item, implementation step
+
+**Prototype**:
+Throwaway code that answers one logic/state or UI-variant question before committing to a production implementation.
+_Avoid_: Spike, proof of concept, draft implementation
+
+**Handoff**:
+A compact session summary that lets a future agent continue work without rereading the full conversation.
+_Avoid_: Summary, transcript, status update
