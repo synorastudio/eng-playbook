@@ -6,7 +6,7 @@ This repo is agent-agnostic first. Skills are written as portable Markdown opera
 
 ## Inspiration
 
-This repo is inspired by Matt Pocock's AI skills repo, especially the ideas behind `engineering/grill-with-docs`, `engineering/prototype`, `engineering/to-issues`, `productivity/handoff`, ubiquitous language, ADRs, and his architecture-improvement workflow.
+This repo is inspired by [Matt Pocock's AI skills repo](https://github.com/mattpocock/skills), especially the ideas behind `engineering/grill-with-docs`, `engineering/prototype`, `engineering/to-issues`, `productivity/handoff`, ubiquitous language, ADRs, and his architecture-improvement workflow.
 
 The goal is not to copy those skills directly. This repo adapts the concepts into my own agent operating system: `LANGUAGE.md` instead of `CONTEXT.md`, small composable skills, tech-agnostic agent guidance, minimal ADRs, living docs stewardship, feature-shaped issues, and disposable prototypes.
 
