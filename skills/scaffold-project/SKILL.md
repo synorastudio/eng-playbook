@@ -1,6 +1,6 @@
 ---
 name: scaffold-project
-description: Create or adopt a tech-agnostic agent operating system for a repo: agent guidance, planning anchors, review templates, ignore files, environment/deployment notes, and safety rules. Use when starting a new project repo or adding agent workflow guidance to an existing repo.
+description: "Create or adopt a tech-agnostic agent operating system for a repo: agent guidance, planning anchors, review templates, ignore files, environment/deployment notes, and safety rules. Use when starting a new project repo or adding agent workflow guidance to an existing repo."
 ---
 
 # Scaffold Project
