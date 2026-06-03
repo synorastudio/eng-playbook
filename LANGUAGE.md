@@ -16,6 +16,10 @@ _Avoid_: Project scaffold, tech stack, tooling setup
 Durable instructions that tell agents how to operate in a repo, including safety rules, issue tracker choices, environment notes, and command discovery.
 _Avoid_: Documentation, preferences, config
 
+**Project Adoption**:
+The workflow for adding or aligning an Agent Operating System in an existing repo by auditing current conventions, surfacing assumptions, and applying only approved changes plus user-provided guidance.
+_Avoid_: Scaffolding, documentation pass, repo setup
+
 **External Project Brief**:
 Project context created outside the coding agent, such as Notion notes, pasted planning docs, user flows, screen ideas, or links.
 _Avoid_: Requirements, PRD, context dump

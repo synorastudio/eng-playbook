@@ -1,18 +1,22 @@
 ---
 name: scaffold-project
-description: "Create or adopt a tech-agnostic agent operating system for a repo: agent guidance, planning anchors, review templates, ignore files, environment/deployment notes, and safety rules. Use when starting a new project repo or adding agent workflow guidance to an existing repo."
+description: "Create a minimal, tech-agnostic agent operating system for a truly greenfield repo: agent guidance, planning anchors, ignore files, and starter documentation. Use when starting a new project repo."
 ---
 
 # Scaffold Project
 
-Establish the repo's agent operating system without choosing or modifying the tech stack.
+Establish a greenfield repo's agent operating system without choosing or modifying the tech stack.
 
-This skill creates and adopts guidance, conventions, and workflow anchors that help future agents work safely. It does not install packages, choose frameworks, configure app tooling, or infer stack defaults.
+This skill creates minimal guidance, conventions, and workflow anchors that help future agents work safely in a new project. It does not install packages, choose frameworks, configure app tooling, infer stack defaults, or adopt existing project conventions.
 
-Support two modes:
+## Greenfield Preflight
 
-- **New project mode**: create minimal workflow anchors and placeholders for decisions the user has not made yet.
-- **Adopt existing project mode**: audit first, add only missing pieces, preserve conventions, and never overwrite without asking.
+Before creating files, inspect the repo state.
+
+- If the repo is empty or contains only `.git/`, proceed.
+- If the repo contains only starter administrative files such as `README.md`, `LICENSE`, or `.gitignore` and has no meaningful project shape, proceed carefully and preserve existing files.
+- If the repo contains app code, package manifests, deployment or environment files, meaningful docs, existing conventions, or agent guidance, stop and route to `adopt-project`.
+- If the repo state is ambiguous, ask before proceeding.
 
 ## Scaffold Principle
 
@@ -50,34 +54,6 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
 
-## Audit Categories
-
-In existing projects, discover and document the project's actual operating environment. Do not introduce preferred tooling just because it is absent.
-
-Audit:
-
-- Agent guidance: `AGENTS.md`, `CLAUDE.md`, Cursor rules, commands, and repo-specific agent instructions.
-- Planning: `plans/`, existing implementation plans, and Cursor plan storage.
-- Docs anchors: README workflow sections, `LANGUAGE.md`, `LANGUAGE-MAP.md`, `docs/architecture.md`, and `docs/adr/`.
-- Review workflow: PR templates, issue templates, contribution docs, and review instructions.
-- Ignore files: `.gitignore`, `.dockerignore`, Cursor/Claude/agent ignores, and other tool-specific ignore files that already apply.
-- Environment guidance: Doppler, `.env`, secrets managers, `.env.example`, local/staging/production envs, and how agents should handle secrets.
-- Runtime and deployment guidance: where the project runs, where it deploys, how to start it locally, and how agents avoid touching production.
-- Command registry: where common commands are documented and how agents should discover them without inventing stack-specific commands.
-- Safety rules: data, auth, secrets, deployment, migrations, paid services, and destructive operations.
-
-## Classify Findings
-
-After auditing, classify findings:
-
-- **Keep**: already matches the desired workflow.
-- **Adopt**: existing convention should become the project default.
-- **Add**: missing workflow anchor that is safe to create.
-- **Ask**: conflict, ambiguity, or multiple valid choices.
-- **Defer**: stack-specific setup outside this skill's scope.
-
-Never assume absence means "create my preferred thing." First infer the project's current defaults.
-
 ## Cursor Plan Bridge
 
 When the user is using Cursor and wants Cursor plans stored in the canonical `plans/` directory, optionally create:
@@ -93,16 +69,6 @@ Before creating the symlink:
 3. If `.cursor/plans` is empty, replace it with the symlink.
 
 Windows portability is out of scope.
-
-## Adopt Existing Project Mode
-
-- Preserve existing conventions unless they conflict with the desired operating model.
-- Ask before renaming `CONTEXT.md` to `LANGUAGE.md` or introducing both.
-- Merge README workflow sections instead of replacing the README.
-- Create `docs/architecture.md` only if no equivalent architecture overview exists.
-- Add environment or deployment guidance by documenting what the project already uses; do not choose Doppler, `.env`, a host, or a secrets strategy unless the user decides.
-- Add command guidance by pointing to existing scripts/docs; do not invent stack-specific commands.
-- Report what was added, skipped, and what still needs a decision.
 
 ## File Intent
 

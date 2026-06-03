@@ -27,7 +27,8 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 ## First-Wave Skills
 
 - `project-intake`: Normalize external project context into goals, users, constraints, feature candidates, assumptions, and open questions.
-- `scaffold-project`: Create or adopt a tech-agnostic agent operating system for a repo.
+- `scaffold-project`: Create a minimal Agent Operating System for a truly greenfield repo.
+- `adopt-project`: Adopt an Agent Operating System into an existing repo through audit, proposal, and approved changes.
 - `grill-with-docs`: Stress-test a concrete plan or design through a relentless design-tree interview.
 - `write-language`: Maintain scoped `LANGUAGE.md` files as bounded vocabulary.
 - `write-adr`: Create minimal ADRs for hard-to-reverse, surprising trade-off decisions.
@@ -42,6 +43,7 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 skills/
   project-intake/
   scaffold-project/
+  adopt-project/
   grill-with-docs/
   write-language/
   write-adr/
