@@ -23,8 +23,7 @@ Before grilling, read relevant existing artifacts when available:
 
 - `LANGUAGE.md` and local `LANGUAGE.md` files.
 - `LANGUAGE-MAP.md` if multiple language contexts exist.
-- `docs/adr/`.
-- `docs/architecture.md` or related living docs.
+- Relevant durable docs under `docs/`, including living docs and ADRs.
 - The specific plan, feature, design, or architecture proposal being grilled.
 
 If the user has not provided a concrete plan or design to grill, ask them to provide one or suggest running `project-intake` first.
@@ -61,11 +60,32 @@ Work from broad decisions to dependent details:
 
 Do not batch a long questionnaire. Ask one question, wait, then continue.
 
+## Turn Handling
+
+When the user replies with a question, uncertainty, a proposed alternative, or a prompt like "thoughts?", stay on the current branch. Answer the user's question, refine the recommendation, and wait for an explicit resolution before asking the next design-tree question.
+
+Treat these as signals to pause progression:
+
+- The user asks for thoughts, trade-offs, or clarification.
+- The user challenges the recommendation.
+- The user proposes another framing or doc location.
+- The user says to hold the next question.
+
+Only move to the next branch when the current decision is accepted, rejected, explicitly deferred, or clearly resolved by the user's response.
+
 ## Docs During Grilling
 
-Use docs only for durable knowledge discovered during the interview.
+Use docs only for durable knowledge discovered during the interview. When a decision resolves a vocabulary ambiguity or other durable documentation point, update the smallest relevant doc immediately before moving to the next design branch.
 
-Update or propose updates to `LANGUAGE.md` when a project-specific term is clarified. Follow `../write-language/LANGUAGE-FORMAT.md`.
+Update `LANGUAGE.md` when a project-specific term is clarified, unless the user has asked not to edit files. Follow `../write-language/LANGUAGE-FORMAT.md`.
+
+Prefer tightening an existing term over adding a new term when the decision is that a proposed phrase should not become project language.
+
+After each inline doc update, briefly state:
+
+- The resolved decision.
+- The file changed.
+- The next branch or question.
 
 Offer an ADR only when all three are true:
 
@@ -73,7 +93,7 @@ Offer an ADR only when all three are true:
 2. The decision would be surprising without context.
 3. The decision came from a real trade-off.
 
-Follow `../write-adr/ADR-FORMAT.md`.
+When an ADR is clearly warranted, offer to write it immediately and follow `../write-adr/ADR-FORMAT.md`.
 
 Do not update living docs, create issues, scaffold files, or write implementation plans from this skill unless the user explicitly asks to switch workflows.
 

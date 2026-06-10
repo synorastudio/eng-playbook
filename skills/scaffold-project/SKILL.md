@@ -22,6 +22,16 @@ Before creating files, inspect the repo state.
 
 Create the project operating system, not premature project knowledge.
 
+If a `project-intake` summary or other accepted external brief is available, use it to seed only durable, non-speculative project orientation:
+
+- Project identity and audience.
+- Current scope or current iteration.
+- Accepted constraints and non-goals.
+- Vocabulary candidates that are already useful enough for `LANGUAGE.md`.
+- Upstream source provenance when it should remain discoverable.
+
+Do not turn backlog, someday ideas, or unresolved assumptions into current scope.
+
 Default creation:
 
 ```text
@@ -36,8 +46,7 @@ Lazy creation:
 
 - `LANGUAGE.md` when project vocabulary exists.
 - `LANGUAGE-MAP.md` when multiple language files exist.
-- `docs/architecture.md` when there is actual system shape to document.
-- `docs/adr/` when the first ADR is needed.
+- Durable docs under `docs/` when there is actual system shape, upstream provenance, or accepted project knowledge to document.
 - PR or issue templates when the project uses that review or tracking flow.
 - `.dockerignore`, agent ignore files, or other ignore files when the matching tool exists or the user asks for them.
 
@@ -53,6 +62,20 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 - Link to deeper docs for details.
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
+
+## README Shape
+
+When creating or revising `README.md`, optimize it as the project front door for humans and agents. Prefer concise sections such as:
+
+- Project identity.
+- Audience or users.
+- Current scope.
+- Constraints and non-goals.
+- Working agreement for how repo docs, external sources, and trackers relate.
+- Repo map for durable artifact locations such as `docs/` and `plans/`.
+- Tracking or upstream context pointers when they are part of the accepted workflow.
+
+Do not document launch checklists, stack choices, issue workflows, or external provenance in the README unless they are already accepted project knowledge.
 
 ## Cursor Plan Bridge
 
@@ -74,8 +97,7 @@ Windows portability is out of scope.
 
 - `AGENTS.md`: repo-level operating instructions for future agents.
 - `LANGUAGE.md`: bounded project vocabulary.
-- `docs/architecture.md`: current system shape and navigation.
-- `docs/adr/`: durable decisions.
+- `docs/`: durable project docs, including living docs, ADRs, and upstream provenance when needed.
 - `plans/`: implementation plans.
 - README workflow sections: how the project expects agents and humans to work.
 - Review templates: collaboration and review workflow.
