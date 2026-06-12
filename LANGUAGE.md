@@ -52,6 +52,10 @@ _Avoid_: Task, ticket, implementation step
 A smaller feature issue nested under a larger feature when the parent is too big.
 _Avoid_: Subtask, checklist item, implementation step
 
+**Smallest Executable Thing**:
+The first behavior, setup move, or narrow implementation path that makes a project real enough to keep building without adding ceremony.
+_Avoid_: Sprint slice, backlog item, mandatory issue
+
 **Prototype**:
 Throwaway code that answers one logic/state or UI-variant question before committing to a production implementation.
 _Avoid_: Spike, proof of concept, draft implementation

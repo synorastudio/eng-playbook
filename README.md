@@ -13,16 +13,17 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 ## Operating Model
 
 1. Start from an external project brief: Notion, Markdown, pasted notes, links, or another source.
-2. Run a grilling session to stress-test a concrete plan or design by walking the design tree one decision at a time.
-3. Capture durable knowledge in the right artifact:
+2. After scaffolding or adoption, start the smallest executable thing: the first behavior or setup move that makes the project real enough to continue.
+3. Use grilling, prototyping, or issue slicing only when they help the work move; they are supports, not required gates.
+4. Capture durable knowledge in the right artifact:
    - `AGENTS.md` for repo-level agent operating instructions.
    - `LANGUAGE.md` for project vocabulary.
    - `docs/adr/` for durable decisions.
    - `docs/architecture.md` and other living docs for durable explanatory knowledge.
    - `plans/` for implementation plans.
-4. Shape work into user-recognizable feature issues and sub-issues, not technical tasks.
-5. Prototype only when a question needs a throwaway logic/state or UI artifact.
-6. Hand off long-running work with compact session summaries that reference durable artifacts.
+5. Shape work into user-recognizable feature issues and sub-issues when tracking would clarify execution.
+6. Prototype only when a question needs a throwaway logic/state or UI artifact.
+7. Hand off long-running work with compact session summaries that reference durable artifacts.
 
 ## First-Wave Skills
 
