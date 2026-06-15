@@ -52,6 +52,17 @@ Lazy creation:
 
 Keep generated placeholders short. The scaffold should invite useful documentation, not create empty bureaucracy.
 
+## Tool-Agnostic Rule Storage
+
+Use `AGENTS.md` as the universal agent entry point, and store detailed agent rules as ordinary repo documentation.
+
+- Add a short rules index to `AGENTS.md` when detailed guidance belongs elsewhere.
+- Prefer focused docs under `docs/` for long-lived rules, such as `docs/agentic-workflow.md`.
+- Use tool-specific rule directories only when the user explicitly asks for them or the repo already depends on them.
+- Do not create `.cursor/rules/`, `.agents/rules/`, `CLAUDE.md`, or other tool-specific rule files as the default way to express shared guidance.
+
+This keeps Codex, Cursor, and other agents aligned on the same source of truth.
+
 ## AGENTS.md Style
 
 Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
@@ -74,6 +85,26 @@ If the user wants that rule, add a short Agent Guidance bullet such as:
 ```
 
 If the user does not want the rule, omit it. Do not add stack-specific commands or server details.
+
+## Workflow Conventions Prompt
+
+When creating `AGENTS.md`, ask whether agents should follow any repo-specific workflow conventions.
+
+Prompt broadly enough to surface hidden working agreements without prescribing a preference:
+
+```text
+Are there repo-specific workflow conventions agents should follow, such as commit message format, branch naming, PR template use, issue links, or review expectations?
+```
+
+If the answer is compact, add one short Agent Guidance bullet such as:
+
+```md
+- Follow the repo's workflow conventions for commits, branches, PR templates, issue links, and review expectations.
+```
+
+If the answer needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
+
+If the user does not provide workflow conventions, omit the rule. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
 ## README Shape
 
@@ -111,6 +142,7 @@ Windows portability is out of scope.
 - `LANGUAGE.md`: bounded project vocabulary.
 - `docs/`: durable project docs, including living docs, ADRs, and upstream provenance when needed.
 - `plans/`: implementation plans.
+- Rules index: a short `AGENTS.md` section that points to detailed agent rule docs.
 - README workflow sections: how the project expects agents and humans to work.
 - Review templates: collaboration and review workflow.
 - Ignore files: keep generated files, secrets, dependencies, and tool noise out of version control.
