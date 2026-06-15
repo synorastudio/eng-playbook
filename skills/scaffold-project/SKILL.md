@@ -63,6 +63,18 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
 
+## Runtime Ownership Prompt
+
+When creating `AGENTS.md`, ask whether agents should avoid starting long-running local dev servers during interactive work.
+
+If the user wants that rule, add a short Agent Guidance bullet such as:
+
+```md
+- In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
+```
+
+If the user does not want the rule, omit it. Do not add stack-specific commands or server details.
+
 ## README Shape
 
 When creating or revising `README.md`, optimize it as the project front door for humans and agents. Prefer concise sections such as:

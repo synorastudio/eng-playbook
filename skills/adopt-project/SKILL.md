@@ -28,6 +28,7 @@ Audit:
 - Ignore files: `.gitignore`, `.dockerignore`, Cursor/Claude/agent ignores, and other tool-specific ignore files that already apply.
 - Environment guidance: Doppler, `.env`, secrets managers, `.env.example`, local/staging/production envs, and how agents should handle secrets.
 - Runtime and deployment guidance: where the project runs, where it deploys, how to start it locally, and how agents avoid touching production.
+- Local runtime ownership: whether agents may start long-running local dev servers during interactive work, or should assume the user manages them.
 - Command registry: where common commands are documented and how agents should discover them without inventing stack-specific commands.
 - Safety rules: data, auth, secrets, deployment, migrations, paid services, and destructive operations.
 
@@ -53,6 +54,7 @@ Include:
 - What existing conventions should be preserved.
 - What files or docs should be added or updated.
 - What should be skipped or deferred.
+- Whether to add a local dev server ownership rule to `AGENTS.md`, if no project convention already answers it.
 - What assumptions need user confirmation.
 - What hidden project knowledge would change the proposal.
 
@@ -93,6 +95,18 @@ Use `../scaffold-project/AGENTS-TEMPLATE.md` when creating or revising `AGENTS.m
 - Link to deeper docs for details.
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
+
+## Runtime Ownership Prompt
+
+If the audit does not reveal a project convention for interactive local dev servers, ask whether agents should avoid starting long-running local dev servers during interactive work.
+
+If the user wants that rule, add a short Agent Guidance bullet such as:
+
+```md
+- In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
+```
+
+If the user does not want the rule, omit it. Preserve any existing project-specific runtime convention instead of replacing it.
 
 ## Cursor Plan Bridge
 

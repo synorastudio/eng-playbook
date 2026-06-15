@@ -12,6 +12,7 @@ Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 - Store implementation plans in `plans/`.
 - Use [issue tracker] for feature issues; issues represent user-recognizable features, not technical tasks.
 - Do not touch production, secrets, migrations, auth, paid services, or broad refactors without asking.
+- [Optional] In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
 - Commands and environment notes: see [README.md or docs path].
 ```
 
