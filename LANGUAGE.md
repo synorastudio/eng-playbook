@@ -4,6 +4,18 @@ Vocabulary for this personal AI skills repo. These terms describe the operating 
 
 ## Terms
 
+**Personal Experiment**:
+A small, niche software project built through fully vibe-coded implementation for the creator, friends, or family, with disposable code and minimal process.
+_Avoid_: Prototype, side project, hobby project
+
+**Professional Project**:
+A client project or owned product built with intentional, AI-accelerated engineering rather than vibe coding, regardless of its size or market potential.
+_Avoid_: Serious project, production project
+
+**Graduation**:
+The creator's explicit decision to rebuild a Personal Experiment as a Professional Project; the experimental code is discarded rather than promoted.
+_Avoid_: Promotion, adoption, hardening
+
 **Skill**:
 A portable Markdown operating procedure that teaches an agent how to perform one focused workflow.
 _Avoid_: Prompt, script, automation

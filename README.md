@@ -12,6 +12,13 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 
 ## Operating Model
 
+Choose the project mode before choosing a workflow:
+
+- For a Personal Experiment, use `start-experiment` to build the outcome directly. Keep a short `README.md`, track build status in `TODO.md`, and skip the professional-project artifact set.
+- For a Professional Project, use the workflow below. These projects use intentional, AI-accelerated engineering rather than vibe coding.
+
+Professional Project workflow:
+
 1. Start from an external project brief: Notion, Markdown, pasted notes, links, or another source.
 2. After scaffolding or adoption, start the smallest executable thing: the first behavior or setup move that makes the project real enough to continue.
 3. Use grilling, prototyping, or issue slicing only when they help the work move; they are supports, not required gates.
@@ -27,6 +34,7 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 
 ## First-Wave Skills
 
+- `start-experiment`: Build a disposable Personal Experiment directly from the desired outcome with minimal process.
 - `project-intake`: Normalize external project context into goals, users, constraints, feature candidates, assumptions, and open questions.
 - `scaffold-project`: Create a minimal Agent Operating System for a truly greenfield repo.
 - `adopt-project`: Adopt an Agent Operating System into an existing repo through audit, proposal, and approved changes.
@@ -42,6 +50,7 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 
 ```text
 skills/
+  start-experiment/
   project-intake/
   scaffold-project/
   adopt-project/
@@ -58,6 +67,7 @@ Each skill lives in its own directory with a `SKILL.md`. Supporting references s
 
 ## Artifact Routing
 
+- Personal Experiment build status belongs in `TODO.md`; its purpose and run instructions belong in a short `README.md`.
 - Agent operating guidance belongs in `AGENTS.md`.
 - Vocabulary belongs in `LANGUAGE.md`.
 - Multi-context vocabulary maps belong in `LANGUAGE-MAP.md`.
