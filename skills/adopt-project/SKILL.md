@@ -22,7 +22,6 @@ Discover the project's actual operating environment. Do not introduce preferred 
 Audit:
 
 - Agent guidance: `AGENTS.md`, `CLAUDE.md`, Cursor rules, commands, and repo-specific agent instructions.
-- Planning: `plans/`, existing implementation plans, and Cursor plan storage.
 - Docs anchors: README workflow sections, `LANGUAGE.md`, `LANGUAGE-MAP.md`, `docs/architecture.md`, and `docs/adr/`.
 - Workflow conventions: commit message format, branch naming, PR template use, issue links, contribution docs, and review instructions.
 - Rule storage: whether detailed agent rules live in ordinary docs, tool-specific rule directories, or duplicated sources.
@@ -72,7 +71,6 @@ Adoption may create or update the same artifact universe as greenfield scaffoldi
 - `LANGUAGE-MAP.md`: routing for multiple language contexts.
 - `docs/architecture.md`: current system shape and navigation.
 - `docs/adr/`: durable decisions.
-- `plans/`: implementation plans.
 - Rules index: a short `AGENTS.md` section that points to detailed agent rule docs.
 - README workflow sections: how the project expects agents and humans to work.
 - Review templates and contribution docs: collaboration, commit, branch, issue-linking, and review workflow.
@@ -138,22 +136,6 @@ If existing conventions are found, preserve them and link to their source from `
 If the answer is compact, add one short Agent Guidance bullet. If it needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
 If the user does not provide workflow conventions, omit the rule. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
-
-## Cursor Plan Bridge
-
-When the user is using Cursor and wants Cursor plans stored in the canonical `plans/` directory, optionally create:
-
-```text
-.cursor/plans -> ../plans
-```
-
-Before creating the symlink:
-
-1. Ensure `plans/` exists.
-2. If `.cursor/plans` exists and contains unique files, ask before migrating them.
-3. If `.cursor/plans` is empty, replace it with the symlink.
-
-Windows portability is out of scope.
 
 ## Completion Report
 

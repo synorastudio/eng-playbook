@@ -10,8 +10,6 @@ The library has two project paths. Personal Experiments use one isolated, low-ce
 - `AGENTS.md`: repo-level operating instructions for future agents.
 - `LANGUAGE.md`: bounded vocabulary for the repo's own domain language.
 - `skills/`: composable skills for planning, scaffolding, adoption, documenting, issue shaping, prototyping, and handoff.
-- `plans/`: implementation plans and saved planning artifacts.
-- `.cursor/plans`: symlink to `../plans` so Cursor workspace plans land in the canonical plans directory.
 
 ## Skill Relationships
 
@@ -30,5 +28,4 @@ The library has two project paths. Personal Experiments use one isolated, low-ce
 - Agent operating guidance belongs in `AGENTS.md`.
 - Decisions belong in `docs/adr/`.
 - Current repo structure and skill relationships belong here.
-- Plans belong in `plans/`.
 - Temporary speculation stays in chat or scratch notes unless promoted deliberately.

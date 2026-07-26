@@ -16,7 +16,7 @@ Save it outside the workspace unless the user asks for a repo artifact. Use the 
 - Current state.
 - Decisions made.
 - Open questions.
-- Relevant files, issues, plans, ADRs, and docs by path or URL.
+- Relevant files, issues, ADRs, and docs by path or URL.
 - Suggested skills for the next session.
 - Recommended next action.
 

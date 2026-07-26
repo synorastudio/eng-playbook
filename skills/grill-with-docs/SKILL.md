@@ -7,7 +7,7 @@ description: Stress-test a plan or design through a relentless design-tree inter
 
 Use this skill to stress-test a plan before implementation.
 
-This skill does not ingest broad project context, scaffold repos, create issues, manage living docs, or write implementation plans. Use `project-intake`, `scaffold-project`, `slice-to-issues`, or `maintain-living-docs` for those workflows.
+This skill does not ingest broad project context, scaffold repos, create issues, or manage living docs. Use `project-intake`, `scaffold-project`, `slice-to-issues`, or `maintain-living-docs` for those workflows.
 
 ## Core Instruction
 
@@ -95,7 +95,7 @@ Offer an ADR only when all three are true:
 
 When an ADR is clearly warranted, offer to write it immediately and follow `../write-adr/ADR-FORMAT.md`.
 
-Do not update living docs, create issues, scaffold files, or write implementation plans from this skill unless the user explicitly asks to switch workflows.
+Do not update living docs, create issues, or scaffold files from this skill unless the user explicitly asks to switch workflows.
 
 ## Completion Criteria
 

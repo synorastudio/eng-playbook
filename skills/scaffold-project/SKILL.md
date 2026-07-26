@@ -1,6 +1,6 @@
 ---
 name: scaffold-project
-description: "Create a minimal, tech-agnostic agent operating system for a truly greenfield repo: agent guidance, planning anchors, ignore files, and starter documentation. Use when starting a new project repo."
+description: "Create a minimal, tech-agnostic agent operating system for a truly greenfield repo: agent guidance, conventions, ignore files, and starter documentation. Use when starting a new project repo."
 ---
 
 # Scaffold Project
@@ -36,7 +36,6 @@ Default creation:
 
 ```text
 AGENTS.md
-plans/
 .gitignore
 .editorconfig
 README.md
@@ -115,33 +114,16 @@ When creating or revising `README.md`, optimize it as the project front door for
 - Current scope.
 - Constraints and non-goals.
 - Working agreement for how repo docs, external sources, and trackers relate.
-- Repo map for durable artifact locations such as `docs/` and `plans/`.
+- Repo map for durable artifact locations such as `docs/`.
 - Tracking or upstream context pointers when they are part of the accepted workflow.
 
 Do not document launch checklists, stack choices, issue workflows, or external provenance in the README unless they are already accepted project knowledge.
-
-## Cursor Plan Bridge
-
-When the user is using Cursor and wants Cursor plans stored in the canonical `plans/` directory, optionally create:
-
-```text
-.cursor/plans -> ../plans
-```
-
-Before creating the symlink:
-
-1. Ensure `plans/` exists.
-2. If `.cursor/plans` exists and contains unique files, ask before migrating them.
-3. If `.cursor/plans` is empty, replace it with the symlink.
-
-Windows portability is out of scope.
 
 ## File Intent
 
 - `AGENTS.md`: repo-level operating instructions for future agents.
 - `LANGUAGE.md`: bounded project vocabulary.
 - `docs/`: durable project docs, including living docs, ADRs, and upstream provenance when needed.
-- `plans/`: implementation plans.
 - Rules index: a short `AGENTS.md` section that points to detailed agent rule docs.
 - README workflow sections: how the project expects agents and humans to work.
 - Review templates: collaboration and review workflow.

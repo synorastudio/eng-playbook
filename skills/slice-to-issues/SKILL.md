@@ -17,7 +17,7 @@ The coding agent decides the technical tasks inside the issue. The issue tracker
 
 ## Workflow
 
-1. Read available project context, `LANGUAGE.md`, ADRs, living docs, and plans.
+1. Read available project context, `LANGUAGE.md`, ADRs, and living docs.
 2. Identify user-recognizable feature outcomes.
 3. Split oversized features into smaller feature sub-issues.
 4. Mark assumptions and dependencies.
@@ -77,7 +77,7 @@ What user-recognizable feature this issue makes possible.
 
 ## Tracker Policy
 
-Stay tracker-agnostic. If the user has not chosen a destination, ask whether to use GitHub Issues, Linear, Markdown files, Cursor plans, or another tracker.
+Stay tracker-agnostic. If the user has not chosen a destination, ask whether to use GitHub Issues, Linear, Markdown files, or another tracker.
 
 Once the user chooses a tracker, persist the decision in `AGENTS.md` so future agents know where issues live.
 

@@ -9,7 +9,6 @@ Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 
 - Read `LANGUAGE.md` before naming or changing project concepts.
 - Read `docs/architecture.md` before changing structure or cross-cutting behavior.
-- Store implementation plans in `plans/`.
 - Use [issue tracker] for feature issues; issues represent user-recognizable features, not technical tasks.
 - Follow [workflow conventions] for commits, branches, PR templates, issue links, and review expectations.
 - Do not touch production, secrets, migrations, auth, paid services, or broad refactors without asking.

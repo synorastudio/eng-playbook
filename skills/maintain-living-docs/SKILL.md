@@ -5,7 +5,7 @@ description: Steward durable explanatory documentation such as docs/architecture
 
 # Maintain Living Docs
 
-Use this skill to keep durable explanatory docs current. It is not a vocabulary, ADR, issue, plan, or handoff skill.
+Use this skill to keep durable explanatory docs current. It is not a vocabulary, ADR, issue, or handoff skill.
 
 ## Update Docs When
 
@@ -14,7 +14,7 @@ Update living docs only when the information is:
 - Durable beyond the current session.
 - Useful to a future agent or human.
 - Explanatory rather than definitional or decisional.
-- Not better captured in code, tests, issue comments, `LANGUAGE.md`, an ADR, a plan, or a handoff.
+- Not better captured in code, tests, issue comments, `LANGUAGE.md`, an ADR, or a handoff.
 
 Skip temporary plans, unresolved speculation, and details that will rot quickly.
 
@@ -31,7 +31,6 @@ This skill does not own:
 
 - Vocabulary. Use `write-language`.
 - Hard-to-reverse trade-off decisions. Use `write-adr`.
-- Implementation plans. Use `plans/` or the planning workflow.
 - Work breakdown. Use `slice-to-issues`.
 - Session continuity. Use `handoff`.
 

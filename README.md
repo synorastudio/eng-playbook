@@ -27,7 +27,6 @@ Professional Project workflow:
    - `LANGUAGE.md` for project vocabulary.
    - `docs/adr/` for durable decisions.
    - `docs/architecture.md` and other living docs for durable explanatory knowledge.
-   - `plans/` for implementation plans.
 5. Shape work into user-recognizable feature issues and sub-issues when tracking would clarify execution.
 6. Prototype only when a question needs a throwaway logic/state or UI artifact.
 7. Hand off long-running work with compact session summaries that reference durable artifacts.
@@ -74,13 +73,9 @@ Each skill lives in its own directory with a `SKILL.md`. Supporting references s
 - Durable decisions belong in `docs/adr/`.
 - Current system shape belongs in `docs/architecture.md`.
 - Durable explanatory knowledge belongs in focused docs under `docs/`.
-- Implementation plans belong in `plans/`.
+- Work breakdown belongs in feature issues.
 - Issue tracker choice belongs in `AGENTS.md`.
 - Temporary speculation belongs in chat or scratch notes unless promoted deliberately.
-
-## Cursor Plans
-
-For Cursor projects, `.cursor/plans` may be a symlink to `../plans` so Cursor workspace plans land in the canonical `plans/` directory.
 
 ## Autonomy Contract
 
