@@ -5,7 +5,7 @@ Vocabulary for this personal AI skills repo. These terms describe the operating 
 ## Terms
 
 **Personal Experiment**:
-A small, niche software project built through fully vibe-coded implementation for the creator, friends, or family, with disposable code and minimal process.
+A small, niche software project built through fully vibe-coded implementation for the creator, friends, or family, with disposable code and minimal process. It exists as a repository under the creator's personal GitHub account paired with a devlog page in the Notion experiments wiki.
 _Avoid_: Prototype, side project, hobby project
 
 **Professional Project**:

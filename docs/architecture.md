@@ -13,7 +13,7 @@ The library has two project paths. Personal Experiments use one isolated, low-ce
 
 ## Skill Relationships
 
-- `start-experiment` independently builds Personal Experiments and owns their minimal repo artifacts: `README.md` and `TODO.md`.
+- `start-experiment` independently bootstraps and builds Personal Experiments. It owns their minimal repo artifacts: `AGENTS.md`, `README.md`, and `TODO.md`.
 - `project-intake` prepares external project context for later workflows.
 - `scaffold-project` creates agent operating guidance for a greenfield repo.
 - `adopt-project` adds or aligns agent operating guidance in an existing repo through Project Adoption.
@@ -23,7 +23,7 @@ The library has two project paths. Personal Experiments use one isolated, low-ce
 
 ## Documentation Boundaries
 
-- Personal Experiments use `README.md` for purpose and run instructions and `TODO.md` for build status; they do not receive the Professional Project artifact set by default.
+- Personal Experiments use a minimal `AGENTS.md` to preserve their operating mode across agent runs, `README.md` for purpose and run instructions, and `TODO.md` for build status. Each is paired with a required Notion devlog for durable decisions, learnings, and dead ends; they do not receive the Professional Project artifact set by default.
 - Vocabulary belongs in `LANGUAGE.md`.
 - Agent operating guidance belongs in `AGENTS.md`.
 - Decisions belong in `docs/adr/`.

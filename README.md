@@ -14,7 +14,7 @@ The goal is not to copy those skills directly. This repo adapts the concepts int
 
 Choose the project mode before choosing a workflow:
 
-- For a Personal Experiment, use `start-experiment` to build the outcome directly. Keep a short `README.md`, track build status in `TODO.md`, and skip the professional-project artifact set.
+- For a Personal Experiment, use `start-experiment` once to establish its low-ceremony operating mode and build the first outcome. Keep a minimal `AGENTS.md`, a short `README.md`, build status in `TODO.md`, and durable decisions, learnings, and dead ends in its paired Notion devlog; skip the professional-project artifact set.
 - For a Professional Project, use the workflow below. These projects use intentional, AI-accelerated engineering rather than vibe coding.
 
 Professional Project workflow:
@@ -33,7 +33,7 @@ Professional Project workflow:
 
 ## First-Wave Skills
 
-- `start-experiment`: Build a disposable Personal Experiment directly from the desired outcome with minimal process.
+- `start-experiment`: Bootstrap a disposable Personal Experiment and build its first outcome with minimal process.
 - `project-intake`: Normalize external project context into goals, users, constraints, feature candidates, assumptions, and open questions.
 - `scaffold-project`: Create a minimal Agent Operating System for a truly greenfield repo.
 - `adopt-project`: Adopt an Agent Operating System into an existing repo through audit, proposal, and approved changes.
@@ -66,7 +66,7 @@ Each skill lives in its own directory with a `SKILL.md`. Supporting references s
 
 ## Artifact Routing
 
-- Personal Experiment build status belongs in `TODO.md`; its purpose and run instructions belong in a short `README.md`.
+- Personal Experiment operating guidance belongs in a minimal `AGENTS.md`; its purpose and run instructions belong in a short `README.md`; build status belongs in `TODO.md`; and durable decisions, learnings, and dead ends belong in its paired Notion devlog.
 - Agent operating guidance belongs in `AGENTS.md`.
 - Vocabulary belongs in `LANGUAGE.md`.
 - Multi-context vocabulary maps belong in `LANGUAGE-MAP.md`.
