@@ -1,4 +1,4 @@
-# UI Prototype
+# UI prototype
 
 Use this branch for screens, components, layouts, interaction models, and visual direction.
 

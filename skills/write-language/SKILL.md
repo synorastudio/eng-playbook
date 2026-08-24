@@ -1,15 +1,15 @@
 ---
 name: write-language
-description: Maintain scoped LANGUAGE.md files as bounded project vocabulary, preventing glossary bloat with local language files, promotion rules, and concise definitions. Use when defining product terms, clarifying ubiquitous language, renaming ambiguous concepts, or updating project vocabulary.
+description: Maintain bounded project vocabulary in scoped LANGUAGE.md files. Use when defining, renaming, or resolving conflict around a recurring project-specific term. Do not use for general programming concepts or one-off implementation names.
 ---
 
-# Write Language
+# Write language
 
-Use this skill to create and maintain `LANGUAGE.md` files. Follow `LANGUAGE-FORMAT.md`.
+Create and maintain `LANGUAGE.md` files. Follow `LANGUAGE-FORMAT.md`.
 
 `LANGUAGE.md` is vocabulary only.
 
-## Add A Term
+## Add a term
 
 Add a term only when it is:
 
@@ -19,7 +19,7 @@ Add a term only when it is:
 
 Do not add general programming concepts, implementation details, plans, decisions, acceptance criteria, or open questions.
 
-## Scope First
+## Choose the scope first
 
 Start local unless the term crosses boundaries.
 
@@ -29,7 +29,7 @@ Start local unless the term crosses boundaries.
 
 Promote a local term to root only when multiple areas need the same meaning.
 
-## Definition Style
+## Definition style
 
 Use:
 
@@ -41,7 +41,7 @@ _Avoid_: Ambiguous synonym, deprecated name
 
 Be opinionated. Pick one canonical term and list aliases to avoid.
 
-## Maintenance
+## Workflow
 
 When changing language:
 
@@ -50,3 +50,4 @@ When changing language:
 3. Prune obsolete or overly generic terms.
 4. Surface conflicts immediately when user language contradicts existing vocabulary.
 5. Do not preserve old terms unless they matter for migration, user-facing copy, or external integrations.
+6. Check that each changed term has one canonical definition in the smallest relevant language file.

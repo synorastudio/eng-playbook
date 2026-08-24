@@ -1,21 +1,22 @@
 ---
 name: adopt-project
-description: "Adopt a tech-agnostic agent operating system into an existing repo through audit, proposal, user guidance, and approved changes."
+description: "Audit an existing repo and apply an approved Agent Operating System proposal."
+disable-model-invocation: true
 ---
 
-# Adopt Project
+# Adopt a project
 
 Add or align an Agent Operating System in an existing repo without overwriting the project's real conventions.
 
-This skill audits first, proposes changes second, and writes only after the user approves the proposal or provides revised guidance. It does not install packages, choose frameworks, configure app tooling, or infer stack defaults.
+Audit first. Propose changes next. Write only after the user approves the proposal or revises it. Leave package installation, framework choice, app tooling, and stack defaults outside this workflow.
 
-## Adoption Principle
+## Adoption principle
 
 Adopt the project's operating reality, not a preferred scaffold.
 
-Project Adoption is a heuristic workflow between Agent Operating System adoption and thin docs adoption. Create or update durable docs only when future agents need them to operate safely.
+Project Adoption may produce a full Agent Operating System or a thin docs update. Create durable docs only when future agents need them to operate safely.
 
-## Audit Categories
+## Audit categories
 
 Discover the project's actual operating environment. Do not introduce preferred tooling just because it is absent.
 
@@ -32,7 +33,7 @@ Audit:
 - Command registry: where common commands are documented and how agents should discover them without inventing stack-specific commands.
 - Safety rules: data, auth, secrets, deployment, migrations, paid services, and destructive operations.
 
-## Classify Findings
+## Classify findings
 
 After auditing, classify findings:
 
@@ -44,7 +45,7 @@ After auditing, classify findings:
 
 Never assume absence means "create my preferred thing." First infer the project's current defaults.
 
-## Adoption Proposal
+## Adoption proposal
 
 Before writing to the repo, present a concise adoption proposal.
 
@@ -60,9 +61,9 @@ Include:
 - What assumptions need user confirmation.
 - What hidden project knowledge would change the proposal.
 
-Wait for the user to approve, reject, or revise the proposal. Apply only approved changes and address the user's additional knowledge or requests.
+Stop after the proposal. Continue only when the user approves it or supplies a revision. Apply the approved scope and incorporate the user's project knowledge.
 
-## Artifact Scope
+## Artifact scope
 
 Adoption may create or update the same artifact universe as greenfield scaffolding, but only through the audit and proposal flow.
 
@@ -79,7 +80,7 @@ Adoption may create or update the same artifact universe as greenfield scaffoldi
 
 Keep generated or revised docs short. Adoption should make the repo safer for future agents, not create empty bureaucracy.
 
-## Handoff to Specialist Skills
+## Route specialist work
 
 Route deeper durable knowledge work to the owning skill instead of expanding this skill's scope.
 
@@ -87,7 +88,7 @@ Route deeper durable knowledge work to the owning skill instead of expanding thi
 - Use `write-adr` when a decision is hard to reverse, surprising without context, and based on a real trade-off.
 - Use `maintain-living-docs` when architecture, onboarding, operations, or project-specific guidance needs more than a thin adoption note.
 
-## AGENTS.md Style
+## Keep AGENTS.md short
 
 Use `../scaffold-project/AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 
@@ -98,7 +99,7 @@ Use `../scaffold-project/AGENTS-TEMPLATE.md` when creating or revising `AGENTS.m
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
 
-## Tool-Agnostic Rule Storage
+## Store rules for any agent
 
 Prefer `AGENTS.md` as the universal agent entry point, with detailed agent rules stored as ordinary repo documentation.
 
@@ -109,7 +110,7 @@ Prefer `AGENTS.md` as the universal agent entry point, with detailed agent rules
 
 Use tool-specific rule directories only when the user explicitly asks for them or the repo already depends on them. Shared guidance should have one project-owned source of truth that Codex, Cursor, and other agents can follow.
 
-## Runtime Ownership Prompt
+## Ask who owns local runtimes
 
 If the audit does not reveal a project convention for interactive local dev servers, ask whether agents should avoid starting long-running local dev servers during interactive work.
 
@@ -121,7 +122,7 @@ If the user wants that rule, add a short Agent Guidance bullet such as:
 
 If the user does not want the rule, omit it. Preserve any existing project-specific runtime convention instead of replacing it.
 
-## Workflow Conventions Prompt
+## Ask about workflow conventions
 
 If the audit does not reveal project conventions for commits, branches, PR templates, issue links, contribution flow, or review expectations, ask whether agents should follow any.
 
@@ -137,7 +138,7 @@ If the answer is compact, add one short Agent Guidance bullet. If it needs detai
 
 If the user does not provide workflow conventions, omit the rule. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
-## Completion Report
+## Completion report
 
 Report:
 
@@ -147,4 +148,4 @@ Report:
 - What user guidance changed from the original proposal.
 - What still needs a decision.
 
-If `adopt-project` and `scaffold-project` keep converging, consider extracting more shared Agent Operating System support files later.
+Finish when every approved proposal item is applied or explicitly deferred, every existing convention touched by the work is preserved or deliberately replaced, and the report accounts for each proposal item.

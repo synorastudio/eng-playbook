@@ -1,8 +1,8 @@
-# LANGUAGE.md Format
+# LANGUAGE.md format
 
 `LANGUAGE.md` is a bounded glossary for project-specific vocabulary. It is not a spec, architecture document, implementation guide, or scratchpad.
 
-## Root Format
+## Root format
 
 ```md
 # Language
@@ -29,7 +29,7 @@ _Avoid_: Other synonym
 - Do not include implementation details, architecture decisions, plans, acceptance criteria, or open questions.
 - Prune obsolete terms when the project language changes.
 
-## Scope Rules
+## Scope rules
 
 Start local unless the term crosses boundaries.
 
@@ -38,10 +38,10 @@ Start local unless the term crosses boundaries.
 - Promote a local term to root only when multiple areas need the same meaning.
 - Use `LANGUAGE-MAP.md` only when multiple language files exist and navigation is needed.
 
-## LANGUAGE-MAP.md Format
+## LANGUAGE-MAP.md format
 
 ```md
-# Language Map
+# Language map
 
 ## Contexts
 

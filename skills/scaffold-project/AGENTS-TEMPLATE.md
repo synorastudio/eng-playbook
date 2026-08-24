@@ -1,11 +1,11 @@
-# AGENTS.md Template
+# AGENTS.md template
 
 Keep `AGENTS.md` as short as possible. Agents load it into context, so use it as an index and routing layer, not a full policy document.
 
 Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 
 ```md
-# Agent Guidance
+# Agent guidance
 
 - Read `LANGUAGE.md` before naming or changing project concepts.
 - Read `docs/architecture.md` before changing structure or cross-cutting behavior.
@@ -15,7 +15,7 @@ Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 - [Optional] In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
 - Commands and environment notes: see [README.md or docs path].
 
-## Rules Index
+## Rules index
 
 - [Rule name](docs/rule-doc.md): short description of the detailed agent guidance.
 ```

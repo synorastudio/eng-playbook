@@ -1,12 +1,12 @@
 ---
 name: handoff
-description: Produce a compact handoff document so a future agent can continue work without rereading the whole conversation. Use near context limits, at session boundaries, before switching agents, or when pausing multi-session work.
+description: Write a compact Handoff for a fresh agent. Use when nearing a context limit, session boundary, agent switch, or pause in multi-session work.
 argument-hint: "What should the next session focus on?"
 ---
 
 # Handoff
 
-Create a handoff document for a fresh agent.
+Write for a fresh agent with no access to the conversation.
 
 Save it outside the workspace unless the user asks for a repo artifact. Use the operating system temp directory by default.
 
@@ -20,7 +20,7 @@ Save it outside the workspace unless the user asks for a repo artifact. Use the 
 - Suggested skills for the next session.
 - Recommended next action.
 
-## Do Not Include
+## Leave out
 
 - Secrets, credentials, tokens, or sensitive personal information.
 - Full copies of artifacts already stored elsewhere.
@@ -34,17 +34,19 @@ Save it outside the workspace unless the user asks for a repo artifact. Use the 
 
 ## Goal
 
-## Current State
+## Current state
 
 ## Decisions
 
-## Open Questions
+## Open questions
 
-## Important Artifacts
+## Important artifacts
 
-## Suggested Skills
+## Suggested skills
 
-## Next Action
+## Next action
 ```
 
 If the user provides a focus argument, tailor the handoff to that next session.
+
+Before finishing, verify that the next agent can identify the goal, the exact stopping point, and one concrete next action without consulting the conversation.

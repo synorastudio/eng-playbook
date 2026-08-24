@@ -1,17 +1,18 @@
 ---
 name: slice-to-issues
-description: Convert grilled features or plans into user-recognizable feature issues and sub-issues, not technical tasks. Use when breaking project scope into Linear, GitHub, Markdown, or other tracker issues that non-technical collaborators should be able to understand.
+description: Turn accepted scope into Feature Issues and Sub-Issues for a chosen tracker.
+disable-model-invocation: true
 ---
 
-# Slice To Issues
+# Slice to issues
 
-Use this skill after enough grilling has happened to understand the target outcome.
+Start after the target outcome and its main boundaries are clear.
 
 Issues represent features, not technical tasks. Think user stories, not implementation steps.
 
 - Issue = a feature a user would recognize: "Guests can RSVP," "Host can view responses," "Invite page shows event details."
 - Sub-issue = a smaller feature if the parent feature is too big: "RSVP supports dietary preferences" under "Guests can RSVP."
-- Never break down by technical layer. Do not create issues like "implement API," "build form," "add route," or "write database schema."
+- A technical layer is not a Feature Issue. "Implement API," "build form," "add route," and "write database schema" stay inside the coding agent's implementation plan.
 
 The coding agent decides the technical tasks inside the issue. The issue tracker should stay readable for non-technical collaborators.
 
@@ -21,11 +22,11 @@ The coding agent decides the technical tasks inside the issue. The issue tracker
 2. Identify user-recognizable feature outcomes.
 3. Split oversized features into smaller feature sub-issues.
 4. Mark assumptions and dependencies.
-5. Ask where issues should live if the destination is unclear.
+5. Determine the destination from repo guidance or ask the user when it is unclear.
 6. Persist the chosen issue tracker in `AGENTS.md`.
-7. Draft issues in dependency order.
+7. Draft issues in dependency order and check each one against the rules below.
 
-## Issue Rules
+## Issue rules
 
 A good issue:
 
@@ -39,7 +40,7 @@ A good issue:
 
 Use sub-issues when the parent feature is too large but the child is still a feature. Do not use sub-issues for implementation steps.
 
-## Issue Template
+## Issue template
 
 ```md
 # Title
@@ -48,12 +49,12 @@ Use sub-issues when the parent feature is too large but the child is still a fea
 
 What user-recognizable feature this issue makes possible.
 
-## Feature Scope
+## Feature scope
 
 - User-facing or system-owner-visible behavior included in this issue.
 - Explicitly excluded behavior, if needed.
 
-## Acceptance Criteria
+## Acceptance criteria
 
 - Observable pass/fail criteria.
 
@@ -61,11 +62,11 @@ What user-recognizable feature this issue makes possible.
 
 - Assumptions the agent may proceed with.
 
-## Blocked By
+## Blocked by
 
 - Dependencies or decisions.
 
-## Stop And Ask If
+## Stop and ask if
 
 - Implementing this requires changing product scope beyond the issue.
 - Implementing this requires a hard-to-reverse architecture decision.
@@ -75,7 +76,7 @@ What user-recognizable feature this issue makes possible.
 - Implementing this requires a broad refactor outside the feature.
 ```
 
-## Tracker Policy
+## Tracker policy
 
 Stay tracker-agnostic. If the user has not chosen a destination, ask whether to use GitHub Issues, Linear, Markdown files, or another tracker.
 
@@ -84,7 +85,7 @@ Once the user chooses a tracker, persist the decision in `AGENTS.md` so future a
 Use a short section like:
 
 ```md
-## Issue Tracker
+## Issue tracker
 
 Use Linear for feature issues and sub-issues.
 
@@ -93,6 +94,8 @@ Issues represent user-recognizable features, not technical tasks. Do not create 
 
 Do not store the tracker decision in `LANGUAGE.md`. If the tracker choice is surprising, costly to reverse, or tied to a workflow/tooling trade-off, offer an ADR too.
 
-## Stop-And-Ask Intent
+## Stop-and-ask intent
 
 `Stop And Ask If` is for the coding agent that later picks up the issue. It preserves autonomy inside the feature while naming the boundaries where the agent must pause instead of improvising.
+
+Finish when every accepted feature has one home, every issue describes an observable outcome, dependencies are explicit, and no issue exists only to represent a technical layer.

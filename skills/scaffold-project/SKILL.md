@@ -1,15 +1,16 @@
 ---
 name: scaffold-project
-description: "Create a minimal, tech-agnostic agent operating system for a truly greenfield repo: agent guidance, conventions, ignore files, and starter documentation. Use when starting a new project repo."
+description: "Create a minimal, tech-agnostic Agent Operating System in a greenfield repo."
+disable-model-invocation: true
 ---
 
-# Scaffold Project
+# Scaffold a project
 
 Establish a greenfield repo's agent operating system without choosing or modifying the tech stack.
 
-This skill creates minimal guidance, conventions, and workflow anchors that help future agents work safely in a new project. It does not install packages, choose frameworks, configure app tooling, infer stack defaults, or adopt existing project conventions.
+Create only the guidance and workflow anchors that future agents need before the project has meaningful structure. Package installation, framework choice, app tooling, and stack defaults belong to later work.
 
-## Greenfield Preflight
+## Greenfield preflight
 
 Before creating files, inspect the repo state.
 
@@ -18,7 +19,7 @@ Before creating files, inspect the repo state.
 - If the repo contains app code, package manifests, deployment or environment files, meaningful docs, existing conventions, or agent guidance, stop and route to `adopt-project`.
 - If the repo state is ambiguous, ask before proceeding.
 
-## Scaffold Principle
+## Scaffold principle
 
 Create the project operating system, not premature project knowledge.
 
@@ -51,7 +52,7 @@ Lazy creation:
 
 Keep generated placeholders short. The scaffold should invite useful documentation, not create empty bureaucracy.
 
-## Tool-Agnostic Rule Storage
+## Store rules for any agent
 
 Use `AGENTS.md` as the universal agent entry point, and store detailed agent rules as ordinary repo documentation.
 
@@ -62,7 +63,7 @@ Use `AGENTS.md` as the universal agent entry point, and store detailed agent rul
 
 This keeps Codex, Cursor, and other agents aligned on the same source of truth.
 
-## AGENTS.md Style
+## Keep AGENTS.md short
 
 Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 
@@ -73,7 +74,7 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
 
-## Runtime Ownership Prompt
+## Ask who owns local runtimes
 
 When creating `AGENTS.md`, ask whether agents should avoid starting long-running local dev servers during interactive work.
 
@@ -85,7 +86,7 @@ If the user wants that rule, add a short Agent Guidance bullet such as:
 
 If the user does not want the rule, omit it. Do not add stack-specific commands or server details.
 
-## Workflow Conventions Prompt
+## Ask about workflow conventions
 
 When creating `AGENTS.md`, ask whether agents should follow any repo-specific workflow conventions.
 
@@ -105,7 +106,7 @@ If the answer needs detail, document it in the README, a PR template, contributi
 
 If the user does not provide workflow conventions, omit the rule. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
-## README Shape
+## Shape the README
 
 When creating or revising `README.md`, optimize it as the project front door for humans and agents. Prefer concise sections such as:
 
@@ -119,7 +120,7 @@ When creating or revising `README.md`, optimize it as the project front door for
 
 Do not document launch checklists, stack choices, issue workflows, or external provenance in the README unless they are already accepted project knowledge.
 
-## File Intent
+## Artifact ownership
 
 - `AGENTS.md`: repo-level operating instructions for future agents.
 - `LANGUAGE.md`: bounded project vocabulary.
@@ -129,3 +130,15 @@ Do not document launch checklists, stack choices, issue workflows, or external p
 - Review templates: collaboration and review workflow.
 - Ignore files: keep generated files, secrets, dependencies, and tool noise out of version control.
 - Environment and deployment notes: where the project runs, how envs are managed, and what agents must not touch.
+
+## Completion check
+
+Before finishing, verify that:
+
+- The repo still has no meaningful project structure that should have routed the work to `adopt-project`.
+- Every created file has current content or a concrete reason to exist. No empty placeholder sections remain.
+- `AGENTS.md` points to detailed guidance instead of copying it.
+- The scaffold contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
+- Existing administrative files retain their useful content.
+
+Report the files created or changed, the user choices encoded, and the lazy artifacts left for later.

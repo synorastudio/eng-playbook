@@ -1,13 +1,13 @@
 ---
 name: prototype
-description: Build throwaway prototypes that answer either logic/state questions or UI-variant questions before committing to production implementation. Use when sanity-checking state models, workflows, data behavior, screens, components, visual directions, or when the user says to prototype or try variants.
+description: Build a throwaway Prototype that answers one design question. Use when the user explicitly asks to prototype, compare UI variants, or test uncertain logic, state, workflow, or data before production. Do not use for ordinary production implementation.
 ---
 
 # Prototype
 
 A prototype is throwaway code that answers a question. The answer is valuable; the prototype is disposable.
 
-## Choose The Branch
+## Choose the branch
 
 - Logic, state, workflow, or data-model uncertainty -> follow `LOGIC.md`.
 - UI, screen, component, layout, or visual direction uncertainty -> follow `UI.md`.
@@ -24,7 +24,7 @@ If the question is ambiguous, ask. If the user is unavailable, choose the branch
 - Surface the relevant state or variant differences.
 - Delete or absorb the prototype when the question is answered.
 
-## Capture The Answer
+## Capture the answer
 
 Before deleting or absorbing the prototype, capture:
 
@@ -34,3 +34,5 @@ Before deleting or absorbing the prototype, capture:
 - Any docs, issue, or architecture update needed.
 
 Do not leave unexplained prototype code in the repo.
+
+Finish when the prototype has produced a verdict, the verdict is recorded in the smallest relevant artifact, and no unexplained prototype code remains.

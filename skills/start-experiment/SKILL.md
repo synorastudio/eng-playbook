@@ -1,13 +1,14 @@
 ---
 name: start-experiment
-description: Bootstrap a disposable personal software experiment and build its first outcome through outcome-first, fully vibe-coded implementation with minimal process. Use when the user wants to start a personal experiment, disposable project, quick vibe-coded build, or small project for themselves, friends, or family without professional engineering ceremony.
+description: Bootstrap a Personal Experiment and build its first user-visible outcome with disposable code and minimal process.
+disable-model-invocation: true
 ---
 
-# Start Experiment
+# Start an experiment
 
 Establish a Personal Experiment's durable operating mode, then build the requested first outcome quickly. Treat the implementation as disposable and delegate engineering choices to the agent.
 
-## Confirm The Mode
+## Confirm the mode
 
 Use this one-time bootstrap workflow only when the user identifies the project as a Personal Experiment or clearly asks for disposable, vibe-coded work. Project size and commercial potential do not determine the mode.
 
@@ -22,7 +23,7 @@ Require the user to provide the devlog page as part of the initial request. Read
 
 After bootstrap, future agents continue the experiment through its `AGENTS.md`; they do not need to invoke this skill again.
 
-## Build For The Outcome
+## Build for the outcome
 
 - Start from the user's desired outcome and implement immediately.
 - Make reasonable product, stack, architecture, and implementation choices without design ceremony.
@@ -30,7 +31,7 @@ After bootstrap, future agents continue the experiment through its `AGENTS.md`; 
 - Ask only when missing information blocks the outcome or a choice carries meaningful cost, safety, privacy, or external-system consequences.
 - Verify the user-visible behavior in proportion to the experiment. Do not introduce a professional test strategy unless requested.
 
-## Establish Minimal Artifacts
+## Establish minimal artifacts
 
 Create a minimal `AGENTS.md`, a short `README.md`, and a concise `TODO.md`. Preserve useful existing content when any of them already exist.
 
@@ -44,7 +45,7 @@ Use `AGENTS.md` to preserve the Personal Experiment operating mode across future
 - Essential guardrails relevant to the experiment.
 - The wrap-up rules below.
 
-Encode these wrap-up rules without prescribing branches, pull requests, or other integration mechanisms:
+Encode these wrap-up rules without prescribing a particular integration mechanism:
 
 - Implement and verify freely, but ship only after the user explicitly signals acceptance or asks to wrap up.
 - Before shipping, verify the accepted user-visible behavior in proportion to the experiment.
@@ -69,8 +70,10 @@ Use `TODO.md` as the only repo-level build-status tracker.
 
 Do not create plans, issues, ADRs, architecture docs, `LANGUAGE.md`, a Professional Project Agent Operating System, or other standard project documentation unless the user explicitly asks for a specific artifact.
 
-## Keep Essential Guardrails
+## Keep essential guardrails
 
 Disposable code does not remove responsibility for secrets, personal data, destructive operations, paid services, deployment, or people who rely on the experiment. Ask before consequential external actions and surface support or safety risks plainly.
 
 Do not add professional ceremony merely because the experiment has users or needs a small maintenance fix.
+
+Bootstrap is complete when the first requested outcome works, the user-visible behavior has been checked, the three repo artifacts describe the current experiment, and the supplied devlog remains the durable record for decisions, learnings, and dead ends.

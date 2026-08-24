@@ -1,11 +1,12 @@
 ---
 name: project-intake
-description: Normalize external project context into goals, users, constraints, feature candidates, assumptions, and open questions. Use when starting a new project, receiving a Notion brief, pasted notes, rough feature list, user flows, screen ideas, or other pre-coding product context.
+description: Normalize an External Project Brief into accepted scope, sources, constraints, assumptions, and open questions.
+disable-model-invocation: true
 ---
 
-# Project Intake
+# Project intake
 
-Use this skill before grilling or scaffolding when the project context comes from outside the coding agent.
+Run intake before grilling or scaffolding when project context comes from outside the coding agent.
 
 ## Inputs
 
@@ -19,7 +20,7 @@ Accept any source the user provides:
 
 Do not make the workflow source-specific. If another tool or skill can fetch context, use it; otherwise ask the user for the missing material.
 
-## Normalize The Brief
+## Normalize the brief
 
 Extract and organize:
 
@@ -27,15 +28,15 @@ Extract and organize:
 - Target users, personas, or jobs-to-be-done.
 - Initial feature candidates.
 - Conceptual user flows or screens.
-- Constraints: timeline, budget, hosting, stack preferences, compliance, team size.
+- Constraints such as timeline, budget, hosting, stack preferences, compliance, and team size.
 - Explicit decisions and non-goals.
 - Open questions.
 - Risky assumptions.
 - Vocabulary candidates for `LANGUAGE.md`.
 
-## Source Authority
+## Source authority
 
-Treat external briefs as upstream context, not automatically authoritative project truth. Preserve the distinction between what the source says and what the repo has accepted.
+Treat an External Project Brief as upstream context, not accepted project truth. Keep source claims separate from decisions already accepted in the repo.
 
 When possible, capture source provenance without copying full upstream content:
 
@@ -47,7 +48,7 @@ When possible, capture source provenance without copying full upstream content:
 
 Flag contradictions between external context and existing repo docs instead of silently resolving them.
 
-## Scope Sorting
+## Sort the scope
 
 Separate active work from future possibility.
 
@@ -63,7 +64,7 @@ Do not promote backlog or speculative ideas into current scope just because they
 Return a concise intake summary:
 
 ```md
-## Project Intake
+## Project intake
 
 ### Sources
 
@@ -71,27 +72,29 @@ Return a concise intake summary:
 
 ### Users
 
-### Current Scope
+### Current scope
 
 ### Constraints
 
-### Backlog And Later
+### Backlog and later
 
-### Existing Decisions
+### Existing decisions
 
-### Non-Goals
+### Non-goals
 
-### Source Conflicts
+### Source conflicts
 
-### Assumptions To Grill
+### Assumptions to grill
 
-### Vocabulary Candidates
+### Vocabulary candidates
 
-### Recommended Next Step
+### Recommended next step
 ```
 
-Omit empty sections when they add no signal. The recommended next step is usually:
+Omit empty sections. Recommend the next workflow based on what remains:
 
 1. `scaffold-project` if the repo is greenfield or lacks an Agent Operating System.
 2. `grill-with-docs` for unresolved assumptions, vocabulary, scope boundaries, and authority questions.
-3. A docs update when the intake reveals accepted durable knowledge that should be reflected in repo docs.
+3. A docs update when the intake finds accepted durable knowledge missing from repo docs.
+
+Finish when every material source claim appears in the summary or is deliberately excluded, source conflicts remain visible, and current scope is distinct from backlog and speculation.

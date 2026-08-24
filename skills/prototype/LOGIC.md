@@ -1,4 +1,4 @@
-# Logic Prototype
+# Logic prototype
 
 Use this branch for state machines, workflows, data-model behavior, business rules, or other non-visual questions.
 
@@ -18,7 +18,7 @@ Prefer:
 - Minimal dependencies.
 - No production persistence unless that is the question.
 
-## Good Questions
+## Good questions
 
 - Does this state model cover the real workflow?
 - Which transitions are invalid?

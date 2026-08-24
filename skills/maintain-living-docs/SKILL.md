@@ -1,13 +1,13 @@
 ---
 name: maintain-living-docs
-description: Steward durable explanatory documentation such as docs/architecture.md, onboarding notes, operational docs, and project-specific guides without creating doc sprawl. Use when implementation changes current system shape, durable workflows, operational knowledge, or architecture navigation.
+description: Maintain Living Docs without creating sprawl. Use when working on architecture, onboarding, operations, project guides, or implementation that changes durable system knowledge. Use narrower skills for vocabulary, decisions, issues, and handoffs.
 ---
 
-# Maintain Living Docs
+# Maintain living docs
 
-Use this skill to keep durable explanatory docs current. It is not a vocabulary, ADR, issue, or handoff skill.
+Keep durable explanatory docs current. Route vocabulary, decisions, work breakdown, and session continuity to their owning skills.
 
-## Update Docs When
+## Update docs when
 
 Update living docs only when the information is:
 
@@ -34,7 +34,7 @@ This skill does not own:
 - Work breakdown. Use `slice-to-issues`.
 - Session continuity. Use `handoff`.
 
-If a requested doc update is mostly vocabulary or decisions, stop and suggest the narrower skill instead of folding it into living docs.
+If vocabulary or decisions dominate the requested update, stop and suggest the narrower skill.
 
 ## docs/architecture.md
 
@@ -50,10 +50,12 @@ Include what helps a future agent understand the current system:
 
 Avoid speculative future architecture, detailed implementation plans, and duplicated ADR rationale.
 
-## Maintenance Rules
+## Workflow
 
-- Prefer updating existing docs over creating new ones.
-- Create a new doc only when the topic has durable ownership.
-- Keep sections short and link to source artifacts.
-- Remove stale statements when replacing them.
-- Report what changed and what was intentionally left undocumented.
+1. Read the relevant doc and the code or source artifacts that establish current behavior.
+2. Update an existing doc when it already owns the topic. Create a doc only when the topic has durable ownership of its own.
+3. Replace stale statements instead of layering corrections beneath them. Link to source artifacts for details that already live elsewhere.
+4. Check every changed claim against the current implementation.
+5. Report what changed and what you intentionally left undocumented.
+
+Finish when every changed claim matches the current system and no obsolete version of that claim remains in the edited docs.

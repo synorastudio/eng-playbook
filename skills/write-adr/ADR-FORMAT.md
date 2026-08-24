@@ -1,4 +1,4 @@
-# ADR Format
+# ADR format
 
 ADRs live in `docs/adr/` and use sequential numbering:
 
@@ -9,7 +9,7 @@ docs/adr/0002-another-decision.md
 
 Create `docs/adr/` lazily, only when the first ADR is needed.
 
-## When To Create An ADR
+## When to create an ADR
 
 Create or offer an ADR only when all three are true:
 
@@ -22,14 +22,14 @@ If any condition is missing, do not create an ADR.
 ## Template
 
 ```md
-# Short Decision Title
+# Short decision title
 
 One to three sentences explaining the context, the decision, and why this trade-off was chosen.
 ```
 
 That is enough for most ADRs.
 
-## Optional Sections
+## Optional sections
 
 Add these only when they carry real value:
 
@@ -38,7 +38,7 @@ Add these only when they carry real value:
 status: accepted
 ---
 
-## Considered Options
+## Considered options
 
 - Option A: reason rejected.
 - Option B: reason accepted.
@@ -52,7 +52,7 @@ status: accepted
 
 Scan `docs/adr/` for the highest existing number and increment it by one. Do not renumber existing ADRs.
 
-## Good ADR Subjects
+## Good ADR subjects
 
 - Architectural shape.
 - Integration patterns between contexts.

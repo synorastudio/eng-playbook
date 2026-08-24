@@ -1,15 +1,15 @@
 ---
 name: grill-with-docs
-description: Stress-test a plan or design through a relentless design-tree interview, sharpening project language and surfacing decisions that belong in LANGUAGE.md or ADRs. Use when the user wants to challenge an idea, architecture, feature design, or implementation plan before committing to work.
+description: Run a Grilling Session over a concrete plan or design. Use when the user asks to grill or challenge it through a decision-by-decision interview before implementation. Do not use for ordinary planning, review, or implementation.
 ---
 
-# Grill With Docs
+# Grill with docs
 
-Use this skill to stress-test a plan before implementation.
+Stress-test a concrete plan before implementation.
 
 This skill does not ingest broad project context, scaffold repos, create issues, or manage living docs. Use `project-intake`, `scaffold-project`, `slice-to-issues`, or `maintain-living-docs` for those workflows.
 
-## Core Instruction
+## Core instruction
 
 Interview the user relentlessly about every aspect of the plan until there is shared understanding.
 
@@ -28,7 +28,7 @@ Before grilling, read relevant existing artifacts when available:
 
 If the user has not provided a concrete plan or design to grill, ask them to provide one or suggest running `project-intake` first.
 
-## Grilling Posture
+## Grilling posture
 
 Start as a collaborative skeptic. Escalate when ambiguity, contradiction, or risk remains.
 
@@ -46,7 +46,7 @@ Push especially hard on:
 - Irreversible or expensive architecture choices.
 - Places where the proposed design conflicts with existing docs or code.
 
-## Design Tree Method
+## Design Tree method
 
 Work from broad decisions to dependent details:
 
@@ -60,7 +60,7 @@ Work from broad decisions to dependent details:
 
 Do not batch a long questionnaire. Ask one question, wait, then continue.
 
-## Turn Handling
+## Handle each turn
 
 When the user replies with a question, uncertainty, a proposed alternative, or a prompt like "thoughts?", stay on the current branch. Answer the user's question, refine the recommendation, and wait for an explicit resolution before asking the next design-tree question.
 
@@ -73,7 +73,7 @@ Treat these as signals to pause progression:
 
 Only move to the next branch when the current decision is accepted, rejected, explicitly deferred, or clearly resolved by the user's response.
 
-## Docs During Grilling
+## Update docs during grilling
 
 Use docs only for durable knowledge discovered during the interview. When a decision resolves a vocabulary ambiguity or other durable documentation point, update the smallest relevant doc immediately before moving to the next design branch.
 
@@ -97,13 +97,15 @@ When an ADR is clearly warranted, offer to write it immediately and follow `../w
 
 Do not update living docs, create issues, or scaffold files from this skill unless the user explicitly asks to switch workflows.
 
-## Completion Criteria
+## Completion criteria
 
 Complete the grilling session when:
 
 - The plan's goal and non-goals are clear.
-- The important branches of the design tree have been walked.
+- Every Design Tree branch that could change scope, system boundaries, data ownership, state, security, or an expensive dependency has been resolved or named.
 - Blocking decisions are resolved or explicitly deferred.
 - Key terms are aligned with `LANGUAGE.md`.
 - ADR-worthy decisions have been identified.
-- Remaining uncertainty is named clearly enough for another skill or session to handle.
+- Each remaining uncertainty has an owner or a named next workflow.
+
+End with a compact decision summary, explicit deferrals, doc changes, ADR candidates, and the next recommended action.
