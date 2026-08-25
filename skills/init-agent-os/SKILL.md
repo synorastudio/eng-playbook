@@ -1,10 +1,10 @@
 ---
-name: scaffold-project
+name: init-agent-os
 description: "Create a minimal, tech-agnostic Agent Operating System in a greenfield repo."
 disable-model-invocation: true
 ---
 
-# Scaffold a project
+# Initialize an Agent Operating System
 
 Establish a greenfield repo's agent operating system without choosing or modifying the tech stack.
 
@@ -19,11 +19,11 @@ Before creating files, inspect the repo state.
 - If the repo contains app code, package manifests, deployment or environment files, meaningful docs, existing conventions, or agent guidance, stop and route to `adopt-project`.
 - If the repo state is ambiguous, ask before proceeding.
 
-## Scaffold principle
+## Initialization principle
 
 Create the project operating system, not premature project knowledge.
 
-If a `project-intake` summary or other accepted external brief is available, use it to seed only durable, non-speculative project orientation:
+If an `intake` summary or other accepted external brief is available, use it to seed only durable, non-speculative project orientation:
 
 - Project identity and audience.
 - Current scope or current iteration.
@@ -50,7 +50,7 @@ Lazy creation:
 - PR or issue templates when the project uses that review or tracking flow.
 - `.dockerignore`, agent ignore files, or other ignore files when the matching tool exists or the user asks for them.
 
-Keep generated placeholders short. The scaffold should invite useful documentation, not create empty bureaucracy.
+Keep generated placeholders short. The initial files should invite useful documentation, not create empty bureaucracy.
 
 ## Store rules for any agent
 
@@ -138,7 +138,7 @@ Before finishing, verify that:
 - The repo still has no meaningful project structure that should have routed the work to `adopt-project`.
 - Every created file has current content or a concrete reason to exist. No empty placeholder sections remain.
 - `AGENTS.md` points to detailed guidance instead of copying it.
-- The scaffold contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
+- The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
 - Existing administrative files retain their useful content.
 
 Report the files created or changed, the user choices encoded, and the lazy artifacts left for later.

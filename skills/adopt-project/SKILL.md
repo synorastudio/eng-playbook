@@ -12,7 +12,7 @@ Audit first. Propose changes next. Write only after the user approves the propos
 
 ## Adoption principle
 
-Adopt the project's operating reality, not a preferred scaffold.
+Let the project's operating reality determine its Agent Operating System.
 
 Project Adoption may produce a full Agent Operating System or a thin docs update. Create durable docs only when future agents need them to operate safely.
 
@@ -65,7 +65,7 @@ Stop after the proposal. Continue only when the user approves it or supplies a r
 
 ## Artifact scope
 
-Adoption may create or update the same artifact universe as greenfield scaffolding, but only through the audit and proposal flow.
+Adoption may create or update the same artifact universe as greenfield initialization, but only through the audit and proposal flow.
 
 - `AGENTS.md`: repo-level operating instructions for future agents.
 - `LANGUAGE.md`: bounded project vocabulary.
@@ -84,13 +84,13 @@ Keep generated or revised docs short. Adoption should make the repo safer for fu
 
 Route deeper durable knowledge work to the owning skill instead of expanding this skill's scope.
 
-- Use `write-language` for substantial vocabulary work, multiple local language contexts, or unclear naming.
+- Use `maintain-language` for substantial vocabulary work, multiple local language contexts, or unclear naming.
 - Use `write-adr` when a decision is hard to reverse, surprising without context, and based on a real trade-off.
 - Use `maintain-living-docs` when architecture, onboarding, operations, or project-specific guidance needs more than a thin adoption note.
 
 ## Keep AGENTS.md short
 
-Use `../scaffold-project/AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
+Use `../init-agent-os/AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 
 `AGENTS.md` must stay short because agents load it into context. Treat it as an index and routing layer, not a full policy document.
 

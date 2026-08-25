@@ -1,13 +1,13 @@
 ---
-name: grill-with-docs
+name: grill
 description: Run a Grilling Session over a concrete plan or design. Use when the user asks to grill or challenge it through a decision-by-decision interview before implementation. Do not use for ordinary planning, review, or implementation.
 ---
 
-# Grill with docs
+# Grill
 
 Stress-test a concrete plan before implementation.
 
-This skill does not ingest broad project context, scaffold repos, create issues, or manage living docs. Use `project-intake`, `scaffold-project`, `slice-to-issues`, or `maintain-living-docs` for those workflows.
+This skill does not ingest broad project context, initialize an Agent Operating System, create issues, or manage living docs. Use `intake`, `init-agent-os`, `write-issues`, or `maintain-living-docs` for those workflows.
 
 ## Core instruction
 
@@ -26,7 +26,7 @@ Before grilling, read relevant existing artifacts when available:
 - Relevant durable docs under `docs/`, including living docs and ADRs.
 - The specific plan, feature, design, or architecture proposal being grilled.
 
-If the user has not provided a concrete plan or design to grill, ask them to provide one or suggest running `project-intake` first.
+If the user has not provided a concrete plan or design to grill, ask them to provide one or suggest running `intake` first.
 
 ## Grilling posture
 
@@ -77,7 +77,7 @@ Only move to the next branch when the current decision is accepted, rejected, ex
 
 Use docs only for durable knowledge discovered during the interview. When a decision resolves a vocabulary ambiguity or other durable documentation point, update the smallest relevant doc immediately before moving to the next design branch.
 
-Update `LANGUAGE.md` when a project-specific term is clarified, unless the user has asked not to edit files. Follow `../write-language/LANGUAGE-FORMAT.md`.
+Update `LANGUAGE.md` when a project-specific term is clarified, unless the user has asked not to edit files. Follow `../maintain-language/LANGUAGE-FORMAT.md`.
 
 Prefer tightening an existing term over adding a new term when the decision is that a proposed phrase should not become project language.
 
@@ -95,7 +95,7 @@ Offer an ADR only when all three are true:
 
 When an ADR is clearly warranted, offer to write it immediately and follow `../write-adr/ADR-FORMAT.md`.
 
-Do not update living docs, create issues, or scaffold files from this skill unless the user explicitly asks to switch workflows.
+Do not update living docs, write a Spec, create Feature Issues, or initialize Agent OS files from this skill unless the user explicitly asks to switch workflows.
 
 ## Completion criteria
 
@@ -108,4 +108,4 @@ Complete the grilling session when:
 - ADR-worthy decisions have been identified.
 - Each remaining uncertainty has an owner or a named next workflow.
 
-End with a compact decision summary, explicit deferrals, doc changes, ADR candidates, and the next recommended action.
+End with a compact decision summary, explicit deferrals, doc changes, ADR candidates, and the next recommended action. Suggest `write-spec` only when the resolved work needs product review or must survive across agent sessions.

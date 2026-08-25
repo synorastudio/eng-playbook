@@ -1,9 +1,9 @@
 ---
-name: write-language
+name: maintain-language
 description: Maintain bounded project vocabulary in scoped LANGUAGE.md files. Use when defining, renaming, or resolving conflict around a recurring project-specific term. Do not use for general programming concepts or one-off implementation names.
 ---
 
-# Write language
+# Maintain language
 
 Create and maintain `LANGUAGE.md` files. Follow `LANGUAGE-FORMAT.md`.
 

@@ -1,12 +1,12 @@
 ---
-name: project-intake
+name: intake
 description: Normalize an External Project Brief into accepted scope, sources, constraints, assumptions, and open questions.
 disable-model-invocation: true
 ---
 
-# Project intake
+# Intake
 
-Run intake before grilling or scaffolding when project context comes from outside the coding agent.
+Run intake before grilling or Agent OS initialization when project context comes from outside the coding agent.
 
 ## Inputs
 
@@ -54,7 +54,7 @@ Separate active work from future possibility.
 
 - Current implementation contract: what appears accepted for the current iteration.
 - Backlog: likely future work, not part of the current contract.
-- Someday or speculative ideas: weak commitments that should not shape immediate scaffolding.
+- Someday or speculative ideas: weak commitments that should not shape the initial Agent Operating System.
 - Non-goals: explicit exclusions.
 
 Do not promote backlog or speculative ideas into current scope just because they appear in the external brief.
@@ -93,8 +93,8 @@ Return a concise intake summary:
 
 Omit empty sections. Recommend the next workflow based on what remains:
 
-1. `scaffold-project` if the repo is greenfield or lacks an Agent Operating System.
-2. `grill-with-docs` for unresolved assumptions, vocabulary, scope boundaries, and authority questions.
+1. `init-agent-os` if the repo is greenfield or lacks an Agent Operating System.
+2. `grill` for unresolved assumptions, vocabulary, scope boundaries, and authority questions.
 3. A docs update when the intake finds accepted durable knowledge missing from repo docs.
 
 Finish when every material source claim appears in the summary or is deliberately excluded, source conflicts remain visible, and current scope is distinct from backlog and speculation.

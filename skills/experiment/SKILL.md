@@ -1,10 +1,10 @@
 ---
-name: start-experiment
+name: experiment
 description: Bootstrap a Personal Experiment and build its first user-visible outcome with disposable code and minimal process.
 disable-model-invocation: true
 ---
 
-# Start an experiment
+# Experiment
 
 Establish a Personal Experiment's durable operating mode, then build the requested first outcome quickly. Treat the implementation as disposable and delegate engineering choices to the agent.
 

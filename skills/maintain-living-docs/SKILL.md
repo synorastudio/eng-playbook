@@ -29,9 +29,10 @@ This skill owns living explanatory docs:
 
 This skill does not own:
 
-- Vocabulary. Use `write-language`.
+- Vocabulary. Use `maintain-language`.
 - Hard-to-reverse trade-off decisions. Use `write-adr`.
-- Work breakdown. Use `slice-to-issues`.
+- Product scope awaiting review or cross-session execution. Use `write-spec`.
+- Work breakdown. Use `write-issues`.
 - Session continuity. Use `handoff`.
 
 If vocabulary or decisions dominate the requested update, stop and suggest the narrower skill.

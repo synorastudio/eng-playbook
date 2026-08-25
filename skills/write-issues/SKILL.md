@@ -1,12 +1,12 @@
 ---
-name: slice-to-issues
+name: write-issues
 description: Turn accepted scope into Feature Issues and Sub-Issues for a chosen tracker.
 disable-model-invocation: true
 ---
 
-# Slice to issues
+# Write issues
 
-Start after the target outcome and its main boundaries are clear.
+Start after the target outcome and its main boundaries are clear. Use an accepted Spec when one exists; a Spec is not required for smaller work whose accepted scope is already available in conversation.
 
 Issues represent features, not technical tasks. Think user stories, not implementation steps.
 
@@ -18,7 +18,7 @@ The coding agent decides the technical tasks inside the issue. The issue tracker
 
 ## Workflow
 
-1. Read available project context, `LANGUAGE.md`, ADRs, and living docs.
+1. Read the accepted Spec when one exists, plus relevant project context, `LANGUAGE.md`, ADRs, and Living Docs.
 2. Identify user-recognizable feature outcomes.
 3. Split oversized features into smaller feature sub-issues.
 4. Mark assumptions and dependencies.

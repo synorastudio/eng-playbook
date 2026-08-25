@@ -52,6 +52,10 @@ _Avoid_: Context, glossary, domain model
 A short architecture decision record for a hard-to-reverse, surprising trade-off decision.
 _Avoid_: Design doc, plan, decision log
 
+**Spec**:
+A conditional issue-tracker artifact that captures settled product scope, design decisions, boundaries, and acceptance criteria for product review and multi-session agent continuity. It remains a draft until accepted and does not live in the repo.
+_Avoid_: PRD, implementation plan, living doc
+
 **Living Doc**:
 A durable explanatory document that describes current system shape, operations, onboarding, or project-specific guidance.
 _Avoid_: Scratchpad, spec, glossary
