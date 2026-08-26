@@ -44,6 +44,18 @@ _Avoid_: Planning session, review, brainstorming
 The set of dependent decisions inside a plan or design, walked from broad choices to downstream details.
 _Avoid_: Checklist, questionnaire, decision matrix
 
+**Decision Map**:
+A conditional tracker artifact that organizes unresolved decisions for proposed work whose design or milestone boundaries are unclear. It may produce one milestone or a sequence of milestones.
+_Avoid_: Spec, roadmap, backlog
+
+**Decision Issue**:
+A child of a Decision Map that owns one unresolved question requiring a separate Grilling Session, research effort, prototype, or owner.
+_Avoid_: Feature Issue, implementation task, technical ticket
+
+**Milestone**:
+A bounded outcome that can be accepted, sequenced, and declared complete. An accepted Spec represents the Milestone when a Spec is useful.
+_Avoid_: Sprint, project phase, release
+
 **Language**:
 The project-specific vocabulary that agents and humans must use consistently.
 _Avoid_: Context, glossary, domain model
@@ -67,10 +79,6 @@ _Avoid_: Task, ticket, implementation step
 **Sub-Issue**:
 A smaller feature issue nested under a larger feature when the parent is too big.
 _Avoid_: Subtask, checklist item, implementation step
-
-**Smallest Executable Thing**:
-The first behavior, setup move, or narrow implementation path that makes a project real enough to keep building without adding ceremony.
-_Avoid_: Sprint slice, backlog item, mandatory issue
 
 **Prototype**:
 Throwaway code that answers one logic/state or UI-variant question before committing to a production implementation.

@@ -94,7 +94,11 @@ Return a concise intake summary:
 Omit empty sections. Recommend the next workflow based on what remains:
 
 1. `init-agent-os` if the repo is greenfield or lacks an Agent Operating System.
-2. `grill` for unresolved assumptions, vocabulary, scope boundaries, and authority questions.
-3. A docs update when the intake finds accepted durable knowledge missing from repo docs.
+2. `map-decisions` when the proposed work contains dependent decisions or unclear Milestone boundaries.
+3. `grill` when a concrete plan has unresolved assumptions, vocabulary, scope boundaries, or authority questions.
+4. `write-spec` when accepted scope needs product review or cross-session continuity.
+5. `write-issues` when accepted scope would benefit from tracking separate outcomes.
+6. `implement` when the scope is already accepted and no planning artifact would help.
+7. A docs update when the intake finds accepted durable knowledge missing from repo docs.
 
 Finish when every material source claim appears in the summary or is deliberately excluded, source conflicts remain visible, and current scope is distinct from backlog and speculation.

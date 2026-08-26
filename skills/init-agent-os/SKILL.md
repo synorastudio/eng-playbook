@@ -141,4 +141,4 @@ Before finishing, verify that:
 - The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
 - Existing administrative files retain their useful content.
 
-Report the files created or changed, the user choices encoded, and the lazy artifacts left for later.
+Report the files created or changed, the user choices encoded, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when accepted scope can proceed directly.

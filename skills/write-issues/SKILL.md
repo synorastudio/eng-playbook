@@ -38,7 +38,9 @@ A good issue:
 - Avoids backend-only, frontend-only, or infrastructure-only work unless the feature is genuinely internal and user-recognizable to the system owner.
 - Captures architectural assumptions without pretending they are settled decisions.
 
-Use sub-issues when the parent feature is too large but the child is still a feature. Do not use sub-issues for implementation steps.
+Use sub-issues only when the parent feature is too large, the child is still a recognizable feature, and the extra hierarchy improves tracking. Do not use sub-issues for implementation steps.
+
+When a Spec exists, link each Feature Issue to it. Use parent-child hierarchy when the tracker supports it and the nesting improves navigation; otherwise use ordinary links. Tracker hierarchy does not prescribe branches or pull-request targets.
 
 ## Issue template
 

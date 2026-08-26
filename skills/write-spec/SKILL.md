@@ -1,12 +1,12 @@
 ---
 name: write-spec
-description: Write a product-reviewable Spec in the configured issue tracker from decisions already settled in conversation or a decision map.
+description: Write a product-reviewable Spec in the configured issue tracker for one Milestone whose decisions are already settled.
 disable-model-invocation: true
 ---
 
 # Write a spec
 
-Capture resolved product and design decisions in a tracker-backed Spec that a product collaborator can review and a fresh agent can continue from.
+Capture one resolved Milestone in a tracker-backed Spec that a product collaborator can review and a fresh agent can continue from.
 
 Use this conditional workflow when the work must survive across agent sessions or needs product review before issue shaping. Skip it when the accepted work fits comfortably in one session and no review artifact would help.
 
@@ -14,7 +14,7 @@ Use this conditional workflow when the work must survive across agent sessions o
 
 A Spec records decisions. It does not make them.
 
-If product scope, design branches, system boundaries, or other blocking decisions remain unresolved, stop and route back to `grill`. Do not invent answers to complete the template.
+If product scope, design branches, system boundaries, or other blocking decisions remain unresolved, stop and route to the linked Decision Map or `grill`. Do not invent answers to complete the template.
 
 The Spec is a temporary tracker artifact for the active body of work. Keep durable vocabulary in `LANGUAGE.md`, hard-to-reverse trade-off decisions in ADRs, and current system knowledge in Living Docs.
 
@@ -23,7 +23,7 @@ The Spec is a temporary tracker artifact for the active body of work. Keep durab
 Read only the sources that bear on the Spec:
 
 - The current conversation and its resolved Grilling Session decisions.
-- A completed decision map and its linked resolutions, when one exists.
+- The completed Decision Map, the Milestone it produced, and linked Decision Issue resolutions, when they exist.
 - Relevant `LANGUAGE.md` files, ADRs, and Living Docs.
 - Relevant code when it establishes current behavior or constraints.
 - Related tracker items when they may overlap or conflict with the proposed work.
@@ -76,10 +76,12 @@ Write observable acceptance criteria. Keep technical tasks, file lists, and spec
 
 Link relevant ADRs, Living Docs, decision-map resolutions, research, and existing issues instead of copying their contents.
 
+A Spec creates no Git branch by default. Record a Milestone integration branch as an implementation constraint only when the accepted work must be verified atomically and intermediate changes cannot safely reach the target repo's normal integration branch.
+
 ## Handoff
 
 Return the created tracker link and state that the Spec remains a draft until the user accepts it through the tracker's normal workflow or explicitly says it is accepted.
 
 Do not create Feature Issues from this skill. Once the Spec is accepted, route to `write-issues` when issue tracking would clarify execution. Route to `implement` when the accepted work is ready to build directly.
 
-Finish when the draft exists in the configured tracker, every commitment traces to an accepted source, and a product collaborator and fresh agent can understand the intended outcome without the original conversation.
+Finish when the draft exists in the configured tracker, every commitment traces to an accepted source, and a product collaborator and fresh agent can understand the Milestone without the original conversation.

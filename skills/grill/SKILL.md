@@ -24,6 +24,7 @@ Before grilling, read relevant existing artifacts when available:
 - `LANGUAGE.md` and local `LANGUAGE.md` files.
 - `LANGUAGE-MAP.md` if multiple language contexts exist.
 - Relevant durable docs under `docs/`, including living docs and ADRs.
+- The linked Decision Map and Decision Issue when the Grilling Session is resolving a mapped branch.
 - The specific plan, feature, design, or architecture proposal being grilled.
 
 If the user has not provided a concrete plan or design to grill, ask them to provide one or suggest running `intake` first.
@@ -95,6 +96,8 @@ Offer an ADR only when all three are true:
 
 When an ADR is clearly warranted, offer to write it immediately and follow `../write-adr/ADR-FORMAT.md`.
 
+When the session owns a linked Decision Issue, record its accepted resolution and update the parent Decision Map before moving on. Keep the full reasoning in the Decision Issue and only a linked summary in the map.
+
 Do not update living docs, write a Spec, create Feature Issues, or initialize Agent OS files from this skill unless the user explicitly asks to switch workflows.
 
 ## Completion criteria
@@ -108,4 +111,4 @@ Complete the grilling session when:
 - ADR-worthy decisions have been identified.
 - Each remaining uncertainty has an owner or a named next workflow.
 
-End with a compact decision summary, explicit deferrals, doc changes, ADR candidates, and the next recommended action. Suggest `write-spec` only when the resolved work needs product review or must survive across agent sessions.
+End with a compact decision summary, explicit deferrals, doc changes, ADR candidates, and the next recommended action. Return to `map-decisions` when other mapped branches remain. Suggest `write-spec` only when an established Milestone needs product review or must survive across agent sessions.

@@ -15,7 +15,7 @@ Codex packaging is not a release target for this personal library. A strict Code
 - `README.md`: public overview, inspiration, operating model, and artifact routing.
 - `AGENTS.md`: repo-level operating instructions for future agents.
 - `LANGUAGE.md`: bounded vocabulary for the repo's own domain language.
-- `skills/`: composable skills for planning, Agent OS initialization, adoption, documenting, issue shaping, prototyping, and handoff.
+- `skills/`: composable skills for intake, decision mapping, design resolution, Agent OS initialization, adoption, documentation, issue shaping, implementation, prototyping, and handoff.
 
 ## Skill Relationships
 
@@ -23,8 +23,9 @@ Codex packaging is not a release target for this personal library. A strict Code
 - `intake` prepares external project context for later workflows.
 - `init-agent-os` creates agent operating guidance for a greenfield repo.
 - `adopt-project` adds or aligns agent operating guidance in an existing repo through Project Adoption.
+- `map-decisions` organizes unresolved work in the configured tracker and discovers one Milestone or a Milestone sequence without resolving the decisions itself.
 - `grill` stress-tests concrete plans and designs through a design-tree interview.
-- `write-spec` conditionally captures settled, multi-session work as a draft in the configured issue tracker for product review.
+- `write-spec` conditionally captures one accepted Milestone as a draft in the configured issue tracker for product review.
 - `maintain-language`, `write-adr`, and `maintain-living-docs` own durable knowledge artifacts.
 - `write-issues`, `prototype`, and `handoff` support execution-adjacent workflows.
 - `implement` owns production execution of an accepted slice and keeps implementation inside the project's autonomy boundaries.
@@ -35,6 +36,8 @@ Codex packaging is not a release target for this personal library. A strict Code
 - Vocabulary belongs in `LANGUAGE.md`.
 - Agent operating guidance belongs in `AGENTS.md`.
 - Decisions belong in `docs/adr/`.
+- Decision Maps and Decision Issues belong in the configured issue tracker, not the repo.
 - Draft and accepted Specs belong in the configured issue tracker, not the repo.
+- Tracker hierarchy does not imply Git hierarchy. Repository branches and pull requests group coherent changes according to the target repo's workflow.
 - Current repo structure and skill relationships belong here.
 - Temporary speculation stays in chat or scratch notes unless promoted deliberately.

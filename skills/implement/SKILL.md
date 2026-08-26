@@ -60,6 +60,12 @@ Do not create speculative documentation or turn implementation notes into long-l
 
 Change tracker state or commit only when the user asks or the repo's Agent Guidance makes that part of the workflow.
 
+## Follow the repository's integration workflow
+
+Tracker hierarchy does not imply Git hierarchy. When the target repo uses branches and pull requests, create them around coherent repository changes rather than Decision Maps, Specs, or issue nesting.
+
+Target the repo's normal integration branch unless the accepted Spec or Agent Guidance requires a Milestone integration branch. Use that exception only when several changes must be verified atomically and their intermediate states cannot safely reach the normal integration branch. Use stacked branches only for real code dependencies, not because one tracker item is another item's child.
+
 ## Finish
 
 Report the implemented outcome, verification performed, any departure from the accepted source, and remaining blockers or follow-up work.
