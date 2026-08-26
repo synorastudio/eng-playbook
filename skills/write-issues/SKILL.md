@@ -98,4 +98,4 @@ Do not store the tracker decision in `LANGUAGE.md`. If the tracker choice is sur
 
 `Stop And Ask If` is for the coding agent that later picks up the issue. It preserves autonomy inside the feature while naming the boundaries where the agent must pause instead of improvising.
 
-Finish when every accepted feature has one home, every issue describes an observable outcome, dependencies are explicit, and no issue exists only to represent a technical layer.
+Finish when every accepted feature has one home, every issue describes an observable outcome, dependencies are explicit, and no issue exists only to represent a technical layer. Route to `implement` when a dependency-ready issue is ready to build.

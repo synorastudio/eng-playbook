@@ -4,6 +4,12 @@ This repo is a personal, agent-agnostic AI skills library. Skills are small Mark
 
 The library has two project paths. Personal Experiments use one isolated, low-ceremony skill; Professional Projects use the composable planning, operating-system, documentation, and execution-support skills. This split keeps experiment exceptions out of the professional workflow.
 
+## Client compatibility
+
+Each skill has one canonical copy for Codex, Claude Code, and Cursor. Client-specific metadata may coexist when one client ignores another client's fields. Explicit-only skills therefore keep `disable-model-invocation: true` in `SKILL.md` for Claude Code and Cursor alongside `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for Codex.
+
+Codex packaging is not a release target for this personal library. A strict Codex validator may reject the cross-client frontmatter flag even when Codex can still use the skill. Treat that warning as an accepted compatibility trade-off. Revisit the metadata only if it blocks actual skill loading or use in one of the three required clients.
+
 ## Main Parts
 
 - `README.md`: public overview, inspiration, operating model, and artifact routing.
@@ -20,7 +26,8 @@ The library has two project paths. Personal Experiments use one isolated, low-ce
 - `grill` stress-tests concrete plans and designs through a design-tree interview.
 - `write-spec` conditionally captures settled, multi-session work as a draft in the configured issue tracker for product review.
 - `maintain-language`, `write-adr`, and `maintain-living-docs` own durable knowledge artifacts.
-- `write-issues`, `prototype`, and `handoff` support execution-adjacent workflows without owning implementation.
+- `write-issues`, `prototype`, and `handoff` support execution-adjacent workflows.
+- `implement` owns production execution of an accepted slice and keeps implementation inside the project's autonomy boundaries.
 
 ## Documentation Boundaries
 

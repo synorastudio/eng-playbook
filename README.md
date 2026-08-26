@@ -28,8 +28,9 @@ Professional Project workflow:
    - `docs/adr/` for durable decisions.
    - `docs/architecture.md` and other living docs for durable explanatory knowledge.
 5. Shape work into user-recognizable feature issues and sub-issues when tracking would clarify execution.
-6. Prototype only when a question needs a throwaway logic/state or UI artifact.
-7. Hand off long-running work with compact session summaries that reference durable artifacts.
+6. Implement an accepted slice as production code, using the target repo's own checks and autonomy boundaries.
+7. Prototype only when a question needs a throwaway logic/state or UI artifact.
+8. Hand off long-running work with compact session summaries that reference durable artifacts.
 
 ## First-Wave Skills
 
@@ -43,6 +44,7 @@ Professional Project workflow:
 - `write-adr`: Create minimal ADRs for hard-to-reverse, surprising trade-off decisions.
 - `maintain-living-docs`: Keep durable explanatory docs current without creating doc sprawl.
 - `write-issues`: Convert accepted scope into user-recognizable Feature Issues and Sub-Issues.
+- `implement`: Turn an accepted slice into verified production code without reopening product scope.
 - `prototype`: Build throwaway logic/state or UI-variant prototypes.
 - `handoff`: Produce concise handoff docs for future agent sessions.
 
@@ -60,6 +62,7 @@ skills/
   write-adr/
   maintain-living-docs/
   write-issues/
+  implement/
   prototype/
   handoff/
 ```

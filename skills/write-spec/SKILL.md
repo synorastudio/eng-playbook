@@ -80,6 +80,6 @@ Link relevant ADRs, Living Docs, decision-map resolutions, research, and existin
 
 Return the created tracker link and state that the Spec remains a draft until the user accepts it through the tracker's normal workflow or explicitly says it is accepted.
 
-Do not create Feature Issues from this skill. Once the Spec is accepted, route to `write-issues` when issue tracking would clarify execution. Direct implementation remains valid when the work does not need issue shaping.
+Do not create Feature Issues from this skill. Once the Spec is accepted, route to `write-issues` when issue tracking would clarify execution. Route to `implement` when the accepted work is ready to build directly.
 
 Finish when the draft exists in the configured tracker, every commitment traces to an accepted source, and a product collaborator and fresh agent can understand the intended outcome without the original conversation.
