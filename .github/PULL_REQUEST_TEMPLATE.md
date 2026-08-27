@@ -1,5 +1,3 @@
-# Pull request
-
 ## Summary
 
 ## Verification
