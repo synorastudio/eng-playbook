@@ -124,7 +124,9 @@ If the answer is compact, add one short Agent Guidance bullet such as:
 
 If the answer needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
-If the user does not provide workflow conventions, omit the optional workflow rule but keep the baseline commit and attribution rules from `AGENTS-TEMPLATE.md`. Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+If the user does not provide workflow conventions, omit the optional workflow rule but keep the baseline commit and attribution rules from `AGENTS-TEMPLATE.md`. State only that commits entering integration history must use the required form. Do not choose whether a pull request title, squash message, or individual commits will be validated. Report the merge strategy and its matching guardrail as deferred until the integration workflow is chosen.
+
+Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
 ## Shape the README
 
@@ -161,7 +163,7 @@ Before finishing, verify that:
 - `AGENTS.md` points to detailed guidance instead of copying it.
 - The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
 - Agent Guidance or its linked workflow documentation explains how to attribute agent-generated repository changes and collaboration artifacts.
-- Agent Guidance states the required commit form and how the project's merge strategy applies it to integration history.
+- Agent Guidance states the required commit form. When the merge strategy is known, it also explains how that strategy applies the form to integration history; otherwise the completion report defers that choice and its matching guardrail.
 - Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 
