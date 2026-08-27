@@ -6,9 +6,11 @@ disable-model-invocation: true
 
 # Initialize an Agent Operating System
 
-Establish a greenfield repo's agent operating system without choosing or modifying the tech stack.
+Establish a greenfield repository's Agent Operating System and current applicable Engineering Convention baseline without choosing or modifying the tech stack.
 
 Create only the guidance and workflow anchors that future agents need before the project has meaningful structure. Package installation, framework choice, app tooling, and stack defaults belong to later work.
+
+Translate required outcomes into project-owned guidance and Project Guardrails. Do not copy a central playbook, create a convention manifest or version marker, or advertise a list of Skills agents should install.
 
 ## Greenfield preflight
 
@@ -51,6 +53,22 @@ Lazy creation:
 - `.dockerignore`, agent ignore files, or other ignore files when the matching tool exists or the user asks for them.
 
 Keep generated placeholders short. The initial files should invite useful documentation, not create empty bureaucracy.
+
+## Establish the convention baseline
+
+Even before the stack exists, encode the outcomes that already apply:
+
+- The repository has a concise Agent Guidance entry point and clear artifact ownership.
+- Durable knowledge will be added only when real project knowledge exists and will live in its owning artifact.
+- Production implementation requires accepted scope and proportionate verification.
+- Agents pause for product changes, hard-to-reverse architecture, paid services, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
+- Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
+
+Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases. Do not invent controls for a stack or workflow that has not been chosen.
+
+Use this deviation rule exactly when the user deliberately chooses not to meet an applicable outcome:
+
+> Any deliberate failure to meet an applicable Engineering Convention requires explicit approval.
 
 ## Store rules for any agent
 
@@ -130,6 +148,7 @@ Do not document launch checklists, stack choices, issue workflows, or external p
 - Review templates: collaboration and review workflow.
 - Ignore files: keep generated files, secrets, dependencies, and tool noise out of version control.
 - Environment and deployment notes: where the project runs, how envs are managed, and what agents must not touch.
+- Project Guardrails: project-owned architecture, code, checks, settings, tracker controls, guidance, or review practices that prevent or detect convention violations.
 
 ## Completion check
 
@@ -139,6 +158,7 @@ Before finishing, verify that:
 - Every created file has current content or a concrete reason to exist. No empty placeholder sections remain.
 - `AGENTS.md` points to detailed guidance instead of copying it.
 - The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
+- Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 
-Report the files created or changed, the user choices encoded, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when accepted scope can proceed directly.
+Report the files created or changed, the user choices encoded, the Project Guardrails established, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when accepted scope can proceed directly.

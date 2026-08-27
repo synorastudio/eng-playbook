@@ -6,15 +6,29 @@ disable-model-invocation: true
 
 # Adopt a project
 
-Add or align an Agent Operating System in an existing repo without overwriting the project's real conventions.
+Bring an existing repository into alignment with the current applicable Engineering Conventions without overwriting its real constraints and established practices.
 
-Audit first. Propose changes next. Write only after the user approves the proposal or revises it. Leave package installation, framework choice, app tooling, and stack defaults outside this workflow.
+Audit first. Propose changes next. Write only after the user approves the proposal or revises it. Translate convention outcomes into project-owned guidance and Project Guardrails instead of copying central playbook prose. Leave package installation, framework choice, app tooling, and stack defaults outside this workflow.
 
 ## Adoption principle
 
 Let the project's operating reality determine its Agent Operating System.
 
 Project Adoption may produce a full Agent Operating System or a thin docs update. Create durable docs only when future agents need them to operate safely.
+
+Running this workflow again is re-adoption. Audit the repository as it exists now; do not require or create a playbook version marker, installed-skill list, or machine-readable adoption manifest.
+
+## Convention baseline
+
+Audit for these outcomes while staying tech-agnostic:
+
+- Repository reality is discoverable through a short Agent Guidance entry point and its linked sources.
+- Durable knowledge is current and lives in its owning artifact.
+- System boundaries are discoverable, with qualifying architecture trade-offs preserved in ADRs.
+- Production work begins from accepted scope and produces proportionate verification evidence.
+- Applicable conventions are backed by project-owned controls that prevent violations or make them visible.
+
+Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases.
 
 ## Audit categories
 
@@ -32,6 +46,8 @@ Audit:
 - Local runtime ownership: whether agents may start long-running local dev servers during interactive work, or should assume the user manages them.
 - Command registry: where common commands are documented and how agents should discover them without inventing stack-specific commands.
 - Safety rules: data, auth, secrets, deployment, migrations, paid services, and destructive operations.
+- Project Guardrails: architecture constraints, tests, static checks, continuous integration, repository settings, tracker states, service permissions, deployment gates, agent rules, and review practices.
+- External controls: important protections or workflow states that do not live in Git, plus any repo pointer an agent needs to discover them.
 
 ## Classify findings
 
@@ -41,6 +57,7 @@ After auditing, classify findings:
 - **Adopt**: existing convention should become the project default.
 - **Add**: missing workflow anchor that is safe to create.
 - **Ask**: conflict, ambiguity, hidden project knowledge, or multiple valid choices.
+- **Deviation**: a deliberate failure to meet an applicable Engineering Convention that requires explicit approval.
 - **Defer**: stack-specific setup outside this skill's scope.
 
 Never assume absence means "create my preferred thing." First infer the project's current defaults.
@@ -53,15 +70,22 @@ Include:
 
 - What the audit found.
 - What existing conventions should be preserved.
+- Which convention outcomes already have effective Project Guardrails.
 - What files or docs should be added or updated.
+- What missing outcomes need a guardrail, including external controls where appropriate.
 - What should be skipped or deferred.
 - Whether to add a local dev server ownership rule to `AGENTS.md`, if no project convention already answers it.
 - Whether to add workflow convention guidance to `AGENTS.md` or a focused workflow doc, if no project convention already answers it.
 - Whether to consolidate detailed agent rules into ordinary docs and point to them from an `AGENTS.md` rules index.
 - What assumptions need user confirmation.
 - What hidden project knowledge would change the proposal.
+- Which deliberate deviations, if any, require explicit approval.
 
 Stop after the proposal. Continue only when the user approves it or supplies a revision. Apply the approved scope and incorporate the user's project knowledge.
+
+Use this deviation rule exactly:
+
+> Any deliberate failure to meet an applicable Engineering Convention requires explicit approval.
 
 ## Artifact scope
 
@@ -77,6 +101,7 @@ Adoption may create or update the same artifact universe as greenfield initializ
 - Review templates and contribution docs: collaboration, commit, branch, issue-linking, and review workflow.
 - Ignore files: keep generated files, secrets, dependencies, and tool noise out of version control.
 - Environment and deployment notes: where the project runs, how envs are managed, and what agents must not touch.
+- Project Guardrails: project-owned architecture, code, checks, settings, tracker controls, guidance, or review practices that prevent or detect convention violations.
 
 Keep generated or revised docs short. Adoption should make the repo safer for future agents, not create empty bureaucracy.
 
@@ -147,5 +172,7 @@ Report:
 - What was deferred to another skill or future session.
 - What user guidance changed from the original proposal.
 - What still needs a decision.
+- What Project Guardrails were added, preserved, or deliberately deferred.
+- What approved deviations remain.
 
-Finish when every approved proposal item is applied or explicitly deferred, every existing convention touched by the work is preserved or deliberately replaced, and the report accounts for each proposal item.
+Finish when every approved proposal item is applied or explicitly deferred, every existing convention touched by the work is preserved or deliberately replaced, and the report accounts for each proposal item. Do not leave behind an adoption manifest, playbook version marker, or copied convention document.
