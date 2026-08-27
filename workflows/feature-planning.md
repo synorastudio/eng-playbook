@@ -18,8 +18,11 @@ flowchart TD
     needs -->|Product review or cross-session context| spec[Preserve accepted scope in a Spec]
     needs -->|Separate outcomes benefit from tracking| issues[Create Feature Issues]
     needs -->|Neither| slice[Use the accepted slice directly]
-    spec --> issues
-    spec --> slice
+    spec --> specAccepted{Is the Spec accepted?}
+    specAccepted -->|No| specReview[Review and accept or revise it]
+    specReview --> specAccepted
+    specAccepted -->|Yes, tracking helps| issues
+    specAccepted -->|Yes, otherwise| slice
     issues --> slice
     slice --> implementation[Implementation]
 ```

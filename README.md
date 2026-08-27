@@ -42,8 +42,11 @@ flowchart TD
     continuity -->|Product review or future sessions| preserve[Preserve accepted scope]
     continuity -->|Separate outcomes need tracking| track[Track feature outcomes]
     continuity -->|None| slice[Accepted implementation slice]
-    preserve --> track
-    preserve --> slice
+    preserve --> preservedAccepted{Is the preserved scope accepted?}
+    preservedAccepted -->|No| preserveReview[Review and accept or revise it]
+    preserveReview --> preservedAccepted
+    preservedAccepted -->|Yes, tracking helps| track
+    preservedAccepted -->|Yes, otherwise| slice
     track --> slice
     slice --> implement[Implement and verify]
 ```
