@@ -61,7 +61,7 @@ Even before the stack exists, encode the outcomes that already apply:
 - The repository has a concise Agent Guidance entry point and clear artifact ownership.
 - Durable knowledge will be added only when real project knowledge exists and will live in its owning artifact.
 - Production implementation requires accepted scope and proportionate verification.
-- Agents pause for product changes, hard-to-reverse architecture, paid services, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
+- Agents pause for product changes, hard-to-reverse architecture, paid services or external vendors, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
 - Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
 - Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.

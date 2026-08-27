@@ -15,7 +15,7 @@ Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 - Visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
 - Use [issue tracker] for feature issues; issues represent user-recognizable features, not technical tasks.
 - Follow [workflow conventions] for commits, branches, PR templates, issue links, and review expectations.
-- Do not touch production, secrets, migrations, auth, paid services, or broad refactors without asking.
+- Begin production implementation only from accepted scope and verify it proportionately. Ask before production access, persisted-data changes, authentication or permissions, secrets, paid services or external vendors, hard-to-reverse architecture, or broad refactors outside the accepted scope.
 - [Optional] In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
 - Commands and environment notes: see [README.md or docs path].
 
