@@ -10,7 +10,8 @@ Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 - Read `LANGUAGE.md` before naming or changing project concepts.
 - Read `docs/architecture.md` before changing structure or cross-cutting behavior.
 - Follow the project's documented guardrails and required checks. Do not weaken or bypass them without explicit approval.
-- Use `<type>[optional scope][!]: <imperative description>` for commits entering integration history. Add the agent as a co-author of agent-generated commits.
+- Use `<type>[optional scope][!]: <description>` for commits entering integration history. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain non-obvious breaks and migration paths in the body.
+- Add the agent as a co-author of agent-generated commits.
 - Visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
 - Use [issue tracker] for feature issues; issues represent user-recognizable features, not technical tasks.
 - Follow [workflow conventions] for commits, branches, PR templates, issue links, and review expectations.

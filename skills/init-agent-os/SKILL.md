@@ -63,7 +63,7 @@ Even before the stack exists, encode the outcomes that already apply:
 - Production implementation requires accepted scope and proportionate verification.
 - Agents pause for product changes, hard-to-reverse architecture, paid services, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
 - Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
-- Every commit entering integration history follows `<type>[optional scope][!]: <imperative description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`.
+- Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.
 
 Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases. Do not invent controls for a stack or workflow that has not been chosen.
@@ -124,7 +124,7 @@ If the answer is compact, add one short Agent Guidance bullet such as:
 
 If the answer needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
-If the user does not provide workflow conventions, omit the optional workflow rule but keep the baseline commit and attribution rules from `AGENTS-TEMPLATE.md`. State only that commits entering integration history must use the required form. Do not choose whether a pull request title, squash message, or individual commits will be validated. Report the merge strategy and its matching guardrail as deferred until the integration workflow is chosen.
+If the user does not provide workflow conventions, omit the optional workflow rule but keep the complete baseline commit and attribution rules from `AGENTS-TEMPLATE.md`. Do not choose whether a pull request title, squash message, or individual commits will be validated. Report the merge strategy and its matching guardrail as deferred until the integration workflow is chosen.
 
 Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 

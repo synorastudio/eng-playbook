@@ -27,7 +27,7 @@ Audit for these outcomes while staying tech-agnostic:
 - System boundaries are discoverable, with qualifying architecture trade-offs preserved in ADRs.
 - Production work begins from accepted scope and produces proportionate verification evidence.
 - Applicable conventions are backed by project-owned controls that prevent violations or make them visible.
-- Every commit entering integration history follows `<type>[optional scope][!]: <imperative description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`.
+- Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.
 
 Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases.
@@ -121,7 +121,7 @@ Route deeper durable knowledge work to the owning skill instead of expanding thi
 
 ## Keep AGENTS.md short
 
-When creating or revising `AGENTS.md`, preserve useful project guidance and include the baseline commit and attribution rules. Commits entering integration history use `<type>[optional scope][!]: <imperative description>`. Add the agent as a co-author of agent-generated commits, and visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
+When creating or revising `AGENTS.md`, preserve useful project guidance and include the baseline commit and attribution rules. Commits entering integration history use `<type>[optional scope][!]: <description>`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain non-obvious breaks and migration paths in the body. Add the agent as a co-author of agent-generated commits, and visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
 
 `AGENTS.md` must stay short because agents load it into context. Treat it as an index and routing layer, not a full policy document.
 
