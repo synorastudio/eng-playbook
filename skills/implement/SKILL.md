@@ -65,7 +65,7 @@ Update an existing durable artifact when the implementation changes the truth it
 
 Do not create speculative documentation or turn implementation notes into long-lived artifacts. Use `handoff` when unfinished work must continue in another session.
 
-Change tracker state or commit only when the user asks or the repo's Agent Guidance makes that part of the workflow.
+Change tracker state or commit only when the user asks or the repo's Agent Guidance makes that part of the workflow. Attribute agent-generated work at the durable boundary that records it. Use commit attribution for repository changes and visible attribution for agent-authored pull request descriptions, reviews, comments, and tracker artifacts, following the project's established format.
 
 ## Follow the repository's integration workflow
 

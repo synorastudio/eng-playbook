@@ -68,6 +68,13 @@ Each Skill lives in its own directory with a `SKILL.md`. Supporting references s
 AGENTS.md
 LANGUAGE.md
 README.md
+.github/
+  PULL_REQUEST_TEMPLATE.md
+  workflows/
+    markdownlint.yml
+.macroscope/
+  correctness/
+    playbook-review.md
 conventions/
   architecture-decisions.md
   delivery.md
@@ -89,7 +96,7 @@ Add `templates/` only when a real shared template needs an owner.
 
 ## Repository checks
 
-Install development dependencies with `npm ci`, then run `npm run lint:markdown`. GitHub Actions runs the same Markdown check on every pull request and on pushes to `main`.
+Install development dependencies with `npm ci`, then run `npm run lint:markdown`. GitHub Actions runs the same Markdown check on every pull request and on pushes to `main`. Macroscope reviews cross-file semantic correctness using the focused context in `.macroscope/correctness/playbook-review.md`.
 
 ## Adoption and change
 

@@ -12,12 +12,13 @@ Production work must move from accepted scope to a verified, reviewable outcome 
 - Tests are added at stable, behavior-relevant boundaries when the project supports them and the change warrants coverage. Manual verification is explicit when automation is unavailable or disproportionate.
 - The final change is reviewed for scope drift, accidental changes, weak failure handling, missing coverage, stale documentation, and weakened guardrails.
 - Failures caused by the change are resolved before completion. Unrelated existing failures are distinguished and reported.
+- Agent-generated work is attributed at the durable boundary that records it. Repository changes use commit attribution; agent-authored pull request descriptions, reviews, comments, and tracker artifacts use visible attribution.
 
 Tracker structure and Git structure remain separate. Branches and pull requests group coherent repository changes and normally target the project's integration path. A Milestone integration branch is justified only when several changes must be verified atomically and intermediate states cannot safely integrate.
 
 ## Evidence
 
-Evidence includes the accepted source, implementation diff, relevant automated check results, manual verification performed, and any updated durable knowledge or Project Guardrails. It must be sufficient for another agent or the user to understand what changed and why the outcome is considered complete.
+Evidence includes the accepted source, implementation diff, relevant automated check results, manual verification performed, attribution for agent-generated work, and any updated durable knowledge or Project Guardrails. It must be sufficient for another agent or the user to understand what changed and why the outcome is considered complete.
 
 ## Guardrail examples
 

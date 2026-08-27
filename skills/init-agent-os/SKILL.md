@@ -63,6 +63,7 @@ Even before the stack exists, encode the outcomes that already apply:
 - Production implementation requires accepted scope and proportionate verification.
 - Agents pause for product changes, hard-to-reverse architecture, paid services, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
 - Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
+- Agent-generated work is attributed at the durable boundary that records it.
 
 Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases. Do not invent controls for a stack or workflow that has not been chosen.
 
@@ -111,7 +112,7 @@ When creating `AGENTS.md`, ask whether agents should follow any repo-specific wo
 Prompt broadly enough to surface hidden working agreements without prescribing a preference:
 
 ```text
-Are there repo-specific workflow conventions agents should follow, such as commit message format, branch naming, PR template use, issue links, or review expectations?
+Are there repo-specific workflow conventions agents should follow, such as commit message and agent-attribution format, branch naming, PR template use, issue links, or review expectations?
 ```
 
 If the answer is compact, add one short Agent Guidance bullet such as:
@@ -122,7 +123,7 @@ If the answer is compact, add one short Agent Guidance bullet such as:
 
 If the answer needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
-If the user does not provide workflow conventions, omit the rule. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+If the user does not provide workflow conventions, omit the optional workflow rule but keep the baseline attribution rule from `AGENTS-TEMPLATE.md`. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
 ## Shape the README
 
@@ -158,6 +159,7 @@ Before finishing, verify that:
 - Every created file has current content or a concrete reason to exist. No empty placeholder sections remain.
 - `AGENTS.md` points to detailed guidance instead of copying it.
 - The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
+- Agent Guidance or its linked workflow documentation explains how to attribute agent-generated repository changes and collaboration artifacts.
 - Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 

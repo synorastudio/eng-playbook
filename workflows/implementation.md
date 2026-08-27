@@ -15,7 +15,8 @@ Start from the most specific accepted source available: an accepted Spec, select
 5. Update durable knowledge whose current truth changed. Do not create speculative documentation.
 6. Verify each acceptance criterion, run the broadest relevant project checks, and perform explicit manual verification where appropriate.
 7. Inspect the full change for scope drift, accidental changes, weak failure handling, missing coverage, stale knowledge, and weakened guardrails.
-8. Resolve failures caused by the slice and distinguish unrelated existing failures in the completion report.
+8. Attribute agent-generated work at the durable boundary that records it: commit metadata for repository changes and visible attribution for agent-authored collaboration artifacts.
+9. Resolve failures caused by the slice and distinguish unrelated existing failures in the completion report.
 
 ## Completion
 

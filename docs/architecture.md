@@ -12,7 +12,9 @@ This repository is SynoraStudio's Engineering Playbook for owned products and cl
 - `skills/` contains portable companion procedures and their owned references.
 - `docs/` contains durable explanations of this repository, including this architecture overview and any qualifying ADRs.
 - `package.json` and `.markdownlint-cli2.jsonc` define the local Markdown check.
+- `.github/PULL_REQUEST_TEMPLATE.md` defines the repository's reviewable pull request structure and Macroscope summary placement.
 - `.github/workflows/markdownlint.yml` runs that check on pull requests and pushes to `main`.
+- `.macroscope/correctness/` supplies repository-specific review context to Macroscope without becoming a source of authority.
 
 `templates/` remains absent until a real shared template exists. The repository does not use a machine-readable convention or Skill manifest.
 
@@ -57,6 +59,6 @@ Codex packaging is not a release target for this playbook. A strict Codex valida
 
 Artifact ownership is defined by the [Documentation convention](../conventions/documentation.md). This file stays navigational: it explains the playbook's current structure, authority flow, and Skill relationships without duplicating individual conventions or Workflow details.
 
-Markdown linting is this repository's first Project Guardrail. The same npm script runs locally and in GitHub Actions, so the automated check and Agent Guidance share one command.
+Markdown linting is this repository's first Project Guardrail. The same npm script runs locally and in GitHub Actions, so the automated check and Agent Guidance share one command. Macroscope provides a semantic second review using focused instructions that point back to the authoritative conventions and workflows.
 
 Personal workflows belong to [`bjardon/personal-skills`](https://github.com/bjardon/personal-skills). They are outside SynoraStudio's professional engineering practice and this playbook's artifact model.
