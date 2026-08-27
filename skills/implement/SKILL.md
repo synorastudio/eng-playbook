@@ -71,6 +71,10 @@ Change tracker state or commit only when the user asks or the repo's Agent Guida
 
 Tracker hierarchy does not imply Git hierarchy. When the target repo uses branches and pull requests, create them around coherent repository changes rather than Decision Maps, Specs, or issue nesting.
 
+Every commit that enters integration history uses `<type>[optional scope][!]: <description>`. Allowed types are `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, and `revert`. Write an imperative, lowercase description without a trailing period. Use `!` for a breaking change, keep the scope optional, and split work that needs more than one primary type. Preserve required reference and attribution footers.
+
+A squash workflow applies the rule to the pull request title or final squash message. A merge or rebase workflow applies it to every commit entering the integration branch. Follow the project's stronger local guardrails when present.
+
 Target the repo's normal integration branch unless the accepted Spec or Agent Guidance requires a Milestone integration branch. Use that exception only when several changes must be verified atomically and their intermediate states cannot safely reach the normal integration branch. Use stacked branches only for real code dependencies, not because one tracker item is another item's child.
 
 ## Finish

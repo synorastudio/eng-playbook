@@ -27,6 +27,7 @@ Audit for these outcomes while staying tech-agnostic:
 - System boundaries are discoverable, with qualifying architecture trade-offs preserved in ADRs.
 - Production work begins from accepted scope and produces proportionate verification evidence.
 - Applicable conventions are backed by project-owned controls that prevent violations or make them visible.
+- Every commit entering integration history follows `<type>[optional scope][!]: <imperative description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`.
 - Agent-generated work is attributed at the durable boundary that records it.
 
 Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases.
@@ -39,7 +40,8 @@ Audit:
 
 - Agent guidance: `AGENTS.md`, `CLAUDE.md`, Cursor rules, commands, and repo-specific agent instructions.
 - Docs anchors: README workflow sections, `LANGUAGE.md`, `LANGUAGE-MAP.md`, `docs/architecture.md`, and `docs/adr/`.
-- Workflow conventions: commit message format, branch naming, PR template use, issue links, contribution docs, and review instructions.
+- Commit workflow: the merge strategy, the message that enters integration history, current commit format, and any automated or external checks.
+- Workflow conventions: branch naming, PR template use, issue links, contribution docs, and review instructions.
 - Attribution: how agent-generated repository changes and collaboration artifacts identify their agent author.
 - Rule storage: whether detailed agent rules live in ordinary docs, tool-specific rule directories, or duplicated sources.
 - Ignore files: `.gitignore`, `.dockerignore`, Cursor/Claude/agent ignores, and other tool-specific ignore files that already apply.
@@ -75,6 +77,7 @@ Include:
 - Which convention outcomes already have effective Project Guardrails.
 - What files or docs should be added or updated.
 - What missing outcomes need a guardrail, including external controls where appropriate.
+- How the merge strategy will apply and guard the required commit form.
 - How agent-generated work will be attributed at its durable boundaries.
 - What should be skipped or deferred.
 - Whether to add a local dev server ownership rule to `AGENTS.md`, if no project convention already answers it.
@@ -118,7 +121,7 @@ Route deeper durable knowledge work to the owning skill instead of expanding thi
 
 ## Keep AGENTS.md short
 
-When creating or revising `AGENTS.md`, preserve useful project guidance and include the baseline attribution rule: add the agent as a co-author of agent-generated commits, and visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
+When creating or revising `AGENTS.md`, preserve useful project guidance and include the baseline commit and attribution rules. Commits entering integration history use `<type>[optional scope][!]: <imperative description>`. Add the agent as a co-author of agent-generated commits, and visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
 
 `AGENTS.md` must stay short because agents load it into context. Treat it as an index and routing layer, not a full policy document.
 
@@ -157,14 +160,14 @@ If the audit does not reveal project conventions for commits, branches, PR templ
 Prompt broadly enough to surface hidden working agreements without prescribing a preference:
 
 ```text
-Are there repo-specific workflow conventions agents should follow, such as commit message and agent-attribution format, branch naming, PR template use, issue links, or review expectations?
+How do commits enter integration history here: squash, merge, or rebase? Are there repo-specific conventions for branch naming, PR templates, issue links, attribution format, or review expectations?
 ```
 
 If existing conventions are found, preserve them and link to their source from `AGENTS.md` only when future agents need the pointer. If conventions conflict, are incomplete, or appear tool-specific rather than project-specific, include the ambiguity in the adoption proposal and ask before changing anything.
 
 If the answer is compact, add one short Agent Guidance bullet. If it needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
-If the user does not provide workflow conventions, omit the optional workflow rule but still propose the baseline attribution rule above. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+If the user does not provide workflow conventions, omit the optional workflow rule but still propose the baseline commit and attribution rules above. Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
 ## Completion report
 

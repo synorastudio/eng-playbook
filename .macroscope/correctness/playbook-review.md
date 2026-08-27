@@ -13,6 +13,7 @@ Report concrete cases where a change:
 - Invents organizational roles, approval chains, or team processes for this solo engineering practice.
 - Makes a Skill agent-specific without an explicit reason.
 - Documents a command, check, repository structure, or external control that does not exist or no longer matches reality.
+- Defines a commit format, type, scope, or breaking-change form that conflicts with `conventions/commits.md`.
 - Leaves agent-generated work without attribution at its durable boundary: commit metadata for repository changes or visible attribution for agent-authored collaboration artifacts.
 
 Verify tooling findings against repository configuration, scripts, and checks. Do not infer a failure from isolated Markdown syntax; an unannotated triple-backtick fence may be a valid closing fence.

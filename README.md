@@ -13,6 +13,7 @@ Projects adopt the applicable convention baseline and translate it into their ow
 ## Engineering conventions
 
 - [Repositories](conventions/repositories.md): Make each repository's operating reality discoverable and locally owned.
+- [Commits](conventions/commits.md): Keep integration history consistent, attributable, and machine-readable.
 - [Documentation](conventions/documentation.md): Keep durable knowledge current and in the artifact that owns it.
 - [Architecture decisions](conventions/architecture-decisions.md): Preserve system boundaries and qualifying trade-off decisions.
 - [Delivery](conventions/delivery.md): Move accepted scope to a verified, reviewable outcome.
@@ -71,12 +72,14 @@ README.md
 .github/
   PULL_REQUEST_TEMPLATE.md
   workflows/
+    commitlint.yml
     markdownlint.yml
 .macroscope/
   correctness/
     playbook-review.md
 conventions/
   architecture-decisions.md
+  commits.md
   delivery.md
   documentation.md
   guardrails.md
@@ -96,7 +99,7 @@ Add `templates/` only when a real shared template needs an owner.
 
 ## Repository checks
 
-Install development dependencies with `npm ci`, then run `npm run lint:markdown`. GitHub Actions runs the same Markdown check on every pull request and on pushes to `main`. Macroscope reviews cross-file semantic correctness using the focused context in `.macroscope/correctness/playbook-review.md`.
+Install development dependencies with `npm ci`, then run `npm run lint:markdown`. Use `npm run lint:commit` with a commit message on standard input to check the Commit Convention. GitHub Actions checks Markdown and validates pull request titles as the prospective squash message. Macroscope reviews cross-file semantic correctness using the focused context in `.macroscope/correctness/playbook-review.md`.
 
 ## Adoption and change
 

@@ -12,7 +12,7 @@ Read the repository's current guidance, documentation, code structure, configura
 
 1. Audit the repository against each applicable Engineering Convention and its required outcomes.
 2. Identify existing Project Guardrails, including external controls not stored in Git.
-3. Classify findings as existing strengths to preserve, local conventions to retain, missing outcomes, conflicts requiring a decision, or inapplicable concerns.
+3. Classify findings as existing strengths to preserve, local conventions to retain, missing outcomes, conflicts requiring a decision, or inapplicable concerns. A conflicting commit format is a deviation, not a local convention to retain silently.
 4. Propose the smallest set of changes that translates the convention outcomes into project-owned guidance and guardrails. Do not copy playbook prose into the project.
 5. Name any deliberate deviation using the rule in the [Project guardrails convention](../conventions/guardrails.md).
 6. Obtain explicit approval before writing. Apply only the approved proposal and user-provided project knowledge.

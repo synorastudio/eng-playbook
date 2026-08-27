@@ -16,6 +16,8 @@ Production work must move from accepted scope to a verified, reviewable outcome 
 
 Tracker structure and Git structure remain separate. Branches and pull requests group coherent repository changes and normally target the project's integration path. A Milestone integration branch is justified only when several changes must be verified atomically and intermediate states cannot safely integrate.
 
+Commits that enter integration history follow the [Commit convention](commits.md). A project's merge strategy determines whether the guardrail validates a pull request title, a final squash message, or each individual commit.
+
 ## Evidence
 
 Evidence includes the accepted source, implementation diff, relevant automated check results, manual verification performed, attribution for agent-generated work, and any updated durable knowledge or Project Guardrails. It must be sufficient for another agent or the user to understand what changed and why the outcome is considered complete.
