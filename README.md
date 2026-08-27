@@ -84,6 +84,10 @@ skills/
 
 Add `templates/` only when a real shared template needs an owner.
 
+## Repository checks
+
+Install development dependencies with `npm ci`, then run `npm run lint:markdown`. GitHub Actions runs the same Markdown check on every pull request and on pushes to `main`.
+
 ## Adoption and change
 
 Greenfield repositories start with the current applicable baseline. Existing repositories adopt or re-adopt it through an explicit audit and approved proposal. They do not copy the playbook, maintain a machine-readable convention manifest, or record a playbook version marker.

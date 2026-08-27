@@ -1,0 +1,14 @@
+{
+  "name": "@synorastudio/eng-playbook",
+  "private": true,
+  "scripts": {
+    "lint": "npm run lint:markdown",
+    "lint:markdown": "markdownlint-cli2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.2"
+  }
+}
