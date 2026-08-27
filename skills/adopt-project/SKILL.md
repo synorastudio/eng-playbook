@@ -118,7 +118,7 @@ Route deeper durable knowledge work to the owning skill instead of expanding thi
 
 ## Keep AGENTS.md short
 
-Use `../init-agent-os/AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
+When creating or revising `AGENTS.md`, preserve useful project guidance and include the baseline attribution rule: add the agent as a co-author of agent-generated commits, and visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
 
 `AGENTS.md` must stay short because agents load it into context. Treat it as an index and routing layer, not a full policy document.
 
@@ -164,7 +164,7 @@ If existing conventions are found, preserve them and link to their source from `
 
 If the answer is compact, add one short Agent Guidance bullet. If it needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
-If the user does not provide workflow conventions, omit the optional workflow rule but still propose the baseline attribution rule from `../init-agent-os/AGENTS-TEMPLATE.md`. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+If the user does not provide workflow conventions, omit the optional workflow rule but still propose the baseline attribution rule above. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
 ## Completion report
 
