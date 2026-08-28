@@ -51,6 +51,21 @@ format, allowed-type, capitalization, punctuation, or parser findings. When the
 evidence supports more than one reasonable classification, report no finding.
 Honor an applicable deviation recorded as approved in the pull request.
 
+### Enforcement
+
+This check is intentionally advisory while its semantic judgments are evaluated
+against real pull requests. Keep `conclusion: neutral` until an explicitly
+approved change promotes it after reviewing observed false positives, missed
+mismatches, and useful findings.
+
+Promotion to a blocking guardrail requires all three changes together:
+
+- Set `conclusion: failure`.
+- Set `requiredStatusCheck: true`.
+- Add `Macroscope - Commit Semantics` to the `Protect main` ruleset.
+
+Until then, findings inform review but do not decide mergeability.
+
 ### Output
 
 For each finding, quote the disputed title fragment, cite concrete evidence
