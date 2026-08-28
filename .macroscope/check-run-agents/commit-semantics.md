@@ -1,7 +1,7 @@
 ---
 title: Commit Semantics
+model: gpt-5-6-luna
 reasoning: medium
-effort: low
 input: full_diff
 tools:
   - browse_code
