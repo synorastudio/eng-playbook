@@ -1,115 +1,112 @@
-# Skills
+# SynoraStudio engineering playbook
 
-Personal AI skills for how I plan, build, document, and hand off software work.
+This repository holds the engineering practice SynoraStudio uses across owned products and client projects.
 
-This repo is agent-agnostic first. Skills are written as portable Markdown operating procedures, with Cursor-compatible `SKILL.md` frontmatter where it costs little.
+The playbook has three layers:
+
+- [Engineering Conventions](conventions/) define required outcomes for Professional Projects.
+- [Workflows](workflows/) describe how recurring work moves through those conventions without depending on a particular agent.
+- [Companion Skills](skills/) give coding agents portable, self-contained procedures for applying focused parts of the playbook.
+
+Projects adopt the applicable convention baseline and translate it into their own Project Guardrails. Skills support that work, but installing or advertising a Skill is never a substitute for a project-owned control.
+
+## Engineering conventions
+
+- [Repositories](conventions/repositories.md): Make each repository's operating reality discoverable and locally owned.
+- [Commits](conventions/commits.md): Keep integration history consistent, attributable, and machine-readable.
+- [Documentation](conventions/documentation.md): Keep durable knowledge current and in the artifact that owns it.
+- [Architecture decisions](conventions/architecture-decisions.md): Preserve system boundaries and qualifying trade-off decisions.
+- [Delivery](conventions/delivery.md): Move accepted scope to a verified, reviewable outcome.
+- [Project guardrails](conventions/guardrails.md): Prevent or detect convention violations using controls suited to the project.
+
+Conventions prescribe outcomes, applicability, evidence, and deviation boundaries. Their guardrail examples are non-binding; each project chooses controls that fit its architecture, risks, and tools.
+
+## Workflows
+
+- [Project intake](workflows/project-intake.md): Normalize an External Project Brief without turning upstream claims into accepted truth.
+- [Project adoption](workflows/project-adoption.md): Audit an existing repository and apply approved changes for the current convention baseline.
+- [Feature planning](workflows/feature-planning.md): Resolve uncertainty and establish accepted, bounded work without requiring every planning artifact.
+- [Implementation](workflows/implementation.md): Deliver and verify an accepted slice while maintaining architecture, knowledge, and guardrails.
+
+The main delivery route is based on the state of the work, not on which Skill happens to be available:
+
+```mermaid
+flowchart TD
+    proposed[Proposed work] --> clear{Are the outcome and main boundaries clear?}
+    clear -->|No| resolve[Resolve blocking decisions]
+    resolve --> bounded[One or more bounded outcomes]
+    clear -->|Yes| bounded
+    bounded --> accepted{Is the outcome accepted?}
+    accepted -->|No| review[Review and revise]
+    review --> accepted
+    accepted -->|Yes| continuity{What continuity does delivery need?}
+    continuity -->|Product review or future sessions| preserve[Preserve accepted scope]
+    continuity -->|Separate outcomes need tracking| track[Track feature outcomes]
+    continuity -->|None| slice[Accepted implementation slice]
+    preserve --> preservedAccepted{Is the preserved scope accepted?}
+    preservedAccepted -->|No| preserveReview[Review and accept or revise it]
+    preserveReview --> preservedAccepted
+    preservedAccepted -->|Yes, tracking helps| track
+    preservedAccepted -->|Yes, otherwise| slice
+    track --> slice
+    slice --> implement[Implement and verify]
+```
+
+## Companion skills
+
+The Skills mirror focused parts of the Workflows while remaining usable outside this repository:
+
+- Project context and setup: `intake`, `init-agent-os`, and `adopt-project`.
+- Feature planning: `map-decisions`, `grill`, `prototype`, `write-spec`, and `write-issues`.
+- Implementation and continuity: `implement` and `handoff`.
+- Durable knowledge: `maintain-language`, `write-adr`, and `maintain-living-docs`.
+
+Each Skill lives in its own directory with a `SKILL.md`. Supporting references sit beside the Skill that owns them. One canonical copy supports Codex, Claude Code, and Cursor, with harmless client-specific metadata kept together where needed.
+
+## Repository layout
+
+```text
+AGENTS.md
+LANGUAGE.md
+README.md
+.github/
+  PULL_REQUEST_TEMPLATE.md
+  workflows/
+    commitlint.yml
+    markdownlint.yml
+.macroscope/
+  correctness/
+    playbook-review.md
+conventions/
+  architecture-decisions.md
+  commits.md
+  delivery.md
+  documentation.md
+  guardrails.md
+  repositories.md
+workflows/
+  feature-planning.md
+  implementation.md
+  project-adoption.md
+  project-intake.md
+docs/
+  architecture.md
+skills/
+  ...
+```
+
+Add `templates/` only when a real shared template needs an owner.
+
+## Repository checks
+
+Install development dependencies with `npm ci`, then run `npm run lint:markdown`. Use `npm run lint:commit` with a commit message on standard input to check the Commit Convention. GitHub Actions checks Markdown and validates pull request titles as the prospective squash message. Macroscope reviews cross-file semantic correctness using the focused context in `.macroscope/correctness/playbook-review.md`.
+
+## Adoption and change
+
+Greenfield repositories start with the current applicable baseline. Existing repositories adopt or re-adopt it through an explicit audit and approved proposal. They do not copy the playbook, maintain a machine-readable convention manifest, or record a playbook version marker.
+
+This repository uses the same conventions as guidance during ordinary maintenance, but it is not formally self-adopting. Add local guardrails here only when actual maintenance experience justifies them.
 
 ## Inspiration
 
-This repo is inspired by [Matt Pocock's AI skills repo](https://github.com/mattpocock/skills), especially the ideas behind `engineering/wayfinder`, `engineering/grill-with-docs`, `engineering/to-spec`, `engineering/to-issues`, `engineering/implement`, `engineering/prototype`, `productivity/handoff`, ubiquitous language, ADRs, and his architecture-improvement workflow.
-
-The goal is not to copy those skills directly. This repo adapts the concepts into my own agent operating system: `LANGUAGE.md` instead of `CONTEXT.md`, small composable skills, tech-agnostic agent guidance, minimal ADRs, living docs stewardship, feature-shaped issues, and disposable prototypes.
-
-## Operating Model
-
-Choose the project mode before choosing a workflow:
-
-- For a Personal Experiment, use `experiment` once to establish its low-ceremony operating mode and build the first outcome. Keep a minimal `AGENTS.md`, a short `README.md`, build status in `TODO.md`, and durable decisions, learnings, and dead ends in its paired Notion devlog; skip the professional-project artifact set.
-- For a Professional Project, use the workflow below. These projects use intentional, AI-accelerated engineering rather than vibe coding.
-
-Professional Projects use a routing model, not a mandatory pipeline. Production implementation requires accepted scope, but no particular planning artifact is always required.
-
-```text
-Accepted work that fits in the current conversation
-  -> implement
-
-Clear work that benefits from tracking
-  -> write-issues -> implement
-
-Accepted work that needs product review or cross-session continuity
-  -> write-spec -> implement
-
-Concrete design with unresolved branches
-  -> grill
-     -> write-spec, write-issues, or implement as needed
-
-Proposed work whose design or Milestone boundaries are unclear
-  -> map-decisions
-     -> grill, research, or prototype unresolved Decision Issues
-     -> one or more Milestones
-     -> write-spec when review or continuity warrants it
-     -> write-issues when tracking separate outcomes helps
-     -> implement accepted slices
-```
-
-Use `intake` when context starts in an External Project Brief. Use `init-agent-os` for a greenfield repo and `adopt-project` for an existing one. Neither route authorizes production implementation before scope is accepted.
-
-Each optional artifact must solve a visible problem:
-
-- A Decision Map organizes uncertainty and discovers one Milestone or a Milestone sequence.
-- A Decision Issue separates one question only when it needs its own resolution work.
-- A Spec preserves accepted intent for product review or future sessions.
-- Feature Issues track independently deliverable outcomes. Sub-Issues are exceptional and remain user-recognizable features.
-- A Prototype answers a design question with throwaway code.
-
-Capture durable knowledge in the artifact that owns it: `AGENTS.md` for agent guidance, `LANGUAGE.md` for vocabulary, `docs/adr/` for durable decisions, and Living Docs for current explanatory knowledge. Use `handoff` when unfinished work must continue in another session.
-
-Tracker hierarchy does not imply Git hierarchy. Decision Maps, Decision Issues, and Specs create no branch by default. When the target repo uses branches and pull requests, group them around coherent repository changes and target its normal integration branch. Use a Milestone integration branch only when accepted work must be verified atomically and intermediate changes cannot safely reach the normal integration branch.
-
-## First-Wave Skills
-
-- `experiment`: Bootstrap a disposable Personal Experiment and build its first outcome with minimal process.
-- `intake`: Normalize external project context into goals, users, constraints, feature candidates, assumptions, and open questions.
-- `init-agent-os`: Create a minimal Agent Operating System for a truly greenfield repo.
-- `adopt-project`: Adopt an Agent Operating System into an existing repo through audit, proposal, and approved changes.
-- `map-decisions`: Map unresolved decisions and discover Milestone boundaries for proposed work.
-- `grill`: Stress-test a concrete plan or design through a relentless design-tree interview.
-- `write-spec`: Capture settled, multi-session work as a product-reviewable draft in the configured issue tracker.
-- `maintain-language`: Maintain scoped `LANGUAGE.md` files as bounded vocabulary.
-- `write-adr`: Create minimal ADRs for hard-to-reverse, surprising trade-off decisions.
-- `maintain-living-docs`: Keep durable explanatory docs current without creating doc sprawl.
-- `write-issues`: Convert accepted scope into user-recognizable Feature Issues and Sub-Issues.
-- `implement`: Turn an accepted slice into verified production code without reopening product scope.
-- `prototype`: Build throwaway logic/state or UI-variant prototypes.
-- `handoff`: Produce concise handoff docs for future agent sessions.
-
-## Repo Layout
-
-```text
-skills/
-  experiment/
-  intake/
-  init-agent-os/
-  adopt-project/
-  map-decisions/
-  grill/
-  write-spec/
-  maintain-language/
-  write-adr/
-  maintain-living-docs/
-  write-issues/
-  implement/
-  prototype/
-  handoff/
-```
-
-Each skill lives in its own directory with a `SKILL.md`. Supporting references sit next to the skill that uses them.
-
-## Artifact Routing
-
-- Personal Experiment operating guidance belongs in a minimal `AGENTS.md`; its purpose and run instructions belong in a short `README.md`; build status belongs in `TODO.md`; and durable decisions, learnings, and dead ends belong in its paired Notion devlog.
-- Agent operating guidance belongs in `AGENTS.md`.
-- Vocabulary belongs in `LANGUAGE.md`.
-- Multi-context vocabulary maps belong in `LANGUAGE-MAP.md`.
-- Durable decisions belong in `docs/adr/`.
-- Decision Maps and Decision Issues belong in the configured issue tracker.
-- Specs belong in the configured issue tracker and remain drafts until accepted.
-- Current system shape belongs in `docs/architecture.md`.
-- Durable explanatory knowledge belongs in focused docs under `docs/`.
-- Work breakdown belongs in feature issues.
-- Issue tracker choice belongs in `AGENTS.md`.
-- Temporary speculation belongs in chat or scratch notes unless promoted deliberately.
-
-## Autonomy Contract
-
-Agents can act autonomously inside an accepted slice. They must pause for product scope changes, hard-to-reverse architecture, paid services, data risk, large refactors, auth, or security-sensitive changes.
+The playbook draws inspiration from [Matt Pocock's AI skills repository](https://github.com/mattpocock/skills) and [Writing for Agents](https://www.aihero.dev/skills-writing-for-agents). SynoraStudio adapts those ideas into its own professional engineering practice.

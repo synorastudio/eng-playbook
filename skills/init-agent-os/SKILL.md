@@ -6,9 +6,11 @@ disable-model-invocation: true
 
 # Initialize an Agent Operating System
 
-Establish a greenfield repo's agent operating system without choosing or modifying the tech stack.
+Establish a greenfield repository's Agent Operating System and current applicable Engineering Convention baseline without choosing or modifying the tech stack.
 
 Create only the guidance and workflow anchors that future agents need before the project has meaningful structure. Package installation, framework choice, app tooling, and stack defaults belong to later work.
+
+Translate required outcomes into project-owned guidance and Project Guardrails. Do not copy a central playbook, create a convention manifest or version marker, or advertise a list of Skills agents should install.
 
 ## Greenfield preflight
 
@@ -52,6 +54,24 @@ Lazy creation:
 
 Keep generated placeholders short. The initial files should invite useful documentation, not create empty bureaucracy.
 
+## Establish the convention baseline
+
+Even before the stack exists, encode the outcomes that already apply:
+
+- The repository has a concise Agent Guidance entry point and clear artifact ownership.
+- Durable knowledge will be added only when real project knowledge exists and will live in its owning artifact.
+- Production implementation requires accepted scope and proportionate verification.
+- Agents pause for product changes, hard-to-reverse architecture, paid services or external vendors, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
+- Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
+- Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
+- Agent-generated work is attributed at the durable boundary that records it.
+
+Prefer guardrails in this order: eliminate the failure through design; detect it through automated or external controls; guide the remaining judgment with concise rules or explicit procedures; rely on user review only for residual cases. Do not invent controls for a stack or workflow that has not been chosen.
+
+Use this deviation rule exactly when the user deliberately chooses not to meet an applicable outcome:
+
+> Any deliberate failure to meet an applicable Engineering Convention requires explicit approval.
+
 ## Store rules for any agent
 
 Use `AGENTS.md` as the universal agent entry point, and store detailed agent rules as ordinary repo documentation.
@@ -93,7 +113,7 @@ When creating `AGENTS.md`, ask whether agents should follow any repo-specific wo
 Prompt broadly enough to surface hidden working agreements without prescribing a preference:
 
 ```text
-Are there repo-specific workflow conventions agents should follow, such as commit message format, branch naming, PR template use, issue links, or review expectations?
+How do commits enter integration history here: squash, merge, or rebase? Are there repo-specific conventions for branch naming, PR templates, issue links, attribution format, or review expectations?
 ```
 
 If the answer is compact, add one short Agent Guidance bullet such as:
@@ -104,7 +124,9 @@ If the answer is compact, add one short Agent Guidance bullet such as:
 
 If the answer needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
 
-If the user does not provide workflow conventions, omit the rule. Do not inject personal preferences, Conventional Commits, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+If the user does not provide workflow conventions, omit the optional workflow rule but keep the complete baseline commit and attribution rules from `AGENTS-TEMPLATE.md`. Do not choose whether a pull request title, squash message, or individual commits will be validated. Report the merge strategy and its matching guardrail as deferred until the integration workflow is chosen.
+
+Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
 
 ## Shape the README
 
@@ -130,6 +152,7 @@ Do not document launch checklists, stack choices, issue workflows, or external p
 - Review templates: collaboration and review workflow.
 - Ignore files: keep generated files, secrets, dependencies, and tool noise out of version control.
 - Environment and deployment notes: where the project runs, how envs are managed, and what agents must not touch.
+- Project Guardrails: project-owned architecture, code, checks, settings, tracker controls, guidance, or review practices that prevent or detect convention violations.
 
 ## Completion check
 
@@ -139,6 +162,9 @@ Before finishing, verify that:
 - Every created file has current content or a concrete reason to exist. No empty placeholder sections remain.
 - `AGENTS.md` points to detailed guidance instead of copying it.
 - The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
+- Agent Guidance or its linked workflow documentation explains how to attribute agent-generated repository changes and collaboration artifacts.
+- Agent Guidance states the required commit form. When the merge strategy is known, it also explains how that strategy applies the form to integration history; otherwise the completion report defers that choice and its matching guardrail.
+- Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 
-Report the files created or changed, the user choices encoded, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when accepted scope can proceed directly.
+Report the files created or changed, the user choices encoded, the Project Guardrails established, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when accepted scope can proceed directly.

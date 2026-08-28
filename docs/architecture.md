@@ -1,43 +1,66 @@
 # Architecture
 
-This repo is a personal, agent-agnostic AI skills library. Skills are small Markdown operating procedures under `skills/`, with supporting references colocated beside the skill that owns them. Closely related skills may reference an owned support file when extracting shared support would add more structure than value.
+This repository is SynoraStudio's Engineering Playbook for owned products and client projects. Its architecture separates durable authority from agent execution procedures.
 
-The library has two project paths. Personal Experiments use one isolated, low-ceremony skill; Professional Projects use the composable planning, operating-system, documentation, and execution-support skills. This split keeps experiment exceptions out of the professional workflow.
+## Main parts
+
+- `README.md` is the public navigation layer.
+- `AGENTS.md` is the short operating entry point for agents maintaining this repository.
+- `LANGUAGE.md` defines the playbook's bounded vocabulary.
+- `conventions/` contains authoritative, agent-independent Engineering Conventions.
+- `workflows/` contains agent-independent routes through recurring work.
+- `skills/` contains portable companion procedures and their owned references.
+- `docs/` contains durable explanations of this repository, including this architecture overview and any qualifying ADRs.
+- `package.json`, `.markdownlint-cli2.jsonc`, and `commitlint.config.mjs` define the local checks.
+- `.github/PULL_REQUEST_TEMPLATE.md` defines the repository's reviewable pull request structure and Macroscope summary placement.
+- `.github/workflows/commitlint.yml` validates pull request titles as prospective squash commit messages.
+- `.github/workflows/markdownlint.yml` runs the Markdown check on pull requests and pushes to `main`.
+- `.macroscope/correctness/` supplies repository-specific context to Macroscope's built-in correctness review.
+- `.macroscope/check-run-agents/` defines repository-specific semantic checks that import authoritative conventions rather than duplicating them.
+
+`templates/` remains absent until a real shared template exists. The repository does not use a machine-readable convention or Skill manifest.
+
+## Authority and flow
+
+```mermaid
+flowchart LR
+    conventions[Engineering Conventions] --> workflows[Workflows]
+    conventions --> adoption[Project adoption]
+    workflows --> skills[Companion Skills]
+    adoption --> projects[Professional Projects]
+    skills --> projects
+    projects --> guardrails[Project-owned guidance and guardrails]
+    guardrails --> delivery[Agent and human work]
+```
+
+Engineering Conventions define required outcomes, evidence, and deviation boundaries. Workflows explain how work reaches those outcomes. Skills encode focused procedures for agents, but do not become the source of authority.
+
+Professional Projects adopt the applicable baseline and translate it into local guidance and Project Guardrails. They do not copy central convention prose. Existing projects receive later convention changes only through explicit re-adoption, which audits actual state rather than comparing a stored playbook version.
+
+## Portable Skills
+
+Each Skill is self-contained enough to work after being copied or installed elsewhere. It may embed the outcomes and procedure it needs, but it must not require runtime access to files in `conventions/` or `workflows/`.
+
+When an Engineering Convention or Workflow changes, its affected Skills are reviewed and updated in the same playbook change. This is repository maintenance, not a runtime dependency.
+
+The Skills form a routing model rather than a mandatory sequence:
+
+- `intake` supports Project Intake.
+- `init-agent-os` initializes a greenfield repository; `adopt-project` applies Project Adoption to an existing one.
+- `map-decisions`, `grill`, `prototype`, `write-spec`, and `write-issues` support Feature Planning.
+- `implement` supports Implementation.
+- `maintain-language`, `write-adr`, `maintain-living-docs`, and `handoff` maintain their owned knowledge or continuity artifacts when a Workflow needs them.
 
 ## Client compatibility
 
-Each skill has one canonical copy for Codex, Claude Code, and Cursor. Client-specific metadata may coexist when one client ignores another client's fields. Explicit-only skills therefore keep `disable-model-invocation: true` in `SKILL.md` for Claude Code and Cursor alongside `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for Codex.
+Each Skill has one canonical copy for Codex, Claude Code, and Cursor. Client-specific metadata may coexist when one client ignores another client's fields. Explicit-only Skills therefore keep `disable-model-invocation: true` in `SKILL.md` for Claude Code and Cursor alongside `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for Codex.
 
-Codex packaging is not a release target for this personal library. A strict Codex validator may reject the cross-client frontmatter flag even when Codex can still use the skill. Treat that warning as an accepted compatibility trade-off. Revisit the metadata only if it blocks actual skill loading or use in one of the three required clients.
+Codex packaging is not a release target for this playbook. A strict Codex validator may reject the cross-client frontmatter flag even when Codex can still use the Skill. Treat that warning as an accepted compatibility trade-off. Revisit the metadata only if it blocks Skill loading or use in one of the three supported clients.
 
-## Main Parts
+## Documentation boundaries
 
-- `README.md`: public overview, inspiration, operating model, and artifact routing.
-- `AGENTS.md`: repo-level operating instructions for future agents.
-- `LANGUAGE.md`: bounded vocabulary for the repo's own domain language.
-- `skills/`: composable skills for intake, decision mapping, design resolution, Agent OS initialization, adoption, documentation, issue shaping, implementation, prototyping, and handoff.
+Artifact ownership is defined by the [Documentation convention](../conventions/documentation.md). This file stays navigational: it explains the playbook's current structure, authority flow, and Skill relationships without duplicating individual conventions or Workflow details.
 
-## Skill Relationships
+Markdown linting checks repository documents locally and in GitHub Actions. Commitlint checks prospective squash messages against the Commit Convention. Macroscope's correctness review uses focused repository context, while its Commit Semantics check compares a pull request title with the full change.
 
-- `experiment` independently bootstraps and builds Personal Experiments. It owns their minimal repo artifacts: `AGENTS.md`, `README.md`, and `TODO.md`.
-- `intake` prepares external project context for later workflows.
-- `init-agent-os` creates agent operating guidance for a greenfield repo.
-- `adopt-project` adds or aligns agent operating guidance in an existing repo through Project Adoption.
-- `map-decisions` organizes unresolved work in the configured tracker and discovers one Milestone or a Milestone sequence without resolving the decisions itself.
-- `grill` stress-tests concrete plans and designs through a design-tree interview.
-- `write-spec` conditionally captures one accepted Milestone as a draft in the configured issue tracker for product review.
-- `maintain-language`, `write-adr`, and `maintain-living-docs` own durable knowledge artifacts.
-- `write-issues`, `prototype`, and `handoff` support execution-adjacent workflows.
-- `implement` owns production execution of an accepted slice and keeps implementation inside the project's autonomy boundaries.
-
-## Documentation Boundaries
-
-- Personal Experiments use a minimal `AGENTS.md` to preserve their operating mode across agent runs, `README.md` for purpose and run instructions, and `TODO.md` for build status. Each is paired with a required Notion devlog for durable decisions, learnings, and dead ends; they do not receive the Professional Project artifact set by default.
-- Vocabulary belongs in `LANGUAGE.md`.
-- Agent operating guidance belongs in `AGENTS.md`.
-- Decisions belong in `docs/adr/`.
-- Decision Maps and Decision Issues belong in the configured issue tracker, not the repo.
-- Draft and accepted Specs belong in the configured issue tracker, not the repo.
-- Tracker hierarchy does not imply Git hierarchy. Repository branches and pull requests group coherent changes according to the target repo's workflow.
-- Current repo structure and skill relationships belong here.
-- Temporary speculation stays in chat or scratch notes unless promoted deliberately.
+Personal workflows belong to [`bjardon/personal-skills`](https://github.com/bjardon/personal-skills). They are outside SynoraStudio's professional engineering practice and this playbook's artifact model.

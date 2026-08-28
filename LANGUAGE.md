@@ -1,27 +1,35 @@
 # Language
 
-Vocabulary for this personal AI skills repo. These terms describe the operating model for planning, building, documenting, and handing off agent-assisted software work.
+Vocabulary for SynoraStudio's engineering playbook. These terms describe how the Tech practice plans, builds, documents, and hands off work across owned products and client projects.
 
 ## Terms
 
-**Personal Experiment**:
-A small, niche software project built through fully vibe-coded implementation for the creator, friends, or family, with disposable code and minimal process. It exists as a repository under the creator's personal GitHub account paired with a devlog page in the Notion experiments wiki.
-_Avoid_: Prototype, side project, hobby project
+**Engineering Playbook**:
+SynoraStudio's shared Engineering Conventions, Workflows, and companion Skills for Professional Projects.
+_Avoid_: Skills library, personal skills repo
+
+**Engineering Convention**:
+An authoritative rule for how SynoraStudio structures, plans, documents, or delivers Professional Projects. Projects adopt the convention baseline and record deviations explicitly.
+_Avoid_: Skill, recommendation, preference
+
+**Workflow**:
+An agent-independent route through a recurring kind of work. It applies Engineering Conventions and may be supported by Skills.
+_Avoid_: Skill, checklist, mandatory pipeline
+
+**Project Guardrail**:
+A project-owned control that prevents or detects a violation of an Engineering Convention. It may live in architecture, code, automated checks, repository settings, tracker controls, agent guidance, or review.
+_Avoid_: Skill requirement, recommendation
 
 **Professional Project**:
-A client project or owned product built with intentional, AI-accelerated engineering rather than vibe coding, regardless of its size or market potential.
+A client project or owned product built with intentional, AI-accelerated engineering, regardless of its size or market potential.
 _Avoid_: Serious project, production project
 
-**Graduation**:
-The creator's explicit decision to rebuild a Personal Experiment as a Professional Project; the experimental code is discarded rather than promoted.
-_Avoid_: Promotion, adoption, hardening
-
 **Skill**:
-A portable Markdown operating procedure that teaches an agent how to perform one focused workflow.
+A portable, self-contained Markdown operating procedure that helps an agent apply one focused part of the Engineering Playbook. It supports the authoritative Engineering Conventions and Workflows without requiring runtime access to them.
 _Avoid_: Prompt, script, automation
 
 **Agent Operating System**:
-The repo-level guidance, artifacts, and conventions that help future agents work safely and consistently in a project.
+The repository-owned guidance, artifacts, and Project Guardrails that help future agents work safely and consistently in a project.
 _Avoid_: Project scaffold, tech stack, tooling setup
 
 **Agent Guidance**:
@@ -29,7 +37,7 @@ Durable instructions that tell agents how to operate in a repo, including safety
 _Avoid_: Documentation, preferences, config
 
 **Project Adoption**:
-The workflow for adding or aligning an Agent Operating System in an existing repo by auditing current conventions, surfacing assumptions, and applying only approved changes plus user-provided guidance.
+The Workflow for auditing an existing repository against the current Engineering Conventions, then adding or aligning its Agent Operating System through approved changes. Running it again is how an existing project explicitly adopts later convention changes.
 _Avoid_: Scaffolding, documentation pass, repo setup
 
 **External Project Brief**:

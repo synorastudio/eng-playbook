@@ -1,0 +1,17 @@
+{
+  "config": {
+    "MD013": false
+  },
+  "overrides": [
+    {
+      "filter": [".github/PULL_REQUEST_TEMPLATE.md"],
+      "config": {
+        // GitHub already renders the pull request title above the description.
+        "MD041": false
+      },
+      "combine": "merge"
+    }
+  ],
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**"]
+}
