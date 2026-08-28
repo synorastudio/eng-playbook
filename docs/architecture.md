@@ -15,7 +15,8 @@ This repository is SynoraStudio's Engineering Playbook for owned products and cl
 - `.github/PULL_REQUEST_TEMPLATE.md` defines the repository's reviewable pull request structure and Macroscope summary placement.
 - `.github/workflows/commitlint.yml` validates pull request titles as prospective squash commit messages.
 - `.github/workflows/markdownlint.yml` runs the Markdown check on pull requests and pushes to `main`.
-- `.macroscope/correctness/` supplies repository-specific review context to Macroscope without becoming a source of authority.
+- `.macroscope/correctness/` supplies repository-specific context to Macroscope's built-in correctness review.
+- `.macroscope/check-run-agents/` defines repository-specific semantic checks that import authoritative conventions rather than duplicating them.
 
 `templates/` remains absent until a real shared template exists. The repository does not use a machine-readable convention or Skill manifest.
 
@@ -60,6 +61,6 @@ Codex packaging is not a release target for this playbook. A strict Codex valida
 
 Artifact ownership is defined by the [Documentation convention](../conventions/documentation.md). This file stays navigational: it explains the playbook's current structure, authority flow, and Skill relationships without duplicating individual conventions or Workflow details.
 
-Markdown linting checks repository documents locally and in GitHub Actions. Commitlint checks prospective squash messages against the Commit Convention. Macroscope provides a semantic review using focused instructions that point back to the authoritative conventions and workflows.
+Markdown linting checks repository documents locally and in GitHub Actions. Commitlint checks prospective squash messages against the Commit Convention. Macroscope's correctness review uses focused repository context, while its Commit Semantics check compares a pull request title with the full change.
 
 Personal workflows belong to [`bjardon/personal-skills`](https://github.com/bjardon/personal-skills). They are outside SynoraStudio's professional engineering practice and this playbook's artifact model.
