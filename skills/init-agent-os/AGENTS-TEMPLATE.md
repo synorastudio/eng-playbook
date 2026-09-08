@@ -13,10 +13,10 @@ Prefer 5-8 high-signal bullets. Link to deeper docs for details.
 - Use `<type>[optional scope][!]: <description>` for commits entering integration history. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain non-obvious breaks and migration paths in the body.
 - Add the agent as a co-author of agent-generated commits.
 - Visibly attribute agent-authored pull request descriptions, reviews, comments, and tracker artifacts.
-- Use [issue tracker] for feature issues; issues represent user-recognizable features, not technical tasks.
-- Follow [workflow conventions] for commits, branches, PR templates, issue links, and review expectations.
-- Begin production implementation only from accepted scope and verify it proportionately. Ask before production access, persisted-data changes, authentication or permissions, secrets, paid services or external vendors, hard-to-reverse architecture, or broad refactors outside the accepted scope.
-- [Optional] In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
+- Use Linear for feature issues; issues represent user-recognizable features, not technical tasks. (Use the project's own tracker instead when it has one.)
+- Squash-merge into the integration branch; the pull request title is the Conventional Commit message. (Follow the project's own workflow instead when it differs.)
+- Default to collaborative planning for new or unclear work: develop product behavior, constraints, technical approach, and providers in conversation, and grill deep branches. Building is a separate mode you enter on request, not the default.
+- Build a Work Unit only after the user releases it (an explicit go-ahead in conversation, or a tracker-marked acceptance). Never treat your own proposal or an accepted plan as the release. Verify proportionately, and ask before production access, persisted-data changes, authentication or permissions, secrets, paid services or external vendors, hard-to-reverse architecture, or broad refactors outside the released unit.
 - Commands and environment notes: see [README.md or docs path].
 
 ## Rules index

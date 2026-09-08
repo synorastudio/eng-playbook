@@ -1,28 +1,30 @@
 ---
 name: implement
-description: Implement an accepted slice of work as verified production code.
+description: Implement a released Work Unit as verified production code.
 disable-model-invocation: true
 ---
 
-# Implement accepted work
+# Implement a released Work Unit
 
-Turn an accepted slice into working, verified production code. Make local engineering decisions inside that slice without creating new product commitments.
+Turn a released Work Unit into working, verified production code. Make local engineering decisions inside that unit without creating new product commitments.
 
-## Establish the implementation contract
+## Confirm the unit is released
 
-Start from the most specific accepted source available:
+Implement only a Work Unit the user has released to build. A release is an explicit user signal for that specific unit: a conversational go-ahead, or a tracker-marked acceptance when continuity across sessions matters. Writing or accepting a Spec, selecting Feature Issues, or summarizing agreed scope supplies the unit's content but is not a release, and you never treat your own proposal or summary as one. If nothing has been released, the work is still in planning: stay collaborative and route back to Feature Planning (`map-decisions`, `grill`, `write-spec`, or `write-issues`) instead of editing production code.
+
+Once released, ground the unit in the most specific accepted source available:
 
 - An accepted Spec.
 - One or more selected Feature Issues.
-- Scope accepted in the current conversation.
+- Scope agreed in the current conversation.
 
 A Spec or Feature Issue is useful, not mandatory. A draft Spec is not accepted work. When sources conflict or leave a blocking product decision unresolved, pause for the user. Suggest `grill` when the missing decision has dependent branches that need a fuller design discussion.
 
-Read the target repo's Agent Guidance and only the Language, ADRs, Living Docs, tracker context, Project Guardrails, and code relevant to the slice. Include external controls such as required checks, protected integration paths, deployment gates, and tracker states when they affect delivery. Use the current implementation to discover constraints. Do not use it to expand the accepted scope.
+Read the target repo's Agent Guidance and only the Language, ADRs, Living Docs, tracker context, Project Guardrails, and code relevant to the released Work Unit. Include external controls such as required checks, protected integration paths, deployment gates, and tracker states when they affect delivery. Use the current implementation to discover constraints. Do not use it to expand the accepted scope.
 
-Before editing, identify the observable outcome, the acceptance criteria that apply, and how the result can be verified. If the requested body of work contains several independent or dependency-ordered slices, start with the smallest dependency-ready slice unless the user asked to complete the whole set.
+Before editing, identify the observable outcome, the acceptance criteria that apply, and how the result can be verified. If the released unit still contains several independent or dependency-ordered pieces, start with the smallest dependency-ready piece unless the user asked to complete the whole set.
 
-## Work inside the accepted slice
+## Work inside the released Work Unit
 
 Choose reversible implementation details autonomously. Pause when the work requires:
 
@@ -31,11 +33,11 @@ Choose reversible implementation details autonomously. Pause when the work requi
 - A new paid service, external vendor, or hosted dependency.
 - Risk to persisted data or a migration whose effects are not already accepted.
 - A change to authentication, permissions, secrets, or other security-sensitive behavior.
-- A broad refactor outside the accepted slice.
+- A broad refactor outside the released Work Unit.
 
 Preserve unrelated work already present in the repo. When the accepted outcome conflicts with the current implementation or cannot be completed as written, report the conflict instead of quietly changing the contract.
 
-Follow applicable Engineering Conventions and Project Guardrails. Prefer preserving a constraint through architecture or code, then automated checks, then concise guidance. Never bypass or weaken a guardrail merely to make the slice pass.
+Follow applicable Engineering Conventions and Project Guardrails. Prefer preserving a constraint through architecture or code, then automated checks, then concise guidance. Never bypass or weaken a guardrail merely to make the Work Unit pass.
 
 Use this deviation rule exactly:
 
@@ -52,7 +54,7 @@ Before finishing:
 1. Verify each applicable acceptance criterion.
 2. Inspect the full diff for scope drift, accidental changes, weak error handling, and missing coverage.
 3. Run the broadest relevant checks available.
-4. Separate failures caused by the change from unrelated failures that already existed. Fix only failures inside the accepted slice and report the rest.
+4. Separate failures caused by the change from unrelated failures that already existed. Fix only failures inside the released Work Unit and report the rest.
 5. Confirm that changed Project Guardrails and their documentation or external configuration still agree.
 
 ## Keep durable knowledge true
@@ -81,4 +83,4 @@ Target the repo's normal integration branch unless the accepted Spec or Agent Gu
 
 Report the implemented outcome, verification performed, Project Guardrails added or changed, any departure from the accepted source, and remaining blockers or follow-up work.
 
-Finish when the accepted slice works, every applicable acceptance criterion has evidence, applicable conventions and Project Guardrails are satisfied or have an approved deviation, the final diff has been reviewed, relevant durable knowledge matches the implementation, and any unresolved failure is reported with its effect.
+Finish when the released Work Unit works, every applicable acceptance criterion has evidence, applicable conventions and Project Guardrails are satisfied or have an approved deviation, the final diff has been reviewed, relevant durable knowledge matches the implementation, and any unresolved failure is reported with its effect.

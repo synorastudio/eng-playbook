@@ -32,7 +32,7 @@ Treat the conversation and linked decision resolutions as the source for new com
 
 ## Choose the tracker
 
-Read `AGENTS.md` for the configured issue tracker. If it does not name one, ask the user where Specs and Feature Issues should live, then record that durable choice in `AGENTS.md`.
+Read `AGENTS.md` for the configured issue tracker. If it does not name one, use the SynoraStudio default of Linear and record it in `AGENTS.md`. Switch only when the project already uses another tracker or the user names one.
 
 Publish the Spec directly to that tracker as a draft. Use a native draft state when the tracker supports one. Otherwise put `Status: Draft` at the top of the issue body.
 
@@ -82,6 +82,6 @@ A Spec creates no Git branch by default. Record a Milestone integration branch a
 
 Return the created tracker link and state that the Spec remains a draft until the user accepts it through the tracker's normal workflow or explicitly says it is accepted.
 
-Do not create Feature Issues from this skill. Once the Spec is accepted, route to `write-issues` when issue tracking would clarify execution. Route to `implement` when the accepted work is ready to build directly.
+Do not create Feature Issues from this skill. Once the Spec is accepted, cut its scope into independent Work Units. Route to `write-issues` when issue tracking would clarify execution, and to `implement` only when the user releases a Work Unit to build. An accepted Spec is not a release: writing or accepting it never authorizes building on its own.
 
 Finish when the draft exists in the configured tracker, every commitment traces to an accepted source, and a product collaborator and fresh agent can understand the Milestone without the original conversation.

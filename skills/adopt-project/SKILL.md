@@ -25,7 +25,7 @@ Audit for these outcomes while staying tech-agnostic:
 - Repository reality is discoverable through a short Agent Guidance entry point and its linked sources.
 - Durable knowledge is current and lives in its owning artifact.
 - System boundaries are discoverable, with qualifying architecture trade-offs preserved in ADRs.
-- Production work begins from accepted scope and produces proportionate verification evidence.
+- Collaborative planning is the default for new or unclear work; building is a separate mode. Production work begins only from a Work Unit the user has released to build, and produces proportionate verification evidence. Accepting a plan is not a release, and an agent never treats its own proposal as one.
 - Applicable conventions are backed by project-owned controls that prevent violations or make them visible.
 - Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.
@@ -47,7 +47,6 @@ Audit:
 - Ignore files: `.gitignore`, `.dockerignore`, Cursor/Claude/agent ignores, and other tool-specific ignore files that already apply.
 - Environment guidance: Doppler, `.env`, secrets managers, `.env.example`, local/staging/production envs, and how agents should handle secrets.
 - Runtime and deployment guidance: where the project runs, where it deploys, how to start it locally, and how agents avoid touching production.
-- Local runtime ownership: whether agents may start long-running local dev servers during interactive work, or should assume the user manages them.
 - Command registry: where common commands are documented and how agents should discover them without inventing stack-specific commands.
 - Safety rules: data, auth, secrets, deployment, migrations, paid services, and destructive operations.
 - Project Guardrails: architecture constraints, tests, static checks, continuous integration, repository settings, tracker states, service permissions, deployment gates, agent rules, and review practices.
@@ -80,8 +79,7 @@ Include:
 - How the merge strategy will apply and guard the required commit form.
 - How agent-generated work will be attributed at its durable boundaries.
 - What should be skipped or deferred.
-- Whether to add a local dev server ownership rule to `AGENTS.md`, if no project convention already answers it.
-- Whether to add workflow convention guidance to `AGENTS.md` or a focused workflow doc, if no project convention already answers it.
+- Whether an existing integration workflow or tracker should be preserved, or the SynoraStudio default applied because the repository has none.
 - Whether to consolidate detailed agent rules into ordinary docs and point to them from an `AGENTS.md` rules index.
 - What assumptions need user confirmation.
 - What hidden project knowledge would change the proposal.
@@ -141,33 +139,14 @@ Prefer `AGENTS.md` as the universal agent entry point, with detailed agent rules
 
 Use tool-specific rule directories only when the user explicitly asks for them or the repo already depends on them. Shared guidance should have one project-owned source of truth that Codex, Cursor, and other agents can follow.
 
-## Ask who owns local runtimes
+## Apply the SynoraStudio defaults
 
-If the audit does not reveal a project convention for interactive local dev servers, ask whether agents should avoid starting long-running local dev servers during interactive work.
+Existing project reality wins. Where the audit reveals a real convention for the integration workflow or issue tracker, preserve it and link to its source from `AGENTS.md` only when future agents need the pointer. Where the audit reveals none, apply SynoraStudio's standing defaults instead of interviewing the user:
 
-If the user wants that rule, add a short Agent Guidance bullet such as:
+- Integration workflow: squash-merge into the normal integration branch, with the pull request title validated as the Conventional Commit message.
+- Issue tracker: Linear owns Decision Maps, Specs, Feature Issues, and Sub-Issues.
 
-```md
-- In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
-```
-
-If the user does not want the rule, omit it. Preserve any existing project-specific runtime convention instead of replacing it.
-
-## Ask about workflow conventions
-
-If the audit does not reveal project conventions for commits, branches, PR templates, issue links, contribution flow, or review expectations, ask whether agents should follow any.
-
-Prompt broadly enough to surface hidden working agreements without prescribing a preference:
-
-```text
-How do commits enter integration history here: squash, merge, or rebase? Are there repo-specific conventions for branch naming, PR templates, issue links, attribution format, or review expectations?
-```
-
-If existing conventions are found, preserve them and link to their source from `AGENTS.md` only when future agents need the pointer. If conventions conflict, are incomplete, or appear tool-specific rather than project-specific, include the ambiguity in the adoption proposal and ask before changing anything.
-
-If the answer is compact, add one short Agent Guidance bullet. If it needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
-
-If the user does not provide workflow conventions, omit the optional workflow rule but still propose the baseline commit and attribution rules above. Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+If an existing convention conflicts with a default, is incomplete, or appears tool-specific rather than project-specific, include the ambiguity in the adoption proposal and ask before changing it. Do not interview the user about local dev-server ownership, branch naming, PR templates, or review flow, and do not inject other preferences the repository has not chosen.
 
 ## Completion report
 

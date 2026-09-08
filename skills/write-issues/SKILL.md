@@ -22,7 +22,7 @@ The coding agent decides the technical tasks inside the issue. The issue tracker
 2. Identify user-recognizable feature outcomes.
 3. Split oversized features into smaller feature sub-issues.
 4. Mark assumptions and dependencies.
-5. Determine the destination from repo guidance or ask the user when it is unclear.
+5. Determine the destination from repo guidance, defaulting to Linear when none is configured.
 6. Persist the chosen issue tracker in `AGENTS.md`.
 7. Draft issues in dependency order and check each one against the rules below.
 
@@ -80,9 +80,9 @@ What user-recognizable feature this issue makes possible.
 
 ## Tracker policy
 
-Stay tracker-agnostic. If the user has not chosen a destination, ask whether to use GitHub Issues, Linear, Markdown files, or another tracker.
+Default to Linear when the repository has not configured a tracker. Use a different tracker only when the project already uses one or the user names one.
 
-Once the user chooses a tracker, persist the decision in `AGENTS.md` so future agents know where issues live.
+Persist the tracker in `AGENTS.md` so future agents know where issues live.
 
 Use a short section like:
 
@@ -100,4 +100,4 @@ Do not store the tracker decision in `LANGUAGE.md`. If the tracker choice is sur
 
 `Stop And Ask If` is for the coding agent that later picks up the issue. It preserves autonomy inside the feature while naming the boundaries where the agent must pause instead of improvising.
 
-Finish when every accepted feature has one home, every issue describes an observable outcome, dependencies are explicit, and no issue exists only to represent a technical layer. Route to `implement` when a dependency-ready issue is ready to build.
+Finish when every accepted feature has one home, every issue describes an observable outcome, dependencies are explicit, and no issue exists only to represent a technical layer. A dependency-ready Feature Issue is a candidate Work Unit; route to `implement` only when the user releases it to build. Creating or accepting the issue is not a release.

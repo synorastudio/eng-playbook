@@ -4,9 +4,9 @@ Production work must move from accepted scope to a verified, reviewable outcome 
 
 ## Required outcomes
 
-- Production implementation begins from an accepted slice whose observable outcome and relevant boundaries are clear. A Spec or Feature Issue may preserve that scope but is not always required.
-- Reversible implementation details may be chosen autonomously inside the accepted slice.
-- Work pauses when it would change product scope, make a hard-to-reverse architecture decision, introduce a paid service or external vendor, risk persisted data, alter authentication or permissions, expose secrets, or require a broad refactor outside the slice.
+- Production implementation begins only from a Work Unit the user has released to build. A release is an explicit user signal for that specific unit: a conversational go-ahead, or a tracker-marked acceptance when continuity across sessions matters. Accepting planning scope, writing a Spec, or the agent summarizing its own proposal is not a release. A Spec or Feature Issue may preserve the unit's scope but is not always required.
+- Reversible implementation details may be chosen autonomously inside the released Work Unit.
+- Work pauses when it would change product scope, make a hard-to-reverse architecture decision, introduce a paid service or external vendor, risk persisted data, alter authentication or permissions, expose secrets, or require a broad refactor outside the released Work Unit.
 - The implementation follows applicable Engineering Conventions and the project's Project Guardrails.
 - Verification covers each applicable acceptance criterion and uses the broadest relevant checks available to the project.
 - Tests are added at stable, behavior-relevant boundaries when the project supports them and the change warrants coverage. Manual verification is explicit when automation is unavailable or disproportionate.
