@@ -98,7 +98,7 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 
 Encode SynoraStudio's standing defaults directly instead of interviewing the user at setup. State them in `AGENTS.md`, and revisit one only when the user asks for something different.
 
-- Integration workflow: squash-merge into the repository's normal integration branch, with the pull request title validated as the Conventional Commit message. The merge strategy is decided; do not defer it.
+- Integration workflow: once the repository uses pull requests, squash-merge into its normal integration branch with the pull request title validated as the Conventional Commit message. State this intended workflow now, and wire the matching pull-request-title check when the repository gains a remote and CI. Do not reopen the merge-strategy choice, and do not assert a pull-request flow on a repository that has no remote yet.
 - Issue tracker: Linear owns Decision Maps, Specs, Feature Issues, and Sub-Issues.
 
 Do not interview the user about local dev-server ownership, branch naming, PR templates, review flow, or other working agreements. Add extra guidance only for a real constraint the repository already imposes, and keep stack-specific commands and server details out of `AGENTS.md`.
@@ -138,7 +138,7 @@ Before finishing, verify that:
 - `AGENTS.md` points to detailed guidance instead of copying it.
 - The Agent Operating System applies the SynoraStudio tracker and integration-workflow defaults, and contains no unchosen stack, hosting, or deployment defaults.
 - Agent Guidance or its linked workflow documentation explains how to attribute agent-generated repository changes and collaboration artifacts.
-- Agent Guidance states the required commit form and that squash-merge applies it to the pull request title on the integration branch.
+- Agent Guidance states the required commit form and, once the project uses pull requests, that squash-merge applies it to the pull request title on the integration branch.
 - Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 
