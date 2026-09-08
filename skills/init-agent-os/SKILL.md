@@ -60,8 +60,8 @@ Even before the stack exists, encode the outcomes that already apply:
 
 - The repository has a concise Agent Guidance entry point and clear artifact ownership.
 - Durable knowledge will be added only when real project knowledge exists and will live in its owning artifact.
-- Production implementation requires accepted scope and proportionate verification.
-- Agents pause for product changes, hard-to-reverse architecture, paid services or external vendors, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside an accepted slice.
+- Collaborative planning is the default for new or unclear work; building is a separate mode. Production implementation begins only from a Work Unit the user has released to build, and verification is proportionate. Accepting a plan is not a release, and an agent never treats its own proposal as one.
+- Agents pause for product changes, hard-to-reverse architecture, paid services or external vendors, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside a released Work Unit.
 - Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
 - Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.
@@ -94,39 +94,14 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 - Include only what an agent must know before choosing what to read next.
 - Do not copy long environment, deployment, command, or review guidance into `AGENTS.md`; point to the relevant doc instead.
 
-## Ask who owns local runtimes
+## Apply the SynoraStudio defaults
 
-When creating `AGENTS.md`, ask whether agents should avoid starting long-running local dev servers during interactive work.
+Encode SynoraStudio's standing defaults directly instead of interviewing the user at setup. State them in `AGENTS.md`, and revisit one only when the user asks for something different.
 
-If the user wants that rule, add a short Agent Guidance bullet such as:
+- Integration workflow: once the repository uses pull requests, squash-merge into its normal integration branch with the pull request title validated as the Conventional Commit message. State this intended workflow now, and wire the matching pull-request-title check when the repository gains a remote and CI. Do not reopen the merge-strategy choice, and do not assert a pull-request flow on a repository that has no remote yet.
+- Issue tracker: Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues.
 
-```md
-- In interactive work, assume the user manages local dev servers. Do not start long-running dev servers unless asked; in unattended work, clean them up before finishing.
-```
-
-If the user does not want the rule, omit it. Do not add stack-specific commands or server details.
-
-## Ask about workflow conventions
-
-When creating `AGENTS.md`, ask whether agents should follow any repo-specific workflow conventions.
-
-Prompt broadly enough to surface hidden working agreements without prescribing a preference:
-
-```text
-How do commits enter integration history here: squash, merge, or rebase? Are there repo-specific conventions for branch naming, PR templates, issue links, attribution format, or review expectations?
-```
-
-If the answer is compact, add one short Agent Guidance bullet such as:
-
-```md
-- Follow the repo's workflow conventions for commits, branches, PR templates, issue links, and review expectations.
-```
-
-If the answer needs detail, document it in the README, a PR template, contribution guidance, or another focused workflow doc under `docs/`, then link to it from the `AGENTS.md` rules index.
-
-If the user does not provide workflow conventions, omit the optional workflow rule but keep the complete baseline commit and attribution rules from `AGENTS-TEMPLATE.md`. Do not choose whether a pull request title, squash message, or individual commits will be validated. Report the merge strategy and its matching guardrail as deferred until the integration workflow is chosen.
-
-Do not inject personal preferences, branch naming schemes, PR templates, issue tracker assumptions, or review flow defaults unless the user explicitly chooses them.
+Do not interview the user about local dev-server ownership, branch naming, PR templates, review flow, or other working agreements. Add extra guidance only for a real constraint the repository already imposes, and keep stack-specific commands and server details out of `AGENTS.md`.
 
 ## Shape the README
 
@@ -161,10 +136,10 @@ Before finishing, verify that:
 - The repo still has no meaningful project structure that should have routed the work to `adopt-project`.
 - Every created file has current content or a concrete reason to exist. No empty placeholder sections remain.
 - `AGENTS.md` points to detailed guidance instead of copying it.
-- The Agent Operating System contains no unchosen stack, tracker, branch, commit, review, or deployment defaults.
+- The Agent Operating System applies the SynoraStudio tracker and integration-workflow defaults, and contains no unchosen stack, hosting, or deployment defaults.
 - Agent Guidance or its linked workflow documentation explains how to attribute agent-generated repository changes and collaboration artifacts.
-- Agent Guidance states the required commit form. When the merge strategy is known, it also explains how that strategy applies the form to integration history; otherwise the completion report defers that choice and its matching guardrail.
+- Agent Guidance states the required commit form and, once the project uses pull requests, that squash-merge applies it to the pull request title on the integration branch.
 - Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 
-Report the files created or changed, the user choices encoded, the Project Guardrails established, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when accepted scope can proceed directly.
+Report the files created or changed, the user choices encoded, the Project Guardrails established, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when the user releases a Work Unit to build.

@@ -22,7 +22,7 @@ Keep accepted facts separate from assumptions. Treat possible Milestones as cand
 
 ## Choose the tracker
 
-Read `AGENTS.md` for the configured issue tracker. If it does not name one, ask where Decision Maps, Specs, and Feature Issues should live, then record that durable choice in `AGENTS.md`.
+Read `AGENTS.md` for the configured issue tracker. If it does not name one, use the SynoraStudio default of Linear and record it in `AGENTS.md`. Switch only when the project already uses another tracker or the user names one.
 
 Create the Decision Map directly in that tracker. Do not save a copy in the repo.
 
@@ -80,4 +80,4 @@ A Decision Map and its Decision Issues create no Git branches by default. When a
 
 Finish the initial mapping pass when no material decision branch is hidden, the branches are ordered by dependency, each unresolved branch has a named resolution workflow, and candidate Milestones are clearly marked as provisional. Leave the Decision Map active while its blocking decisions remain unresolved.
 
-After every blocking decision is resolved or explicitly deferred outside the affected Milestone, replace candidate Milestones with the resulting Milestone or Milestone sequence. Link each one to its accepted source. Route to `write-spec` when a Milestone needs product review or cross-session continuity, `write-issues` when tracking separate delivery outcomes would help, or `implement` when the accepted work can proceed directly. Close the Decision Map after its resulting work is linked and no blocking decision remains hidden.
+After every blocking decision is resolved or explicitly deferred outside the affected Milestone, replace candidate Milestones with the resulting Milestone or Milestone sequence. Link each one to its accepted source. Route to `write-spec` when a Milestone needs product review or cross-session continuity, `write-issues` when tracking separate delivery outcomes would help, or `implement` when the user releases a Work Unit to build directly. Close the Decision Map after its resulting work is linked and no blocking decision remains hidden.

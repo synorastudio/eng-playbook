@@ -2,6 +2,12 @@
 
 Feature Planning turns proposed work into one or more accepted, bounded outcomes. It is a routing Workflow, not a mandatory document pipeline.
 
+## Default posture
+
+Planning is the default mode for new or unclear work, and it is collaborative. The agent's job here is to develop the outcome with the user through conversation: product behavior and constraints, technical approach, and third-party dependencies and providers. Reach for `grill` when a branch runs deep enough to need a decision-by-decision interview.
+
+Do not implement from this Workflow. Planning ends by producing finalized scope and cutting it into independent Work Units; a Work Unit becomes buildable only when the user releases it, which enters the [Implementation Workflow](implementation.md). Proposing scope, writing a Spec, or accepting scope is not a release, and the agent never treats its own proposal as one.
+
 ## Route by current state
 
 ```mermaid
@@ -17,14 +23,17 @@ flowchart TD
     accepted -->|Yes| needs{What continuity does delivery need?}
     needs -->|Product review or cross-session context| spec[Preserve accepted scope in a Spec]
     needs -->|Separate outcomes benefit from tracking| issues[Create Feature Issues]
-    needs -->|Neither| slice[Use the accepted slice directly]
+    needs -->|Neither| units
     spec --> specAccepted{Is the Spec accepted?}
     specAccepted -->|No| specReview[Review and accept or revise it]
     specReview --> specAccepted
     specAccepted -->|Yes, tracking helps| issues
-    specAccepted -->|Yes, otherwise| slice
-    issues --> slice
-    slice --> implementation[Implementation]
+    specAccepted -->|Yes, otherwise| units
+    issues --> units[Cut finalized scope into independent Work Units]
+    units --> released{Has the user released this Work Unit to build?}
+    released -->|No| planning[Stay in planning: discuss, grill, or wait]
+    planning --> released
+    released -->|Yes| implementation[Implementation]
 ```
 
 ## Planning rules
@@ -40,6 +49,6 @@ flowchart TD
 
 ## Completion
 
-Planning is complete for a slice when its observable outcome and material boundaries are accepted, blocking decisions are resolved or excluded, and any needed continuity artifact exists. The result enters the [Implementation Workflow](implementation.md).
+Planning is complete for a Work Unit when its observable outcome and material boundaries are accepted, blocking decisions are resolved or excluded, any needed continuity artifact exists, and the finalized scope has been cut into independent Work Units. A finalized, accepted plan is not yet a build authorization: each Work Unit enters the [Implementation Workflow](implementation.md) only when the user releases it, and unreleased units stay in planning.
 
 Companion Skills support individual routes: `map-decisions`, `grill`, `prototype`, `write-spec`, and `write-issues`.

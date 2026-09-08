@@ -98,7 +98,7 @@ Omit empty sections. Recommend the next workflow based on what remains:
 3. `grill` when a concrete plan has unresolved assumptions, vocabulary, scope boundaries, or authority questions.
 4. `write-spec` when accepted scope needs product review or cross-session continuity.
 5. `write-issues` when accepted scope would benefit from tracking separate outcomes.
-6. `implement` when the scope is already accepted and no planning artifact would help.
+6. `implement` when the user releases a Work Unit to build and no planning artifact would help.
 7. A docs update when the intake finds accepted durable knowledge missing from repo docs.
 
 Finish when every material source claim appears in the summary or is deliberately excluded, source conflicts remain visible, and current scope is distinct from backlog and speculation.
