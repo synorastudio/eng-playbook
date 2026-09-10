@@ -38,7 +38,7 @@ flowchart TD
 
 ## Planning rules
 
-- A Decision Map organizes uncertainty only when dependent decisions or Milestone boundaries are unclear.
+- A Decision Map organizes the dependent decisions in a body of work, either to discover Milestone boundaries when the shape is unclear or to decompose an accepted Milestone that still holds unresolved decisions.
 - A Decision Issue owns one substantial unresolved question when it needs separate discussion, research, or a Prototype.
 - A Grilling Session resolves branches in a concrete design; it does not replace broad intake or implementation.
 - A Prototype is throwaway code that answers one design question before production commitment.

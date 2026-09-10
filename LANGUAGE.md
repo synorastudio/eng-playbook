@@ -53,7 +53,7 @@ The set of dependent decisions inside a plan or design, walked from broad choice
 _Avoid_: Checklist, questionnaire, decision matrix
 
 **Decision Map**:
-A conditional tracker artifact that organizes unresolved decisions for proposed work whose design or milestone boundaries are unclear. It may produce one milestone or a sequence of milestones.
+A conditional tracker artifact that organizes the unresolved decisions inside a body of work. It runs in two modes: discovering Milestone boundaries when the shape is unclear (producing one Milestone or a sequence), or decomposing an accepted Milestone into a tracked decision tree.
 _Avoid_: Spec, roadmap, backlog
 
 **Decision Issue**:
