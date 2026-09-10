@@ -30,9 +30,9 @@ Read only the sources that bear on the Spec:
 
 Treat the conversation and linked decision resolutions as the source for new commitments. Use repo artifacts and code to check consistency, not to silently expand scope.
 
-## Choose the tracker
+## Use the configured tracker
 
-Read `AGENTS.md` for the configured issue tracker. If it does not name one, use the SynoraStudio default of Linear and record it in `AGENTS.md`. Switch only when the project already uses another tracker or the user names one.
+Read `AGENTS.md` for the configured issue tracker and the project reference that resolves an issue id. If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` to record it, rather than choosing one here.
 
 Publish the Spec directly to that tracker as a draft. Use a native draft state when the tracker supports one. Otherwise put `Status: Draft` at the top of the issue body.
 

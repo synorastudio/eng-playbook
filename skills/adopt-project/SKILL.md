@@ -144,7 +144,7 @@ Use tool-specific rule directories only when the user explicitly asks for them o
 Existing project reality wins. Where the audit reveals a real convention for the integration workflow or issue tracker, preserve it and link to its source from `AGENTS.md` only when future agents need the pointer. Where the audit reveals none, apply SynoraStudio's standing defaults instead of interviewing the user:
 
 - Integration workflow: squash-merge into the normal integration branch, with the pull request title validated as the Conventional Commit message.
-- Issue tracker: Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues.
+- Issue tracker: Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues. Record in `AGENTS.md` the team and project that resolve an issue id, preserving an existing reference when the audit finds one.
 
 If an existing convention conflicts with a default, is incomplete, or appears tool-specific rather than project-specific, include the ambiguity in the adoption proposal and ask before changing it. Do not interview the user about local dev-server ownership, branch naming, PR templates, or review flow, and do not inject other preferences the repository has not chosen.
 
