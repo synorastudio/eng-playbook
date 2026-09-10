@@ -22,7 +22,7 @@ Each issue should deliver a usable, verifiable increment that spans whatever lay
 
 Nest the same way `map-decisions` nests: prefer shallow trees, and split a feature into Sub-Issues only when it is too big to verify or sequence as one slice. Each Sub-Issue is itself a vertical slice. Add hierarchy only when it improves tracking.
 
-Sequence with dependencies, not nesting. Set native `blockedBy` edges (or ordinary links when the tracker lacks them) so the tracker enforces the order. Tracker hierarchy does not prescribe branches or pull-request targets.
+Sequence with dependencies, not nesting. Record each dependency as a tracker relation, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise, so the order is visible. The tracker does not hold a dependent issue closed on its own; the release order honors the sequence. Tracker hierarchy does not prescribe branches or pull-request targets.
 
 ## Aim for independent verifiability
 
@@ -37,7 +37,7 @@ Not all tracked work is a feature. Track a decision as a Decision Issue, owned b
 1. Read the accepted Spec when one exists, plus relevant project context, `LANGUAGE.md`, ADRs, and Living Docs.
 2. Identify user-recognizable outcomes and cut each as a vertical slice.
 3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to verify or sequence as one.
-4. Mark assumptions, and set dependencies as `blockedBy` edges in dependency order.
+4. Mark assumptions, and set dependency relations in dependency order, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise.
 5. Determine the destination from repo guidance, defaulting to Linear when none is configured.
 6. Persist the chosen issue tracker in `AGENTS.md`.
 7. Draft issues and check each one against the rules below.
@@ -49,7 +49,7 @@ A good issue:
 - Names a user-recognizable or system-owner-visible outcome with a feature noun-phrase title.
 - Is a vertical slice spanning the layers it needs, not a horizontal layer.
 - Is independently verifiable, ideally through a preview deployment; verified another way only when that does not fit.
-- Has clear acceptance criteria and explicit `blockedBy` dependencies.
+- Has clear acceptance criteria and explicit dependency relations, using `blockedBy` when the tracker supports it.
 - Avoids bundling unrelated user-facing behavior.
 - Captures architectural assumptions without pretending they are settled decisions.
 
@@ -81,7 +81,7 @@ The user-recognizable or system-owner-visible behavior this slice delivers.
 
 ## Blocked by
 
-- Dependencies (as tracker edges) and unresolved decisions.
+- Dependencies as tracker relations, and unresolved decisions.
 
 ## Stop and ask if
 
