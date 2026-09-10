@@ -38,7 +38,7 @@ Not all tracked work is a feature, and decisions are not folded into Feature Iss
 2. Identify user-recognizable outcomes and cut each as a vertical slice.
 3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to build or sequence as one.
 4. Mark assumptions, and set dependency relations in dependency order, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise.
-5. Read the configured issue tracker from `AGENTS.md`, where project setup has already recorded it.
+5. Read the configured issue tracker and its project reference from `AGENTS.md`, where project setup has already recorded them.
 6. Draft issues there and check each one against the rules below.
 
 ## Issue rules
@@ -94,7 +94,7 @@ The user-recognizable or system-owner-visible behavior this slice delivers.
 
 ## Tracker
 
-The tracker is already configured in `AGENTS.md` by project setup (`init-agent-os` or `adopt-project`). Read it and write issues there. A missing tracker is a setup gap to flag, not a choice to make here.
+`AGENTS.md` records the issue tracker and the project reference that resolves an issue id (the workspace, team, or board), set once by project setup (`init-agent-os` or `adopt-project`). Read them and write issues there. If either is missing, that is a setup gap: route back to `init-agent-os` or `adopt-project` to record it, rather than choosing or persisting it here.
 
 ## Stop-and-ask intent
 
