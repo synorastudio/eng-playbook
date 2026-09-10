@@ -20,7 +20,9 @@ flowchart TD
     milestones --> accepted{Is the Milestone accepted?}
     accepted -->|No| review[Review and accept or revise it]
     review --> accepted
-    accepted -->|Yes| needs{What continuity does delivery need?}
+    accepted -->|Yes, decisions resolved| needs{What continuity does delivery need?}
+    accepted -->|Yes, decisions remain| decompose[Decompose the Milestone through a Decision Map]
+    decompose --> needs
     needs -->|Product review or cross-session context| spec[Preserve accepted scope in a Spec]
     needs -->|Separate outcomes benefit from tracking| issues[Create Feature Issues]
     needs -->|Neither| units
