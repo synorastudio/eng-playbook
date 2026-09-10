@@ -22,7 +22,7 @@ Keep accepted facts separate from assumptions. Treat possible Milestones as cand
 
 ## Choose the tracker
 
-Read `AGENTS.md` for the configured issue tracker. If it does not name one, use the SynoraStudio default of Linear and record it in `AGENTS.md`. Switch only when the project already uses another tracker or the user names one.
+Read `AGENTS.md` for the configured issue tracker and the project reference that resolves an issue id. If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` to record it, rather than choosing one here.
 
 Create the Decision Map directly in that tracker. Do not save a copy in the repo.
 
