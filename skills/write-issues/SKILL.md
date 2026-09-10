@@ -1,6 +1,6 @@
 ---
 name: write-issues
-description: Turn accepted scope into a tree of Feature Issues, each a nested vertical slice, for a chosen tracker.
+description: Turn accepted scope into a tree of Feature Issues, each a nested vertical slice, in the configured tracker.
 disable-model-invocation: true
 ---
 
@@ -24,9 +24,9 @@ Nest the same way `map-decisions` nests: prefer shallow trees, and split a featu
 
 Sequence with dependencies, not nesting. Record each dependency as a tracker relation, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise, so the order is visible. The tracker does not hold a dependent issue closed on its own; the release order honors the sequence. Tracker hierarchy does not prescribe branches or pull-request targets.
 
-## Aim for independent verifiability
+## Aim to verify by using it
 
-Aim for each slice to be verifiable on its own, ideally by clicking through a pull-request preview deployment. This is an aim, not a hard rule. Some slices are verified another way. An email-notification slice is verified by triggering the transition and checking the email. Do not contort a slice to force preview-verifiability when it does not fit, and do not drop the aim for slices that could have met it.
+Aim for each slice to be verifiable by running the project and using the behavior it adds, however that project runs (a local dev server, a deployed preview, a CLI). Some slices are exercised directly; others by triggering the behavior and checking its effect, such as an email notification landing in the inbox. Keep each slice small enough to exercise on its own, and do not drop that aim for a slice that could meet it.
 
 ## Decisions are tracked too
 
@@ -38,9 +38,8 @@ Not all tracked work is a feature. Track a decision as a Decision Issue, owned b
 2. Identify user-recognizable outcomes and cut each as a vertical slice.
 3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to verify or sequence as one.
 4. Mark assumptions, and set dependency relations in dependency order, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise.
-5. Determine the destination from repo guidance, defaulting to Linear when none is configured.
-6. Persist the chosen issue tracker in `AGENTS.md`.
-7. Draft issues and check each one against the rules below.
+5. Read the configured issue tracker from `AGENTS.md`, where project setup has already recorded it.
+6. Draft issues there and check each one against the rules below.
 
 ## Issue rules
 
@@ -48,7 +47,7 @@ A good issue:
 
 - Names a user-recognizable or system-owner-visible outcome with a feature noun-phrase title.
 - Is a vertical slice spanning the layers it needs, not a horizontal layer.
-- Is independently verifiable, ideally through a preview deployment; verified another way only when that does not fit.
+- Can be verified by running the project and using it.
 - Has clear acceptance criteria and explicit dependency relations, using `blockedBy` when the tracker supports it.
 - Avoids bundling unrelated user-facing behavior.
 - Captures architectural assumptions without pretending they are settled decisions.
@@ -73,7 +72,7 @@ The user-recognizable or system-owner-visible behavior this slice delivers.
 
 ## Verification
 
-- How to verify the slice: the preview-deployment path when it fits, or the specific alternative when it does not.
+- How to verify the slice by running the project and using it.
 
 ## Assumptions
 
@@ -93,23 +92,9 @@ The user-recognizable or system-owner-visible behavior this slice delivers.
 - Implementing this requires a broad refactor outside the slice.
 ```
 
-## Tracker policy
+## Tracker
 
-Default to Linear when the repository has not configured a tracker. Use a different tracker only when the project already uses one or the user names one.
-
-Persist the tracker in `AGENTS.md` so future agents know where issues live.
-
-Use a short section like:
-
-```md
-## Issue tracker
-
-Use Linear for Feature Issues and Sub-Issues.
-
-Feature Issues are vertical slices of user-recognizable behavior, not technical tasks or horizontal layers. Do not create layer-based issues like "implement API" or "build form" unless the user explicitly asks.
-```
-
-Do not store the tracker decision in `LANGUAGE.md`. If the tracker choice is surprising, costly to reverse, or tied to a workflow/tooling trade-off, offer an ADR too.
+The tracker is already configured in `AGENTS.md` by project setup (`init-agent-os` or `adopt-project`). Read it and write issues there. A missing tracker is a setup gap to flag, not a choice to make here.
 
 ## Stop-and-ask intent
 
