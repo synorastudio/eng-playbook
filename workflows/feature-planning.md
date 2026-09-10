@@ -43,7 +43,7 @@ flowchart TD
 - A Grilling Session resolves branches in a concrete design; it does not replace broad intake or implementation.
 - A Prototype is throwaway code that answers one design question before production commitment.
 - A Spec preserves already-settled scope when product review or cross-session continuity warrants it. It remains a draft until accepted.
-- Feature Issues represent user-recognizable or system-owner-visible outcomes, not technical implementation tasks.
+- Feature Issues represent user-recognizable or system-owner-visible outcomes cut as vertical slices, not technical implementation tasks or horizontal layers. They nest shallowly, the way a Decision Map nests.
 - Optional artifacts are omitted when they solve no visible problem.
 - Hard-to-reverse architecture choices follow the [Architecture decisions convention](../conventions/architecture-decisions.md).
 
