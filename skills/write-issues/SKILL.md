@@ -73,9 +73,9 @@ The user-recognizable or system-owner-visible behavior this slice delivers, acro
 
 - Assumptions the agent may proceed with.
 
-## Blocked by
+## Open decisions
 
-- Dependency relations, and unresolved decisions.
+- Unresolved decisions this slice depends on. Link the Decision Issue when one exists.
 
 ## Stop and ask if
 
