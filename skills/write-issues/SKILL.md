@@ -59,20 +59,15 @@ A good issue:
 
 ## Outcome
 
-The user-recognizable or system-owner-visible behavior this slice delivers.
+The user-recognizable or system-owner-visible behavior this slice delivers, across the layers it spans.
 
-## Slice scope
+### Out of scope
 
-- Behavior included in this vertical slice, across the layers it spans.
-- Explicitly excluded behavior, if needed.
+- Behavior deliberately excluded from this slice.
 
 ## Acceptance criteria
 
-- Observable pass/fail criteria.
-
-## Verification
-
-- How to verify the slice by running the project and using it.
+- Observable checks confirmed by running the project and using the slice.
 
 ## Assumptions
 
@@ -80,16 +75,11 @@ The user-recognizable or system-owner-visible behavior this slice delivers.
 
 ## Blocked by
 
-- Dependencies as tracker relations, and unresolved decisions.
+- Dependency relations, and unresolved decisions.
 
 ## Stop and ask if
 
-- Implementing this requires changing product scope beyond the slice.
-- Implementing this requires a hard-to-reverse architecture decision.
-- Implementing this requires a new paid service, external vendor, or hosted dependency.
-- Implementing this risks existing persisted data or requires a migration.
-- Implementing this changes auth, permissions, secrets, or security-sensitive behavior.
-- Implementing this requires a broad refactor outside the slice.
+- Pauses specific to this slice. Omit this section when none apply.
 ```
 
 ## Tracker
@@ -98,6 +88,6 @@ The user-recognizable or system-owner-visible behavior this slice delivers.
 
 ## Stop-and-ask intent
 
-`Stop And Ask If` is for the coding agent that later picks up the slice. It preserves autonomy inside the slice while naming the boundaries where the agent must pause instead of improvising.
+`Stop And Ask If` is for the coding agent that later picks up the slice. The universal pauses (product-scope changes, hard-to-reverse architecture, paid vendors, persisted-data risk, auth or secrets, broad refactors) already bind that agent through the delivery convention and `AGENTS.md`, so name only pauses unique to this slice here, and omit the section when there are none.
 
 Finish when every issue meets the rules above, every accepted outcome has one home as a vertical slice, and the tree is as shallow as the work allows. A dependency-ready Feature Issue is a candidate Work Unit; route to `implement` only when the user releases it to build. Creating or accepting the issue is not a release.
