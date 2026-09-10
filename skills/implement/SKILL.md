@@ -35,6 +35,8 @@ Choose reversible implementation details autonomously. Pause when the work requi
 - A change to authentication, permissions, secrets, or other security-sensitive behavior.
 - A broad refactor outside the released Work Unit.
 
+These pauses hold for every Work Unit on their own, whether or not the target repo's guidance restates them. They are this skill's safety contract, so a copy of it enforces them anywhere.
+
 Preserve unrelated work already present in the repo. When the accepted outcome conflicts with the current implementation or cannot be completed as written, report the conflict instead of quietly changing the contract.
 
 Follow applicable Engineering Conventions and Project Guardrails. Prefer preserving a constraint through architecture or code, then automated checks, then concise guidance. Never bypass or weaken a guardrail merely to make the Work Unit pass.
