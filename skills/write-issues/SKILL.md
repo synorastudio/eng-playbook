@@ -1,6 +1,6 @@
 ---
 name: write-issues
-description: Turn accepted scope into Feature Issues and Sub-Issues for a chosen tracker.
+description: Turn accepted scope into a tree of Feature Issues, each a nested vertical slice, in the configured tracker.
 disable-model-invocation: true
 ---
 
@@ -8,96 +8,86 @@ disable-model-invocation: true
 
 Start after the target outcome and its main boundaries are clear. Use an accepted Spec when one exists; a Spec is not required for smaller work whose accepted scope is already available in conversation.
 
-Issues represent features, not technical tasks. Think user stories, not implementation steps.
+A Feature Issue names a user-recognizable or system-owner-visible outcome, and is cut as a **vertical slice** through the stack that can be verified on its own. The title is a feature noun-phrase, not a user-story sentence or a technical task.
 
-- Issue = a feature a user would recognize: "Guests can RSVP," "Host can view responses," "Invite page shows event details."
-- Sub-issue = a smaller feature if the parent feature is too big: "RSVP supports dietary preferences" under "Guests can RSVP."
-- A technical layer is not a Feature Issue. "Implement API," "build form," "add route," and "write database schema" stay inside the coding agent's implementation plan.
+- Feature Issue = a vertical slice of behavior a user or system owner would recognize: "Owner Sign-up and Sign-in," "Services Management," "Public Booking."
+- Sub-Issue = a smaller vertical slice nested under a larger feature when the parent is too big to build or sequence as one slice: "Availability Configuration" under "Tenant Configuration."
+- A horizontal layer is not a Feature Issue. "Implement API," "build form," "add route," "write database schema," and "slot generation & display" on its own are not slices. Slots you cannot book yet cannot be verified on their own. Layers stay inside the coding agent's implementation plan for a slice.
 
-The coding agent decides the technical tasks inside the issue. The issue tracker should stay readable for non-technical collaborators.
+The coding agent decides the technical tasks inside a slice. The tracker stays readable for non-technical collaborators.
+
+## Cut vertical slices, nest shallowly
+
+Each issue should deliver a usable, verifiable increment that spans whatever layers it needs, not one layer of many. Prefer the smallest slice that is still recognizable and verifiable on its own.
+
+Nest the same way `map-decisions` nests: prefer shallow trees, and split a feature into Sub-Issues only when it is too big to build or sequence as one slice. Every issue, the parent included, stays an independently verifiable vertical slice; a parent is verified through the behavior its Sub-Issues compose. Add hierarchy only when it improves tracking.
+
+Sequence with dependencies, not nesting. Record each dependency as a tracker relation, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise, so the order is visible. The tracker does not hold a dependent issue closed on its own; the release order honors the sequence. Tracker hierarchy does not prescribe branches or pull-request targets.
+
+## Aim to verify by using it
+
+Aim for each slice to be verifiable by running the project and using the behavior it adds, however that project runs (a local dev server, a deployed preview, a CLI). Some slices are exercised directly; others by triggering the behavior and checking its effect, such as an email notification landing in the inbox. Keep each slice small enough to exercise on its own, and do not drop that aim for a slice that could meet it.
+
+## Decisions are tracked too
+
+Not all tracked work is a feature, and decisions are not folded into Feature Issues. Follow `map-decisions`: keep small questions in the parent Decision Map, and create a Decision Issue only when a question needs separate grilling, research, prototyping, or ownership. A hard-to-reverse, surprising, trade-off decision graduates to an ADR (`write-adr`).
 
 ## Workflow
 
 1. Read the accepted Spec when one exists, plus relevant project context, `LANGUAGE.md`, ADRs, and Living Docs.
-2. Identify user-recognizable feature outcomes.
-3. Split oversized features into smaller feature sub-issues.
-4. Mark assumptions and dependencies.
-5. Determine the destination from repo guidance, defaulting to Linear when none is configured.
-6. Persist the chosen issue tracker in `AGENTS.md`.
-7. Draft issues in dependency order and check each one against the rules below.
+2. Identify user-recognizable outcomes and cut each as a vertical slice.
+3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to build or sequence as one.
+4. Mark assumptions, and set dependency relations in dependency order, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise.
+5. Read the configured issue tracker and its project reference from `AGENTS.md`, where project setup has already recorded them.
+6. Draft issues there and check each one against the rules below.
 
 ## Issue rules
 
 A good issue:
 
-- Names a feature a user or collaborator would recognize.
-- Produces a demoable outcome.
-- Has clear acceptance criteria.
-- Names dependencies and blockers.
+- Names a user-recognizable or system-owner-visible outcome with a feature noun-phrase title.
+- Is a vertical slice spanning the layers it needs, not a horizontal layer.
+- Can be verified by running the project and using it.
+- Has clear acceptance criteria and explicit dependency relations, using `blockedBy` when the tracker supports it.
 - Avoids bundling unrelated user-facing behavior.
-- Avoids backend-only, frontend-only, or infrastructure-only work unless the feature is genuinely internal and user-recognizable to the system owner.
 - Captures architectural assumptions without pretending they are settled decisions.
-
-Use sub-issues only when the parent feature is too large, the child is still a recognizable feature, and the extra hierarchy improves tracking. Do not use sub-issues for implementation steps.
-
-When a Spec exists, link each Feature Issue to it. Use parent-child hierarchy when the tracker supports it and the nesting improves navigation; otherwise use ordinary links. Tracker hierarchy does not prescribe branches or pull-request targets.
 
 ## Issue template
 
 ```md
-# Title
+# Feature noun-phrase title
 
 ## Outcome
 
-What user-recognizable feature this issue makes possible.
+The user-recognizable or system-owner-visible behavior this slice delivers, across the layers it spans.
 
-## Feature scope
+### Out of scope
 
-- User-facing or system-owner-visible behavior included in this issue.
-- Explicitly excluded behavior, if needed.
+- Behavior deliberately excluded from this slice.
 
 ## Acceptance criteria
 
-- Observable pass/fail criteria.
+- Observable checks confirmed by running the project and using the slice.
 
 ## Assumptions
 
 - Assumptions the agent may proceed with.
 
-## Blocked by
+## Open decisions
 
-- Dependencies or decisions.
+- Unresolved decisions this slice depends on. Link the Decision Issue when one exists.
 
 ## Stop and ask if
 
-- Implementing this requires changing product scope beyond the issue.
-- Implementing this requires a hard-to-reverse architecture decision.
-- Implementing this requires a new paid service, external vendor, or hosted dependency.
-- Implementing this risks existing persisted data or requires a migration.
-- Implementing this changes auth, permissions, secrets, or security-sensitive behavior.
-- Implementing this requires a broad refactor outside the feature.
+- Pauses specific to this slice. Omit this section when none apply.
 ```
 
-## Tracker policy
+## Tracker
 
-Default to Linear when the repository has not configured a tracker. Use a different tracker only when the project already uses one or the user names one.
-
-Persist the tracker in `AGENTS.md` so future agents know where issues live.
-
-Use a short section like:
-
-```md
-## Issue tracker
-
-Use Linear for feature issues and sub-issues.
-
-Issues represent user-recognizable features, not technical tasks. Do not create layer-based issues like "implement API" or "build form" unless the user explicitly asks.
-```
-
-Do not store the tracker decision in `LANGUAGE.md`. If the tracker choice is surprising, costly to reverse, or tied to a workflow/tooling trade-off, offer an ADR too.
+`AGENTS.md` records the issue tracker and the project reference that resolves an issue id (the workspace, team, or board), set once by project setup (`init-agent-os` or `adopt-project`). Read them and write issues there. If either is missing, that is a setup gap: route back to `init-agent-os` or `adopt-project` to record it, rather than choosing or persisting it here.
 
 ## Stop-and-ask intent
 
-`Stop And Ask If` is for the coding agent that later picks up the issue. It preserves autonomy inside the feature while naming the boundaries where the agent must pause instead of improvising.
+`Stop And Ask If` is for the coding agent that later picks up the slice. The universal pauses (product-scope changes, hard-to-reverse architecture, paid vendors, persisted-data risk, auth or secrets, broad refactors) already bind that agent through the delivery convention and `AGENTS.md`, so name only pauses unique to this slice here, and omit the section when there are none.
 
-Finish when every accepted feature has one home, every issue describes an observable outcome, dependencies are explicit, and no issue exists only to represent a technical layer. A dependency-ready Feature Issue is a candidate Work Unit; route to `implement` only when the user releases it to build. Creating or accepting the issue is not a release.
+Finish when every issue meets the rules above, every accepted outcome has one home as a vertical slice, and the tree is as shallow as the work allows. A dependency-ready Feature Issue is a candidate Work Unit; route to `implement` only when the user releases it to build. Creating or accepting the issue is not a release.

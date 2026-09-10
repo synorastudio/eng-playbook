@@ -81,11 +81,11 @@ A durable explanatory document that describes current system shape, operations, 
 _Avoid_: Scratchpad, spec, glossary
 
 **Feature Issue**:
-An issue that represents a user-recognizable feature or system-owner-visible capability, not a technical task.
-_Avoid_: Task, ticket, implementation step
+An issue that represents a user-recognizable feature or system-owner-visible capability, cut as a vertical slice through the stack that can be verified on its own. It names an outcome, not a technical task, and is not a horizontal layer.
+_Avoid_: Task, ticket, implementation step, horizontal layer
 
 **Sub-Issue**:
-A smaller feature issue nested under a larger feature when the parent is too big.
+A smaller vertical slice nested under a larger Feature Issue when the parent is too big to verify or sequence as one slice. It is itself a vertical slice, not an implementation step.
 _Avoid_: Subtask, checklist item, implementation step
 
 **Work Unit**:
