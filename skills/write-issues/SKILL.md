@@ -11,7 +11,7 @@ Start after the target outcome and its main boundaries are clear. Use an accepte
 A Feature Issue names a user-recognizable or system-owner-visible outcome, and is cut as a **vertical slice** through the stack that can be verified on its own. The title is a feature noun-phrase, not a user-story sentence or a technical task.
 
 - Feature Issue = a vertical slice of behavior a user or system owner would recognize: "Owner Sign-up and Sign-in," "Services Management," "Public Booking."
-- Sub-Issue = a smaller vertical slice nested under a larger feature when the parent is too big to verify or sequence as one slice: "Availability Configuration" under "Tenant Configuration."
+- Sub-Issue = a smaller vertical slice nested under a larger feature when the parent is too big to build or sequence as one slice: "Availability Configuration" under "Tenant Configuration."
 - A horizontal layer is not a Feature Issue. "Implement API," "build form," "add route," "write database schema," and "slot generation & display" on its own are not slices. Slots you cannot book yet cannot be verified on their own. Layers stay inside the coding agent's implementation plan for a slice.
 
 The coding agent decides the technical tasks inside a slice. The tracker stays readable for non-technical collaborators.
@@ -20,7 +20,7 @@ The coding agent decides the technical tasks inside a slice. The tracker stays r
 
 Each issue should deliver a usable, verifiable increment that spans whatever layers it needs, not one layer of many. Prefer the smallest slice that is still recognizable and verifiable on its own.
 
-Nest the same way `map-decisions` nests: prefer shallow trees, and split a feature into Sub-Issues only when it is too big to verify or sequence as one slice. Each Sub-Issue is itself a vertical slice. Add hierarchy only when it improves tracking.
+Nest the same way `map-decisions` nests: prefer shallow trees, and split a feature into Sub-Issues only when it is too big to build or sequence as one slice. Every issue, the parent included, stays an independently verifiable vertical slice; a parent is verified through the behavior its Sub-Issues compose. Add hierarchy only when it improves tracking.
 
 Sequence with dependencies, not nesting. Record each dependency as a tracker relation, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise, so the order is visible. The tracker does not hold a dependent issue closed on its own; the release order honors the sequence. Tracker hierarchy does not prescribe branches or pull-request targets.
 
@@ -30,13 +30,13 @@ Aim for each slice to be verifiable by running the project and using the behavio
 
 ## Decisions are tracked too
 
-Not all tracked work is a feature. Track a decision as a Decision Issue, owned by `map-decisions` and kept distinct from Feature Issues; a hard-to-reverse, surprising, trade-off decision graduates to an ADR (`write-adr`). A question that is really an unresolved decision belongs in a Decision Issue, not a Feature Issue.
+Not all tracked work is a feature, and decisions are not folded into Feature Issues. Follow `map-decisions`: keep small questions in the parent Decision Map, and create a Decision Issue only when a question needs separate grilling, research, prototyping, or ownership. A hard-to-reverse, surprising, trade-off decision graduates to an ADR (`write-adr`).
 
 ## Workflow
 
 1. Read the accepted Spec when one exists, plus relevant project context, `LANGUAGE.md`, ADRs, and Living Docs.
 2. Identify user-recognizable outcomes and cut each as a vertical slice.
-3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to verify or sequence as one.
+3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to build or sequence as one.
 4. Mark assumptions, and set dependency relations in dependency order, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise.
 5. Read the configured issue tracker from `AGENTS.md`, where project setup has already recorded it.
 6. Draft issues there and check each one against the rules below.
