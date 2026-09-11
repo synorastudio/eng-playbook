@@ -82,6 +82,6 @@ A Spec creates no Git branch by default. Record a Milestone integration branch a
 
 Return the created tracker link and state that the Spec remains a draft until the user accepts it through the tracker's normal workflow or explicitly says it is accepted.
 
-Do not create Feature Issues from this skill. Once the Spec is accepted, cut its scope into independent Work Units. Route to `write-issues` when issue tracking would clarify execution, and to `implement` only when the user releases a Work Unit to build. An accepted Spec is not a release: writing or accepting it never authorizes building on its own.
+Do not create Feature Issues from this skill. Once the Spec is accepted, route to `write-issues` to cut it into Feature Issues when issue tracking would clarify execution, or to `implement` when the user tells the agent to build a specific piece directly. An accepted Spec is not that go-ahead; writing or accepting it never authorizes building on its own.
 
 Finish when the draft exists in the configured tracker, every commitment traces to an accepted source, and a product collaborator and fresh agent can understand the Milestone without the original conversation.

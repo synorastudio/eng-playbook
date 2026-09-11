@@ -25,10 +25,10 @@ Conventions prescribe outcomes, applicability, evidence, and deviation boundarie
 
 - [Project intake](workflows/project-intake.md): Normalize an External Project Brief without turning upstream claims into accepted truth.
 - [Project adoption](workflows/project-adoption.md): Audit an existing repository and apply approved changes for the current convention baseline.
-- [Feature planning](workflows/feature-planning.md): Collaborate on uncertainty and establish accepted, bounded work, then cut it into independent Work Units, without requiring every planning artifact.
-- [Implementation](workflows/implementation.md): Deliver and verify a released Work Unit while maintaining architecture, knowledge, and guardrails.
+- [Feature planning](workflows/feature-planning.md): Collaborate on uncertainty and establish accepted, bounded work, then make it ready to build, tracked as Feature Issues when that helps, without requiring every planning artifact.
+- [Implementation](workflows/implementation.md): Deliver and verify the work the user asked to build while maintaining architecture, knowledge, and guardrails.
 
-Planning is the default, collaborative mode; building is a separate mode entered per Work Unit. Accepting a plan and releasing a unit to build are different acts, and only the user's release crosses into implementation. The main delivery route is based on the state of the work, not on which Skill happens to be available:
+Planning is the default, collaborative mode; building is a separate mode entered one piece at a time. Accepting a plan and telling the agent to build a piece are different acts, and only the user's go-ahead crosses into implementation. The main delivery route is based on the state of the work, not on which Skill happens to be available:
 
 ```mermaid
 flowchart TD
@@ -42,17 +42,17 @@ flowchart TD
     accepted -->|Yes| continuity{What continuity does delivery need?}
     continuity -->|Product review or future sessions| preserve[Preserve accepted scope]
     continuity -->|Separate outcomes need tracking| track[Track feature outcomes]
-    continuity -->|None| units[Independent Work Units]
+    continuity -->|None| ready[Accepted work ready to build]
     preserve --> preservedAccepted{Is the preserved scope accepted?}
     preservedAccepted -->|No| preserveReview[Review and accept or revise it]
     preserveReview --> preservedAccepted
     preservedAccepted -->|Yes, tracking helps| track
-    preservedAccepted -->|Yes, otherwise| units
-    track --> units
-    units --> released{Did the user release this unit to build?}
-    released -->|No| planning[Stay in planning]
-    planning --> released
-    released -->|Yes| implement[Implement and verify]
+    preservedAccepted -->|Yes, otherwise| ready
+    track --> ready
+    ready --> gate{Did the user say to build this piece?}
+    gate -->|No| planning[Stay in planning]
+    planning --> gate
+    gate -->|Yes| implement[Implement and verify]
 ```
 
 ## Companion skills

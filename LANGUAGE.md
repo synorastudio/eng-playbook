@@ -88,10 +88,6 @@ _Avoid_: Task, ticket, implementation step, horizontal layer
 A smaller vertical slice nested under a larger Feature Issue when the parent is too big to verify or sequence as one slice. It is itself a vertical slice, not an implementation step.
 _Avoid_: Subtask, checklist item, implementation step
 
-**Work Unit**:
-An independent, buildable piece of finalized scope, sliced from an accepted Spec, Feature Issue, or Milestone. An agent implements a Work Unit only after the user releases it: an explicit conversational go-ahead, or a tracker-marked acceptance when continuity across sessions matters. Accepting the planning scope is not the same act as releasing a Work Unit to build.
-_Avoid_: Slice, task, ticket, sprint item
-
 **Prototype**:
 Throwaway code that answers one logic/state or UI-variant question before committing to a production implementation.
 _Avoid_: Spike, proof of concept, draft implementation
