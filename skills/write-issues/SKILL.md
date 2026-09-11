@@ -85,7 +85,7 @@ The user-recognizable or system-owner-visible behavior this slice delivers, acro
 
 ## Tracker
 
-Issues live in Linear, in the team and project `AGENTS.md` records by project setup (`init-agent-os` or `adopt-project`), so an issue id resolves without repeating where it lives. If the team or project is missing, that is a setup gap: route back to `init-agent-os` or `adopt-project` rather than choosing it here. Give every Feature Issue the `type: feature` label, and let a Sub-Issue inherit its parent's type.
+Issues live in Linear, in the team and project `AGENTS.md` records by project setup (`init-agent-os` or `adopt-project`), so an issue id resolves without repeating where it lives. If the team or project is missing, that is a setup gap: route back to `init-agent-os` or `adopt-project` rather than choosing it here. If `AGENTS.md` records a different tracker for this project (a client exception), write issues there instead. Give every Feature Issue the `type: feature` label, and let a Sub-Issue inherit its parent's type.
 
 ## Stop-and-ask intent
 

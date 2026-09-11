@@ -32,7 +32,7 @@ Treat the conversation and linked decision resolutions as the source for new com
 
 ## Use the Linear tracker
 
-Read the Linear team and project from `AGENTS.md`, recorded by project setup (`init-agent-os` or `adopt-project`). If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` rather than choosing it here.
+Read the Linear team and project from `AGENTS.md`, recorded by project setup (`init-agent-os` or `adopt-project`). If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` rather than choosing it here. If `AGENTS.md` records a different tracker for this project (a client exception), publish the Spec there instead.
 
 Publish the Spec as a Linear issue with the `type: spec` label, in a draft or backlog state until it is accepted.
 

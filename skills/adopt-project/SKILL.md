@@ -141,10 +141,10 @@ Use tool-specific rule directories only when the user explicitly asks for them o
 
 ## Apply the SynoraStudio defaults
 
-Existing project reality wins. Where the audit reveals a real convention for the integration workflow or issue tracker, preserve it and link to its source from `AGENTS.md` only when future agents need the pointer. Where the audit reveals none, apply SynoraStudio's standing defaults instead of interviewing the user:
+Existing project reality wins for the integration workflow: where the audit reveals a real one, preserve it and link to its source from `AGENTS.md` only when future agents need the pointer; where it reveals none, apply the default. Apply SynoraStudio's standing defaults instead of interviewing the user:
 
 - Integration workflow: squash-merge into the normal integration branch, with the pull request title validated as the Conventional Commit message.
-- Issue tracker: Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues. Record in `AGENTS.md` the team and project that resolve an issue id, preserving an existing reference when the audit finds one. Ensure the workspace has the `type` label group: `feature`, `decision`, `docs`, `bug`, `chore`, `spec`.
+- Issue tracker: Linear by default. Record in `AGENTS.md` the Linear team and project that resolve an issue id, and ensure the workspace has the `type` label group: `feature`, `decision`, `docs`, `bug`, `chore`, `spec`. When the audit finds the project already on a different tracker, record that in `AGENTS.md` as the client-tracker exception rather than keeping it silently. Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues.
 
 If an existing convention conflicts with a default, is incomplete, or appears tool-specific rather than project-specific, include the ambiguity in the adoption proposal and ask before changing it. Do not interview the user about local dev-server ownership, branch naming, PR templates, or review flow, and do not inject other preferences the repository has not chosen.
 
