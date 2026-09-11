@@ -81,6 +81,10 @@ A Milestone is a bounded outcome that can be accepted, sequenced, and declared c
 
 Blocking decisions must resolve before their affected Milestone becomes accepted scope. A deferred question may remain only when it does not threaten that Milestone's outcome or boundaries.
 
+## Amend accepted scope
+
+A decision can change scope the Milestone or its source brief already accepted, such as pulling work in or dropping it. This is a product-scope change, so get the user's explicit go-ahead rather than silently widening or narrowing the Milestone. Record the amendment in the map, stating what changed, from what to what, and why. Reconcile the upstream source that defined the scope, such as an External Project Brief, in the same pass, so it stops contradicting the accepted work.
+
 ## Keep tracker and Git structure separate
 
 A Decision Map and its Decision Issues create no Git branches by default. When accepted decisions change `LANGUAGE.md`, ADRs, or Living Docs, group repository changes into focused, coherent pull requests according to the target repo's workflow. Do not create a branch per Decision Issue or keep a long-lived branch open merely because the map remains active.
