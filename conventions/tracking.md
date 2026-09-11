@@ -10,12 +10,16 @@ SynoraStudio tracks execution in Linear. A Professional Project's issues follow 
 - A Milestone is a Linear project milestone within the project, mirroring the current iteration described upstream.
 - Every issue carries one `type` label from a fixed group:
   - `feature`: a vertical slice of user-recognizable behavior.
-  - `decision`: a Decision Issue, or a Decision Map as its parent decision issue.
+  - `decision`: a Decision Map, or a decision resolved in conversation.
+  - `research`: a decision resolved by away-from-keyboard digging that records its sources and conclusions.
+  - `grilling`: a decision resolved through a grilling session, one question at a time with the user.
+  - `prototype`: a decision resolved by a throwaway artifact the user reacts to.
   - `docs`: documentation-writing work that links to the repo files where the doc lives.
   - `bug`: a defect fix.
   - `chore`: maintenance that fits no feature.
   - `spec`: settled, reviewable scope for a Milestone.
-  - A Sub-Issue inherits its parent's type.
+  - The `type` label reflects how a decision is resolved and signals the workflow to use: `grilling`, `prototype`, and `research` are resolved through their named workflows, not ad hoc.
+- Assign a `type` label explicitly to every issue; Linear does not inherit labels from a parent. A feature Sub-Issue takes `feature` like its parent; a Decision Map's children each take the label matching how they are resolved (`decision`, `research`, `grilling`, or `prototype`).
 - Issues reference the material they do not own rather than duplicating it. Product scope and requirements live upstream in Notion; architecture and ADRs live in the repo. A Linear issue links to them. The [Tooling & Workflow doc](https://app.notion.com/p/Tooling-Workflow-f4f227e90a8747e5a09b5f1fa72ae4f2) defines which surface owns what.
 - Dependencies are recorded as Linear `blockedBy` relations, not as a text list in an issue body. The tracker shows the order; the order work is built in honors it. Tracker hierarchy does not prescribe branches or pull-request targets.
 - ADRs live in the repo, never in Linear.

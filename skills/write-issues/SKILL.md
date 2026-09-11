@@ -49,7 +49,7 @@ A good issue:
 - Is a vertical slice spanning the layers it needs, not a horizontal layer.
 - Can be verified by running the project and using it.
 - Has clear acceptance criteria and explicit `blockedBy` relations.
-- Carries the `type: feature` label; a Sub-Issue inherits it.
+- Carries the `type: feature` label, assigned explicitly to a Sub-Issue too (Linear does not inherit labels).
 - Avoids bundling unrelated user-facing behavior.
 - Captures architectural assumptions without pretending they are settled decisions.
 
@@ -85,7 +85,7 @@ The user-recognizable or system-owner-visible behavior this slice delivers, acro
 
 ## Tracker
 
-Issues live in Linear, in the team and project `AGENTS.md` records by project setup (`init-agent-os` or `adopt-project`), so an issue id resolves without repeating where it lives. If the team or project is missing, that is a setup gap: route back to `init-agent-os` or `adopt-project` rather than choosing it here. If `AGENTS.md` records a different tracker for this project (a client exception), write issues there instead. Give every Feature Issue the `type: feature` label, and let a Sub-Issue inherit its parent's type.
+Issues live in Linear, in the team and project `AGENTS.md` records by project setup (`init-agent-os` or `adopt-project`), so an issue id resolves without repeating where it lives. If the team or project is missing, that is a setup gap: route back to `init-agent-os` or `adopt-project` rather than choosing it here. If `AGENTS.md` records a different tracker for this project (a client exception), write issues there instead. Give every Feature Issue the `type: feature` label, and assign it explicitly to each Sub-Issue too, since Linear does not inherit labels from a parent.
 
 ## Stop-and-ask intent
 

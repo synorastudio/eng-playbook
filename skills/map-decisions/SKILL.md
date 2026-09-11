@@ -67,7 +67,9 @@ Order branches by dependency. Identify the branch that blocks the most downstrea
 
 Keep small questions in the Decision Map and record their explicit resolution there. Create a child Decision Issue only when one question needs its own Grilling Session, research effort, prototype, or owner.
 
-Each Decision Issue should state the question, why it matters, known constraints, credible options, the current recommendation when one exists, resolution criteria, consequences, and references. Route it to `grill`, `prototype`, or research as appropriate.
+Type each child by how it is resolved, and resolve it through that workflow rather than ad hoc: `grilling` for a Grilling Session (the `grill` skill, one question at a time), `prototype` for a throwaway artifact (the `prototype` skill), `research` for away-from-keyboard digging that records sources and conclusions, or `decision` for one settled in conversation.
+
+Each Decision Issue should state the question, why it matters, known constraints, credible options, the current recommendation when one exists, resolution criteria, consequences, and references.
 
 Keep full reasoning in the child issue. When it resolves, add a short linked resolution to the parent map. Use `write-adr` when the accepted answer is hard to reverse, surprising, and resulted from a real trade-off.
 

@@ -57,7 +57,7 @@ A Linear parent issue (`type: decision`) that organizes the unresolved decisions
 _Avoid_: Spec, roadmap, backlog
 
 **Decision Issue**:
-A Linear issue (`type: decision`), child of a Decision Map, that owns one unresolved question requiring a separate Grilling Session, research effort, prototype, or owner.
+A Linear issue, child of a Decision Map, that owns one unresolved question requiring a separate Grilling Session, research effort, prototype, or owner. Its `type` label reflects how it is resolved: `grilling`, `prototype`, `research`, or `decision` when settled in conversation.
 _Avoid_: Feature Issue, implementation task, technical ticket
 
 **Milestone**:
