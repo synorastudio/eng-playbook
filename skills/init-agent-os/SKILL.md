@@ -60,8 +60,8 @@ Even before the stack exists, encode the outcomes that already apply:
 
 - The repository has a concise Agent Guidance entry point and clear artifact ownership.
 - Durable knowledge will be added only when real project knowledge exists and will live in its owning artifact.
-- Collaborative planning is the default for new or unclear work; building is a separate mode. Production implementation begins only from a Work Unit the user has released to build, and verification is proportionate. Accepting a plan is not a release, and an agent never treats its own proposal as one.
-- Agents pause for product changes, hard-to-reverse architecture, paid services or external vendors, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside a released Work Unit.
+- Collaborative planning is the default for new or unclear work; building is a separate mode. Production implementation begins only when the user has explicitly told the agent what to build, one piece at a time, and verification is proportionate. Accepting a plan is not that go-ahead, and an agent never treats its own proposal as one.
+- Agents pause for product changes, hard-to-reverse architecture, paid services or external vendors, persisted-data risk, authentication, permissions, secrets, security-sensitive changes, and broad refactors outside what the user asked to build.
 - Project Guardrails are added when actual architecture or tooling makes a concrete failure preventable or detectable.
 - Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.
@@ -142,4 +142,4 @@ Before finishing, verify that:
 - Applicable convention outcomes have project-owned evidence or an explicitly approved deviation.
 - Existing administrative files retain their useful content.
 
-Report the files created or changed, the user choices encoded, the Project Guardrails established, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, or an accepted Milestone still holds unresolved decisions, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when the user releases a Work Unit to build.
+Report the files created or changed, the user choices encoded, the Project Guardrails established, and the lazy artifacts left for later. Recommend the next route without starting production implementation: `map-decisions` when the proposed work or its Milestone boundaries remain unclear, or an accepted Milestone still holds unresolved decisions, `grill` for unresolved branches in a concrete design, `write-spec` when accepted scope needs review or continuity, `write-issues` when tracking would help, or `implement` when the user tells the agent to build a specific piece.

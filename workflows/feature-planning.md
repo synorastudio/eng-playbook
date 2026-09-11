@@ -6,7 +6,7 @@ Feature Planning turns proposed work into one or more accepted, bounded outcomes
 
 Planning is the default mode for new or unclear work, and it is collaborative. The agent's job here is to develop the outcome with the user through conversation: product behavior and constraints, technical approach, and third-party dependencies and providers. Reach for `grill` when a branch runs deep enough to need a decision-by-decision interview.
 
-Do not implement from this Workflow. Planning ends by producing finalized scope and cutting it into independent Work Units; a Work Unit becomes buildable only when the user releases it, which enters the [Implementation Workflow](implementation.md). Proposing scope, writing a Spec, or accepting scope is not a release, and the agent never treats its own proposal as one.
+Do not implement from this Workflow. Planning ends by producing finalized scope, usually cut into Feature Issues. Building any piece begins only when the user explicitly tells the agent to build it, which enters the [Implementation Workflow](implementation.md). Proposing scope, writing a Spec, or accepting scope is not that go-ahead, and the agent never treats its own proposal as one.
 
 ## Route by current state
 
@@ -25,17 +25,17 @@ flowchart TD
     decompose --> needs
     needs -->|Product review or cross-session context| spec[Preserve accepted scope in a Spec]
     needs -->|Separate outcomes benefit from tracking| issues[Create Feature Issues]
-    needs -->|Neither| units
+    needs -->|Neither| ready
     spec --> specAccepted{Is the Spec accepted?}
     specAccepted -->|No| specReview[Review and accept or revise it]
     specReview --> specAccepted
     specAccepted -->|Yes, tracking helps| issues
-    specAccepted -->|Yes, otherwise| units
-    issues --> units[Cut finalized scope into independent Work Units]
-    units --> released{Has the user released this Work Unit to build?}
-    released -->|No| planning[Stay in planning: discuss, grill, or wait]
-    planning --> released
-    released -->|Yes| implementation[Implementation]
+    specAccepted -->|Yes, otherwise| ready
+    issues --> ready[Feature Issues ready to build]
+    ready --> gate{Has the user said to build this piece?}
+    gate -->|No| planning[Stay in planning: discuss, grill, or wait]
+    planning --> gate
+    gate -->|Yes| implementation[Implementation]
 ```
 
 ## Planning rules
@@ -51,6 +51,6 @@ flowchart TD
 
 ## Completion
 
-Planning is complete for a Work Unit when its observable outcome and material boundaries are accepted, blocking decisions are resolved or excluded, any needed continuity artifact exists, and the finalized scope has been cut into independent Work Units. A finalized, accepted plan is not yet a build authorization: each Work Unit enters the [Implementation Workflow](implementation.md) only when the user releases it, and unreleased units stay in planning.
+Planning is complete for a piece of work when its observable outcome and material boundaries are accepted, blocking decisions are resolved or excluded, any needed continuity artifact exists, and the finalized scope is cut into Feature Issues. A finalized, accepted plan is not yet a build authorization: a piece enters the [Implementation Workflow](implementation.md) only when the user tells the agent to build it, and everything else stays in planning.
 
 Companion Skills support individual routes: `map-decisions`, `grill`, `prototype`, `write-spec`, and `write-issues`.

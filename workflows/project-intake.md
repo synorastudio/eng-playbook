@@ -12,7 +12,7 @@ Gather the supplied notes, documents, links, user flows, sketches, research, and
 2. Keep source claims separate from decisions already accepted in the project. Surface conflicts instead of silently resolving them.
 3. Separate current scope from backlog and speculative ideas. Presence in the brief does not make an idea accepted work.
 4. Produce a concise intake summary that omits empty sections and preserves material uncertainty.
-5. Choose the next Workflow from the state of the work: Project Adoption, Feature Planning, documentation maintenance, or direct Implementation of a released Work Unit.
+5. Choose the next Workflow from the state of the work: Project Adoption, Feature Planning, documentation maintenance, or direct Implementation of a piece the user has told the agent to build.
 
 ## Completion
 

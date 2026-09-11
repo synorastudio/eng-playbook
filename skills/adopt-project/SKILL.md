@@ -25,7 +25,7 @@ Audit for these outcomes while staying tech-agnostic:
 - Repository reality is discoverable through a short Agent Guidance entry point and its linked sources.
 - Durable knowledge is current and lives in its owning artifact.
 - System boundaries are discoverable, with qualifying architecture trade-offs preserved in ADRs.
-- Collaborative planning is the default for new or unclear work; building is a separate mode. Production work begins only from a Work Unit the user has released to build, and produces proportionate verification evidence. Accepting a plan is not a release, and an agent never treats its own proposal as one.
+- Collaborative planning is the default for new or unclear work; building is a separate mode. Production work begins only when the user has explicitly told the agent what to build, one piece at a time, and produces proportionate verification evidence. Accepting a plan is not that go-ahead, and an agent never treats its own proposal as one.
 - Applicable conventions are backed by project-owned controls that prevent violations or make them visible.
 - Every commit entering integration history follows `<type>[optional scope][!]: <description>` with an allowed type: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, or `revert`. Descriptions are imperative, lowercase, and have no trailing period. Breaking changes use `!` and explain the break and migration path in the body when they are not obvious.
 - Agent-generated work is attributed at the durable boundary that records it.

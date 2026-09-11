@@ -22,7 +22,7 @@ Each issue should deliver a usable, verifiable increment that spans whatever lay
 
 Nest the same way `map-decisions` nests: prefer shallow trees, and split a feature into Sub-Issues only when it is too big to build or sequence as one slice. Every issue, the parent included, stays an independently verifiable vertical slice; a parent is verified through the behavior its Sub-Issues compose. Add hierarchy only when it improves tracking.
 
-Sequence with dependencies, not nesting. Record each dependency as a tracker relation, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise, so the order is visible. The tracker does not hold a dependent issue closed on its own; the release order honors the sequence. Tracker hierarchy does not prescribe branches or pull-request targets.
+Sequence with dependencies, not nesting. Record each dependency as a tracker relation, using native `blockedBy` edges when the tracker supports them and ordinary links otherwise, so the order is visible. The tracker does not hold a dependent issue closed on its own; the order you build them in honors the sequence. Tracker hierarchy does not prescribe branches or pull-request targets.
 
 ## Aim to verify by using it
 
@@ -90,4 +90,4 @@ The user-recognizable or system-owner-visible behavior this slice delivers, acro
 
 `Stop And Ask If` is for the coding agent that later picks up the slice. The universal pauses (product-scope changes, hard-to-reverse architecture, paid vendors, persisted-data risk, auth or secrets, broad refactors) already bind that agent through the delivery convention and `AGENTS.md`, so name only pauses unique to this slice here, and omit the section when there are none.
 
-Finish when every issue meets the rules above, every accepted outcome has one home as a vertical slice, and the tree is as shallow as the work allows. A dependency-ready Feature Issue is a candidate Work Unit; route to `implement` only when the user releases it to build. Creating or accepting the issue is not a release.
+Finish when every issue meets the rules above, every accepted outcome has one home as a vertical slice, and the tree is as shallow as the work allows. A dependency-ready Feature Issue is ready to build; route to `implement` only when the user tells you to build it. Creating or accepting the issue is not that go-ahead.
