@@ -7,7 +7,7 @@ Treat `conventions/` as authoritative. Workflows must apply those conventions wi
 Report concrete cases where a change:
 
 - Contradicts an Engineering Convention across workflows, diagrams, Skills, or root documentation.
-- Allows a draft Spec, unresolved decision, or work the user has not told the agent to build to reach production implementation, or lets an agent treat its own proposal or an accepted plan as that go-ahead.
+- Allows an unresolved decision, or work the user has not told the agent to build, to reach production implementation, or lets an agent treat its own proposal or an accepted plan as that go-ahead.
 - Makes a conditional planning artifact mandatory without changing the applicable convention.
 - Changes a convention or workflow without reviewing and updating affected Skills.
 - Invents organizational roles, approval chains, or team processes for this solo engineering practice.

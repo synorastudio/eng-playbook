@@ -32,7 +32,7 @@ This skill does not own:
 - Vocabulary. Use `maintain-language`.
 - Hard-to-reverse trade-off decisions. Use `write-adr`.
 - Unresolved product or design work. Use `map-decisions`.
-- Product scope awaiting review or cross-session execution. Use `write-spec`.
+- Product scope and current iteration. Keep these in Notion; cut execution into Feature Issues with `write-issues`.
 - Work breakdown. Use `write-issues`.
 - Session continuity. Use `handoff`.
 

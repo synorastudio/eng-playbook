@@ -53,15 +53,15 @@ The set of dependent decisions inside a plan or design, walked from broad choice
 _Avoid_: Checklist, questionnaire, decision matrix
 
 **Decision Map**:
-A conditional tracker artifact that organizes the unresolved decisions inside a body of work. It runs in two modes: discovering Milestone boundaries when the shape is unclear (producing one Milestone or a sequence), or decomposing an accepted Milestone into a tracked decision tree.
-_Avoid_: Spec, roadmap, backlog
+A Linear parent issue (`type: decision`) that organizes the unresolved decisions inside a body of work. It runs in two modes: discovering Milestone boundaries when the shape is unclear (producing one Milestone or a sequence), or decomposing an accepted Milestone into a tracked decision tree.
+_Avoid_: roadmap, backlog
 
 **Decision Issue**:
-A child of a Decision Map that owns one unresolved question requiring a separate Grilling Session, research effort, prototype, or owner.
+A Linear issue, child of a Decision Map, that owns one unresolved question requiring a separate Grilling Session, research effort, prototype, or owner. It carries `type: decision` plus a `resolution` label (`grilling`, `prototype`, or `research`) saying how it resolves; a question settled in conversation carries no `resolution` label.
 _Avoid_: Feature Issue, implementation task, technical ticket
 
 **Milestone**:
-A bounded outcome that can be accepted, sequenced, and declared complete. An accepted Spec represents the Milestone when a Spec is useful.
+A bounded outcome that can be accepted, sequenced, and declared complete. In Linear it is a project milestone, mirroring the current iteration described upstream.
 _Avoid_: Sprint, project phase, release
 
 **Language**:
@@ -72,16 +72,12 @@ _Avoid_: Context, glossary, domain model
 A short architecture decision record for a hard-to-reverse, surprising trade-off decision.
 _Avoid_: Design doc, plan, decision log
 
-**Spec**:
-A conditional issue-tracker artifact that captures settled product scope, design decisions, boundaries, and acceptance criteria for product review and multi-session agent continuity. It remains a draft until accepted and does not live in the repo.
-_Avoid_: PRD, implementation plan, living doc
-
 **Living Doc**:
 A durable explanatory document that describes current system shape, operations, onboarding, or project-specific guidance.
 _Avoid_: Scratchpad, spec, glossary
 
 **Feature Issue**:
-An issue that represents a user-recognizable feature or system-owner-visible capability, cut as a vertical slice through the stack that can be verified on its own. It names an outcome, not a technical task, and is not a horizontal layer.
+A Linear issue (`type: feature`) that represents a user-recognizable feature or system-owner-visible capability, cut as a vertical slice through the stack that can be verified on its own. It names an outcome, not a technical task, and is not a horizontal layer.
 _Avoid_: Task, ticket, implementation step, horizontal layer
 
 **Sub-Issue**:

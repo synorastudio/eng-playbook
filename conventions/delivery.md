@@ -4,7 +4,7 @@ Production work must move from accepted scope to a verified, reviewable outcome 
 
 ## Required outcomes
 
-- Production implementation begins only when the user has explicitly told the agent what to build, one piece at a time. That go-ahead is a plain instruction naming the Feature Issue or the scope to build now. Accepting planning scope, writing a Spec, or the agent summarizing its own proposal is not that instruction. A Spec or Feature Issue may preserve the scope but is not always required.
+- Production implementation begins only when the user has explicitly told the agent what to build, one piece at a time. That go-ahead is a plain instruction naming the Feature Issue or the scope to build now. Accepting planning scope or the agent summarizing its own proposal is not that instruction. A Feature Issue may preserve the scope but is not always required.
 - Reversible implementation details may be chosen autonomously inside the work the user asked for.
 - Work pauses when it would change product scope, make a hard-to-reverse architecture decision, introduce a paid service or external vendor, risk persisted data, alter authentication or permissions, expose secrets, or require a broad refactor outside the work the user asked for.
 - The implementation follows applicable Engineering Conventions and the project's Project Guardrails.
