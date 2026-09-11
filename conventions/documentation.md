@@ -9,7 +9,7 @@ Documentation must preserve current, durable knowledge in the artifact that owns
 - `docs/architecture.md` owns a navigational description of the current system shape.
 - `docs/adr/` owns qualifying Architecture Decision Records.
 - Focused documents under `docs/` own durable explanatory knowledge such as operations, onboarding, and project-specific guides.
-- The configured issue tracker owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues.
+- Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues, per the [Tracking convention](tracking.md).
 - A Handoff owns temporary cross-session continuity and normally lives outside the repository.
 - Chat and scratch notes own temporary speculation until it is deliberately promoted.
 

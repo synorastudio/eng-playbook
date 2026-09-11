@@ -39,7 +39,7 @@ Professional Projects adopt the applicable baseline and translate it into local 
 
 ## Portable Skills
 
-Each Skill is self-contained enough to work after being copied or installed elsewhere. It may embed the outcomes and procedure it needs, but it must not require runtime access to files in `conventions/` or `workflows/`.
+Each Skill is self-contained enough to work after being copied or installed elsewhere. It may embed the outcomes and procedure it needs, but it must not require runtime access to files in `conventions/` or `workflows/`. Self-containment is about that runtime independence, not tool-neutrality: Skills assume SynoraStudio's tools, including Linear as the tracker, and a project on a different tracker records that exception in its Agent Guidance.
 
 When an Engineering Convention or Workflow changes, its affected Skills are reviewed and updated in the same playbook change. This is repository maintenance, not a runtime dependency.
 

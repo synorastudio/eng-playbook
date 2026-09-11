@@ -1,11 +1,11 @@
 ---
 name: map-decisions
-description: Map and resolve the dependent decisions inside a body of work in the configured issue tracker, either to discover Milestone boundaries or to decompose an accepted Milestone. Do not use when there are no substantial decisions or for ordinary implementation planning.
+description: Map and resolve the dependent decisions inside a body of work in Linear, either to discover Milestone boundaries or to decompose an accepted Milestone. Do not use when there are no substantial decisions or for ordinary implementation planning.
 ---
 
 # Map decisions
 
-Create a tracker-backed Decision Map that makes the decisions inside a body of work visible and organizes them until its shape is settled. Run it in one of two modes:
+Create a Decision Map in Linear that makes the decisions inside a body of work visible and organizes them until its shape is settled. Run it in one of two modes:
 
 - **Discover.** The Milestone boundaries are unclear. The map explores whether the work is one Milestone or a sequence, and surfaces the decisions that shape them.
 - **Decompose.** The Milestone is already accepted, such as a fixed iteration or MVP. The map surfaces and resolves the decisions inside that Milestone, then routes the feature decomposition to `write-issues`.
@@ -23,11 +23,11 @@ Read only the context needed to identify decisions:
 
 Keep accepted facts separate from assumptions. In Discover mode, treat possible Milestones as candidates until the decisions that shape them are resolved. In Decompose mode, treat the accepted Milestone as fixed and organize the decisions under it.
 
-## Choose the tracker
+## Use the Linear tracker
 
-Read `AGENTS.md` for the configured issue tracker and the project reference that resolves an issue id. If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` to record it, rather than choosing one here.
+Read the Linear team and project from `AGENTS.md`, recorded by project setup (`init-agent-os` or `adopt-project`). If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` rather than choosing it here.
 
-Create the Decision Map directly in that tracker. Do not save a copy in the repo.
+Create the Decision Map as a Linear parent issue with the `type: decision` label; its child Decision Issues carry `type: decision` too. Do not save a copy in the repo.
 
 ## Create the map
 

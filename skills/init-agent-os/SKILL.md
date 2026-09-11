@@ -99,7 +99,7 @@ Use `AGENTS-TEMPLATE.md` when creating or revising `AGENTS.md`.
 Encode SynoraStudio's standing defaults directly instead of interviewing the user at setup. State them in `AGENTS.md`, and revisit one only when the user asks for something different.
 
 - Integration workflow: once the repository uses pull requests, squash-merge into its normal integration branch with the pull request title validated as the Conventional Commit message. State this intended workflow now, and wire the matching pull-request-title check when the repository gains a remote and CI. Do not reopen the merge-strategy choice, and do not assert a pull-request flow on a repository that has no remote yet.
-- Issue tracker: Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues. Record in `AGENTS.md` the Linear team and project that resolve an issue id, drawn from the brief or intake, so later work needs only the id. Confirm that reference once when it is not yet known, rather than leaving it out.
+- Issue tracker: Linear owns Decision Maps, Decision Issues, Specs, Feature Issues, and Sub-Issues. Record in `AGENTS.md` the Linear team and project that resolve an issue id, drawn from the brief or intake, so later work needs only the id. Confirm that reference once when it is not yet known, rather than leaving it out. Ensure the workspace has the `type` label group: `feature`, `decision`, `docs`, `bug`, `chore`, `spec`.
 
 Do not interview the user about local dev-server ownership, branch naming, PR templates, review flow, or other working agreements. Add extra guidance only for a real constraint the repository already imposes, and keep stack-specific commands and server details out of `AGENTS.md`.
 

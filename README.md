@@ -17,6 +17,7 @@ Projects adopt the applicable convention baseline and translate it into their ow
 - [Documentation](conventions/documentation.md): Keep durable knowledge current and in the artifact that owns it.
 - [Architecture decisions](conventions/architecture-decisions.md): Preserve system boundaries and qualifying trade-off decisions.
 - [Delivery](conventions/delivery.md): Move accepted scope to a verified, reviewable outcome.
+- [Tracking](conventions/tracking.md): Track execution as Linear issues with a consistent type and structure.
 - [Project guardrails](conventions/guardrails.md): Prevent or detect convention violations using controls suited to the project.
 
 Conventions prescribe outcomes, applicability, evidence, and deviation boundaries. Their guardrail examples are non-binding; each project chooses controls that fit its architecture, risks, and tools.
