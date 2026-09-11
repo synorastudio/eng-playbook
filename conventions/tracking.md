@@ -6,7 +6,7 @@ SynoraStudio tracks execution in Linear. A Professional Project's issues follow 
 
 - Linear is the issue tracker. A client project that must use another tracker records that exception in its Agent Guidance; every other project uses Linear.
 - The project records its Linear team and the project that resolves an issue id in `AGENTS.md`, so later work needs only the id.
-- The team, initiative, and project hierarchy is defined by the practice's tooling model, not created per project. The playbook works within a project and defines only the issue layer inside it.
+- The team, initiative, and project hierarchy is defined by SynoraStudio's [Tooling & Workflow doc](https://app.notion.com/p/Tooling-Workflow-f4f227e90a8747e5a09b5f1fa72ae4f2), not created per project. The playbook works within a project and defines only the issue layer inside it.
 - A Milestone is a Linear project milestone within the project, mirroring the current iteration described upstream.
 - Every issue carries one `type` label from a fixed group:
   - `feature`: a vertical slice of user-recognizable behavior.
@@ -16,7 +16,7 @@ SynoraStudio tracks execution in Linear. A Professional Project's issues follow 
   - `chore`: maintenance that fits no feature.
   - `spec`: settled, reviewable scope for a Milestone.
   - A Sub-Issue inherits its parent's type.
-- Issues reference the material they do not own rather than duplicating it. Product scope and requirements live upstream in the product knowledge base; architecture and ADRs live in the repo. A Linear issue links to them.
+- Issues reference the material they do not own rather than duplicating it. Product scope and requirements live upstream in Notion; architecture and ADRs live in the repo. A Linear issue links to them. The [Tooling & Workflow doc](https://app.notion.com/p/Tooling-Workflow-f4f227e90a8747e5a09b5f1fa72ae4f2) defines which surface owns what.
 - Dependencies are recorded as Linear `blockedBy` relations, not as a text list in an issue body. The tracker shows the order; the order work is built in honors it. Tracker hierarchy does not prescribe branches or pull-request targets.
 - ADRs live in the repo, never in Linear.
 
