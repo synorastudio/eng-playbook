@@ -25,7 +25,7 @@ Conventions prescribe outcomes, applicability, evidence, and deviation boundarie
 
 - [Project intake](workflows/project-intake.md): Normalize an External Project Brief without turning upstream claims into accepted truth.
 - [Project adoption](workflows/project-adoption.md): Audit an existing repository and apply approved changes for the current convention baseline.
-- [Feature planning](workflows/feature-planning.md): Collaborate on uncertainty and establish accepted, bounded work, then cut it into Feature Issues, without requiring every planning artifact.
+- [Feature planning](workflows/feature-planning.md): Collaborate on uncertainty and establish accepted, bounded work, then make it ready to build, tracked as Feature Issues when that helps, without requiring every planning artifact.
 - [Implementation](workflows/implementation.md): Deliver and verify the work the user asked to build while maintaining architecture, knowledge, and guardrails.
 
 Planning is the default, collaborative mode; building is a separate mode entered one piece at a time. Accepting a plan and telling the agent to build a piece are different acts, and only the user's go-ahead crosses into implementation. The main delivery route is based on the state of the work, not on which Skill happens to be available:
@@ -42,7 +42,7 @@ flowchart TD
     accepted -->|Yes| continuity{What continuity does delivery need?}
     continuity -->|Product review or future sessions| preserve[Preserve accepted scope]
     continuity -->|Separate outcomes need tracking| track[Track feature outcomes]
-    continuity -->|None| ready[Feature Issues ready to build]
+    continuity -->|None| ready[Accepted work ready to build]
     preserve --> preservedAccepted{Is the preserved scope accepted?}
     preservedAccepted -->|No| preserveReview[Review and accept or revise it]
     preserveReview --> preservedAccepted
