@@ -83,7 +83,7 @@ Blocking decisions must resolve before their affected Milestone becomes accepted
 
 ## Amend accepted scope
 
-A decision can change scope the Milestone or its source brief already accepted, such as pulling work in or dropping it. This is a product-scope change, so get the user's explicit go-ahead rather than silently widening or narrowing the Milestone. Record the amendment in the map, stating what changed, from what to what, and why. Reconcile the upstream source that defined the scope, such as an External Project Brief, in the same pass, so it stops contradicting the accepted work.
+A decision can change scope the Milestone or its source brief already accepted, such as pulling work in or dropping it. This is a product-scope change, so get the user's explicit go-ahead rather than silently widening or narrowing the Milestone. Record the amendment in the map, stating what changed, from what to what, and why. Reconcile the upstream source that defined the scope, such as an External Project Brief, in the same pass when it is editable. When it cannot be updated, record the superseding decision and its provenance instead, so the source stops contradicting the accepted work.
 
 ## Keep tracker and Git structure separate
 

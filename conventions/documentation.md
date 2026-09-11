@@ -22,7 +22,7 @@ Tracker hierarchy does not imply Git hierarchy. Planning artifacts do not create
 - Repository documents link to existing sources instead of duplicating their content.
 - Empty placeholders and speculative documents are not created for anticipated needs.
 - Documentation changed by implementation is updated in the same coherent body of work.
-- When accepted scope changes, the upstream source that defined it, such as an External Project Brief, is reconciled in the same pass, so it does not keep contradicting the accepted work.
+- When accepted scope changes, the upstream source that defined it, such as an External Project Brief, is reconciled in the same pass when it is editable. When it cannot be updated, the superseding decision and its provenance are recorded instead, so the source does not keep contradicting the accepted work.
 
 ## Evidence
 

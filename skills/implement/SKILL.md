@@ -67,6 +67,8 @@ Update an existing durable artifact when the implementation changes the truth it
 - ADRs for accepted, hard-to-reverse, surprising trade-offs.
 - Living Docs for current system shape, operations, onboarding, or project guidance.
 
+When an approved change amends accepted product scope, reconcile the upstream source that defined it the same way: update it when editable, or record the superseding decision and its provenance when it cannot be updated.
+
 Do not create speculative documentation or turn implementation notes into long-lived artifacts. Use `handoff` when unfinished work must continue in another session.
 
 Change tracker state or commit only when the user asks or the repo's Agent Guidance makes that part of the workflow. Attribute agent-generated work at the durable boundary that records it. Use commit attribution for repository changes and visible attribution for agent-authored pull request descriptions, reviews, comments, and tracker artifacts, following the project's established format.
