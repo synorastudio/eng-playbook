@@ -10,16 +10,17 @@ SynoraStudio tracks execution in Linear. A Professional Project's issues follow 
 - A Milestone is a Linear project milestone within the project, mirroring the current iteration described upstream.
 - Every issue carries one `type` label from a fixed group:
   - `feature`: a vertical slice of user-recognizable behavior.
-  - `decision`: a Decision Map, or a decision resolved in conversation.
-  - `research`: a decision resolved by away-from-keyboard digging that records its sources and conclusions.
-  - `grilling`: a decision resolved through a grilling session, one question at a time with the user.
-  - `prototype`: a decision resolved by a throwaway artifact the user reacts to.
+  - `decision`: a Decision Map or a Decision Issue.
   - `docs`: documentation-writing work that links to the repo files where the doc lives.
   - `bug`: a defect fix.
   - `chore`: maintenance that fits no feature.
   - `spec`: settled, reviewable scope for a Milestone.
-  - The `type` label reflects how a decision is resolved and signals the workflow to use: `grilling`, `prototype`, and `research` are resolved through their named workflows, not ad hoc.
-- Assign a `type` label explicitly to every issue; Linear does not inherit labels from a parent. A feature Sub-Issue takes `feature` like its parent; a Decision Map's children each take the label matching how they are resolved (`decision`, `research`, `grilling`, or `prototype`).
+- A decision issue also carries a `resolution` label saying how it resolves, which signals the workflow to use, resolved through it rather than ad hoc:
+  - `grilling`: a Grilling Session, one question at a time with the user.
+  - `prototype`: a throwaway artifact the user reacts to.
+  - `research`: away-from-keyboard digging that records its sources and conclusions.
+  - A decision settled in conversation carries no `resolution` label.
+- Assign labels explicitly; Linear does not inherit them from a parent. A feature Sub-Issue takes `type: feature` like its parent; a Decision Map's children take `type: decision` plus their own `resolution` label.
 - Issues reference the material they do not own rather than duplicating it. Product scope and requirements live upstream in Notion; architecture and ADRs live in the repo. A Linear issue links to them. The [Tooling & Workflow doc](https://app.notion.com/p/Tooling-Workflow-f4f227e90a8747e5a09b5f1fa72ae4f2) defines which surface owns what.
 - Dependencies are recorded as Linear `blockedBy` relations, not as a text list in an issue body. The tracker shows the order; the order work is built in honors it. Tracker hierarchy does not prescribe branches or pull-request targets.
 - ADRs live in the repo, never in Linear.
