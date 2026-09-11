@@ -25,9 +25,9 @@ Keep accepted facts separate from assumptions. In Discover mode, treat possible 
 
 ## Use the Linear tracker
 
-Read the Linear team and project from `AGENTS.md`, recorded by project setup (`init-agent-os` or `adopt-project`). If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` rather than choosing it here. If `AGENTS.md` records a different tracker for this project (a client exception), create the map there instead.
+Read the Linear team and project from `AGENTS.md`, recorded by project setup (`init-agent-os` or `adopt-project`). If either is missing, that is a setup gap: route to `init-agent-os` or `adopt-project` rather than choosing it here. If `AGENTS.md` records a different tracker for this project (a client exception), create the map there instead, following that tracker's equivalent conventions.
 
-Create the Decision Map as a Linear parent issue with the `type: decision` label; its child Decision Issues carry `type: decision` too. Do not save a copy in the repo.
+Create the Decision Map as a parent issue with the `type: decision` label. Its child Decision Issues also carry `type: decision`, plus a `resolution` label when they need a workflow (see below). Do not save a copy in the repo.
 
 ## Create the map
 
