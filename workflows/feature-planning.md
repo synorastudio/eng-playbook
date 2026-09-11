@@ -20,7 +20,9 @@ flowchart TD
     milestones --> accepted{Is the Milestone accepted?}
     accepted -->|No| review[Review and accept or revise it]
     review --> accepted
-    accepted -->|Yes| needs{What continuity does delivery need?}
+    accepted -->|Yes, decisions resolved| needs{What continuity does delivery need?}
+    accepted -->|Yes, decisions remain| decompose[Decompose the Milestone through a Decision Map]
+    decompose --> needs
     needs -->|Product review or cross-session context| spec[Preserve accepted scope in a Spec]
     needs -->|Separate outcomes benefit from tracking| issues[Create Feature Issues]
     needs -->|Neither| units
@@ -38,7 +40,7 @@ flowchart TD
 
 ## Planning rules
 
-- A Decision Map organizes uncertainty only when dependent decisions or Milestone boundaries are unclear.
+- A Decision Map organizes the dependent decisions in a body of work, either to discover Milestone boundaries when the shape is unclear or to decompose an accepted Milestone that still holds unresolved decisions.
 - A Decision Issue owns one substantial unresolved question when it needs separate discussion, research, or a Prototype.
 - A Grilling Session resolves branches in a concrete design; it does not replace broad intake or implementation.
 - A Prototype is throwaway code that answers one design question before production commitment.

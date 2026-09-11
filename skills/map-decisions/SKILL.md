@@ -1,13 +1,16 @@
 ---
 name: map-decisions
-description: Map unresolved decisions in the configured issue tracker when proposed work has unclear design or Milestone boundaries. Do not use for already-accepted scope or ordinary implementation planning.
+description: Map and resolve the dependent decisions inside a body of work in the configured issue tracker, either to discover Milestone boundaries or to decompose an accepted Milestone. Do not use when there are no substantial decisions or for ordinary implementation planning.
 ---
 
 # Map decisions
 
-Create a tracker-backed Decision Map that makes uncertainty visible and discovers whether proposed work should become one Milestone or a sequence.
+Create a tracker-backed Decision Map that makes the decisions inside a body of work visible and organizes them until its shape is settled. Run it in one of two modes:
 
-Use this workflow only when dependent product or design decisions make the shape of the work unclear. Skip it when the outcome and its main boundaries are already accepted. A Decision Map organizes questions and records accepted answers. It does not invent resolutions, write a Spec, create delivery issues, or authorize implementation.
+- **Discover.** The Milestone boundaries are unclear. The map explores whether the work is one Milestone or a sequence, and surfaces the decisions that shape them.
+- **Decompose.** The Milestone is already accepted, such as a fixed iteration or MVP. The map surfaces and resolves the decisions inside that Milestone, then routes the feature decomposition to `write-issues`.
+
+Name the mode from the state of the work before mapping. Use the workflow whenever a body of work carries dependent product or design decisions worth organizing, including an accepted Milestone that still holds unresolved decisions. Skip it only when there are no substantial decisions to map; resolve a single obvious question in conversation. A Decision Map organizes questions and records accepted answers. It does not invent resolutions, write a Spec, create Feature Issues, or authorize implementation.
 
 ## Gather the proposed work
 
@@ -18,7 +21,7 @@ Read only the context needed to identify decisions:
 - Existing code when it establishes current behavior or constraints.
 - Related tracker items when they may overlap with the proposed work.
 
-Keep accepted facts separate from assumptions. Treat possible Milestones as candidates until the decisions that shape them are resolved.
+Keep accepted facts separate from assumptions. In Discover mode, treat possible Milestones as candidates until the decisions that shape them are resolved. In Decompose mode, treat the accepted Milestone as fixed and organize the decisions under it.
 
 ## Choose the tracker
 
@@ -54,6 +57,8 @@ Status: Draft
 ## References
 ```
 
+`Candidate Milestones` and `Resulting Milestones` belong to Discover mode. In Decompose mode the Milestone is fixed: name it in `Proposed outcome` and omit both sections.
+
 Map the decisions that can change product scope, user-visible behavior, system or domain boundaries, data ownership, state transitions, security, external dependencies, or costly-to-reverse choices. Leave reversible implementation details to `implement`.
 
 Order branches by dependency. Identify the branch that blocks the most downstream decisions first.
@@ -66,9 +71,13 @@ Each Decision Issue should state the question, why it matters, known constraints
 
 Keep full reasoning in the child issue. When it resolves, add a short linked resolution to the parent map. Use `write-adr` when the accepted answer is hard to reverse, surprising, and resulted from a real trade-off.
 
-## Establish Milestones
+## Settle the Milestone shape
 
-A Milestone is a bounded outcome that can be accepted, sequenced, and declared complete. The proposed work may become one Milestone or several. Do not preserve the original feature boundary when the decisions show that another sequence is clearer.
+A Milestone is a bounded outcome that can be accepted, sequenced, and declared complete.
+
+**Discover mode.** The proposed work may become one Milestone or several. Replace candidate Milestones with the resulting Milestone or sequence, and do not preserve the original feature boundary when the decisions show another sequence is clearer.
+
+**Decompose mode.** The Milestone is already accepted, so do not re-derive its boundary. Organize the decision branches under it, and route the feature decomposition to `write-issues`.
 
 Blocking decisions must resolve before their affected Milestone becomes accepted scope. A deferred question may remain only when it does not threaten that Milestone's outcome or boundaries.
 
@@ -80,4 +89,4 @@ A Decision Map and its Decision Issues create no Git branches by default. When a
 
 Finish the initial mapping pass when no material decision branch is hidden, the branches are ordered by dependency, each unresolved branch has a named resolution workflow, and candidate Milestones are clearly marked as provisional. Leave the Decision Map active while its blocking decisions remain unresolved.
 
-After every blocking decision is resolved or explicitly deferred outside the affected Milestone, replace candidate Milestones with the resulting Milestone or Milestone sequence. Link each one to its accepted source. Route to `write-spec` when a Milestone needs product review or cross-session continuity, `write-issues` when tracking separate delivery outcomes would help, or `implement` when the user releases a Work Unit to build directly. Close the Decision Map after its resulting work is linked and no blocking decision remains hidden.
+After every blocking decision is resolved or explicitly deferred outside the affected Milestone, settle the outcome: in Discover mode, replace candidate Milestones with the resulting Milestone or sequence; in Decompose mode, the fixed Milestone stands. Link the resulting work to its accepted source. Route to `write-spec` when a Milestone needs product review or cross-session continuity, `write-issues` to decompose it into the feature tree, or `implement` when the user releases a Work Unit to build directly. Close the Decision Map after its resulting work is linked and no blocking decision remains hidden.
