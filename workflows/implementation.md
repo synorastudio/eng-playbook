@@ -4,7 +4,7 @@ Implementation turns the work the user asked to build into a verified production
 
 ## Entry
 
-Enter only when the user has explicitly told the agent what to build. That go-ahead is a plain instruction naming the piece to build now. An accepted Spec, selected Feature Issues, or scope agreed in conversation supply the content, but none of them is that instruction, and the agent never treats its own proposal or summary as one. If the user has not said what to build, the work is still in planning: return to the [Feature Planning Workflow](feature-planning.md) instead of implementing.
+Enter only when the user has explicitly told the agent what to build. That go-ahead is a plain instruction naming the piece to build now. Selected Feature Issues or scope agreed in conversation supply the content, but neither is that instruction, and the agent never treats its own proposal or summary as one. If the user has not said what to build, the work is still in planning: return to the [Feature Planning Workflow](feature-planning.md) instead of implementing.
 
 Once the user names it, identify the observable outcome, applicable acceptance criteria, relevant Engineering Conventions, and project-owned guardrails before editing.
 

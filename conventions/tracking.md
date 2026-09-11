@@ -14,7 +14,6 @@ SynoraStudio tracks execution in Linear. A Professional Project's issues follow 
   - `docs`: documentation-writing work that links to the repo files where the doc lives.
   - `bug`: a defect fix.
   - `chore`: maintenance that fits no feature.
-  - `spec`: settled, reviewable scope for a Milestone.
 - A decision issue also carries a `resolution` label saying how it resolves, which signals the workflow to use, resolved through it rather than ad hoc:
   - `grilling`: a Grilling Session, one question at a time with the user.
   - `prototype`: a throwaway artifact the user reacts to.

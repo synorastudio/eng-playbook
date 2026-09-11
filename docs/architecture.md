@@ -47,7 +47,7 @@ The Skills form a routing model rather than a mandatory sequence:
 
 - `intake` supports Project Intake.
 - `init-agent-os` initializes a greenfield repository; `adopt-project` applies Project Adoption to an existing one.
-- `map-decisions`, `grill`, `prototype`, `write-spec`, and `write-issues` support Feature Planning.
+- `map-decisions`, `grill`, `prototype`, and `write-issues` support Feature Planning.
 - `implement` supports Implementation.
 - `maintain-language`, `write-adr`, `maintain-living-docs`, and `handoff` maintain their owned knowledge or continuity artifacts when a Workflow needs them.
 

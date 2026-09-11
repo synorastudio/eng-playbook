@@ -10,15 +10,14 @@ Turn the work the user asked you to build into working, verified production code
 
 ## Confirm the user asked you to build it
 
-Implement only what the user has explicitly told you to build, one piece at a time. That go-ahead is a plain instruction naming the Feature Issue or the scope to build now. Writing or accepting a Spec, selecting Feature Issues, or summarizing agreed scope supplies the content but is not that go-ahead, and you never treat your own proposal or summary as one. If the user has not told you what to build, the work is still in planning: stay collaborative and route back to Feature Planning (`map-decisions`, `grill`, `write-spec`, or `write-issues`) instead of editing production code.
+Implement only what the user has explicitly told you to build, one piece at a time. That go-ahead is a plain instruction naming the Feature Issue or the scope to build now. Selecting Feature Issues or summarizing agreed scope supplies the content but is not that go-ahead, and you never treat your own proposal or summary as one. If the user has not told you what to build, the work is still in planning: stay collaborative and route back to Feature Planning (`map-decisions`, `grill`, or `write-issues`) instead of editing production code.
 
 Once the user names it, ground the work in the most specific accepted source available:
 
-- An accepted Spec.
 - One or more selected Feature Issues.
 - Scope agreed in the current conversation.
 
-A Spec or Feature Issue is useful, not mandatory. A draft Spec is not accepted work. When sources conflict or leave a blocking product decision unresolved, pause for the user. Suggest `grill` when the missing decision has dependent branches that need a fuller design discussion.
+A Feature Issue is useful, not mandatory. When sources conflict or leave a blocking product decision unresolved, pause for the user. Suggest `grill` when the missing decision has dependent branches that need a fuller design discussion.
 
 Read the target repo's Agent Guidance and only the Language, ADRs, Living Docs, tracker context, Project Guardrails, and code relevant to the work you were asked to build. Include external controls such as required checks, protected integration paths, deployment gates, and tracker states when they affect delivery. Use the current implementation to discover constraints. Do not use it to expand the accepted scope.
 
@@ -75,13 +74,13 @@ Change tracker state or commit only when the user asks or the repo's Agent Guida
 
 ## Follow the repository's integration workflow
 
-Tracker hierarchy does not imply Git hierarchy. When the target repo uses branches and pull requests, create them around coherent repository changes rather than Decision Maps, Specs, or issue nesting.
+Tracker hierarchy does not imply Git hierarchy. When the target repo uses branches and pull requests, create them around coherent repository changes rather than Decision Maps or issue nesting.
 
 Every commit that enters integration history uses `<type>[optional scope][!]: <description>`. Allowed types are `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `style`, and `revert`. Write an imperative, lowercase description without a trailing period. Use `!` for a breaking change and explain the break and migration path in the body when they are not obvious. Keep the scope optional, split work that needs more than one primary type, and preserve required reference and attribution footers.
 
 A squash workflow applies the rule to the pull request title or final squash message. A merge or rebase workflow applies it to every commit entering the integration branch. Follow the project's stronger local guardrails when present.
 
-Target the repo's normal integration branch unless the accepted Spec or Agent Guidance requires a Milestone integration branch. Use that exception only when several changes must be verified atomically and their intermediate states cannot safely reach the normal integration branch. Use stacked branches only for real code dependencies, not because one tracker item is another item's child.
+Target the repo's normal integration branch unless Agent Guidance requires a Milestone integration branch. Use that exception only when several changes must be verified atomically and their intermediate states cannot safely reach the normal integration branch. Use stacked branches only for real code dependencies, not because one tracker item is another item's child.
 
 ## Finish
 

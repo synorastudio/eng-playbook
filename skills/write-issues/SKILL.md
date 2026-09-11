@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Write issues
 
-Start after the target outcome and its main boundaries are clear. Use an accepted Spec when one exists; a Spec is not required for smaller work whose accepted scope is already available in conversation.
+Start after the target outcome and its main boundaries are clear and settled in conversation, grilling, prototyping, or a Decision Map.
 
 A Feature Issue names a user-recognizable or system-owner-visible outcome, and is cut as a **vertical slice** through the stack that can be verified on its own. The title is a feature noun-phrase, not a user-story sentence or a technical task.
 
@@ -34,7 +34,7 @@ Not all tracked work is a feature, and decisions are not folded into Feature Iss
 
 ## Workflow
 
-1. Read the accepted Spec when one exists, plus relevant project context, `LANGUAGE.md`, ADRs, and Living Docs.
+1. Read the relevant project context, `LANGUAGE.md`, ADRs, and Living Docs.
 2. Identify user-recognizable outcomes and cut each as a vertical slice.
 3. Split an oversized slice into nested Sub-Issue slices only when the parent is too big to build or sequence as one.
 4. Mark assumptions, and set dependencies in dependency order as Linear `blockedBy` relations.

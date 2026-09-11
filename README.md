@@ -61,7 +61,7 @@ flowchart TD
 The Skills mirror focused parts of the Workflows while remaining usable outside this repository:
 
 - Project context and setup: `intake`, `init-agent-os`, and `adopt-project`.
-- Feature planning: `map-decisions`, `grill`, `prototype`, `write-spec`, and `write-issues`.
+- Feature planning: `map-decisions`, `grill`, `prototype`, and `write-issues`.
 - Implementation and continuity: `implement` and `handoff`.
 - Durable knowledge: `maintain-language`, `write-adr`, and `maintain-living-docs`.
 
