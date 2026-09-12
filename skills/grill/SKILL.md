@@ -7,7 +7,7 @@ description: Run a Grilling Session over a plan, decision, or open question, dev
 
 Reach shared understanding on a plan, decision, or open question before implementation — developing the options where none exist yet, and stress-testing them where they do.
 
-This skill does not ingest broad project context, initialize an Agent Operating System, create issues, or manage living docs. Use `intake`, `init-agent-os`, `write-issues`, or `maintain-living-docs` for those workflows.
+This skill does not ingest broad project context, initialize an Agent Operating System, or manage living docs. It creates no tracker issues, with one exception: the single blocking spin-off described under "Contribute back to the map". Use `intake`, `init-agent-os`, `write-issues`, or `maintain-living-docs` for those workflows.
 
 ## Core instruction
 
@@ -109,11 +109,11 @@ Do not update living docs, create Feature Issues, or initialize Agent OS files f
 
 ## Contribute back to the map
 
-A branch can surface a question conversation cannot settle: it needs the higher fidelity of a prototype, away-from-keyboard research, or it is a substantial new decision in its own right. When the session is resolving a linked Decision Map, hand such a question back to the map rather than forcing an answer or resolving it here.
+A branch can surface a question conversation cannot settle: it needs the higher fidelity of a prototype, away-from-keyboard research, or it is a substantial new decision in its own right. When the session is resolving a linked Decision Map, feed such a question back into the map rather than forcing an answer or resolving it here.
 
 - Apply `map-decisions`' "substantial decision" bar first. A minor uncertainty still takes a recommendation and resolves in the session; only a question that genuinely needs its own resolution mode or owner graduates to the map.
-- Name it precisely: the question, why conversation cannot settle it, the `resolution` label it should carry (`prototype` or `research`), and whether it blocks the current branch.
-- When it blocks the current branch, mint it now rather than stall the session: create the child Decision Issue with its `resolution` label, wire its `blockedBy` edge to the branch it blocks, and mark that branch deferred until it clears. This single blocking spin-off is the one issue this skill creates; leave broader map-shaping to `map-decisions`.
+- Name it precisely: the question, why conversation cannot settle it, the `resolution` label it should carry (`prototype`, `research`, or `grilling`), and whether it blocks the current branch.
+- When it blocks the current branch, mint it now rather than stall the session: create the child Decision Issue with its `resolution` label, point the deferred branch's `blockedBy` edge at this new decision, and mark that branch deferred until the new decision clears. This single blocking spin-off is the one issue this skill creates; leave broader map-shaping to `map-decisions`.
 - When it is independent, do not create it here. Hand it back: name it in the summary and let `map-decisions` mint it when control returns to the map, and carry on with the current branch.
 
 ## Completion criteria
