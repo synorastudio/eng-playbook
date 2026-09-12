@@ -73,6 +73,18 @@ Each Decision Issue should state the question, why it matters, known constraints
 
 Keep full reasoning in the child issue. When it resolves, add a short linked resolution to the parent map. Use `write-adr` when the accepted answer is hard to reverse, surprising, and resulted from a real trade-off.
 
+## Work through the map
+
+Resolving mapped decisions is a distinct invocation from charting: the map already exists and the user points at it, or at a single Decision Issue. A named issue is optional — without one, pick the next decision rather than asking which.
+
+1. Load the map at low resolution, not every child issue body.
+2. Choose the decision. Use the one the user named; otherwise take the next unresolved branch in dependency order, skipping any whose blocking decisions are still open.
+3. Dispatch on its `resolution` label rather than resolving ad hoc: `grilling` runs the `grill` skill, `prototype` runs the `prototype` skill, `research` runs an away-from-keyboard research pass that records its sources and conclusion. A decision with no `resolution` label is small enough to settle in conversation here.
+4. Record the accepted answer: keep the full reasoning in the Decision Issue, add a linked one-line resolution to the parent map's `Resolved decisions`, and reconcile any constraint it hands to a sibling decision. Use `write-adr` when the answer is hard to reverse, surprising, and the product of a real trade-off.
+5. Surface any decision the answer has newly made specifiable, and re-order the remaining branches when the resolution changed their dependencies.
+
+Resolving a decision produces a decision, not an implementation. Grouping the resulting repository changes into pull requests and building features are separate steps, routed after the map settles.
+
 ## Settle the Milestone shape
 
 A Milestone is a bounded outcome that can be accepted, sequenced, and declared complete.

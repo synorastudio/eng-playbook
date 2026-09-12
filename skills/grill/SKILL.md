@@ -1,11 +1,11 @@
 ---
 name: grill
-description: Run a Grilling Session over a concrete plan or design. Use when the user asks to grill or challenge it through a decision-by-decision interview before implementation. Do not use for ordinary planning, review, or implementation.
+description: Run a Grilling Session over a plan, decision, or open question, developing options where none exist yet and stress-testing them where they do, through a one-question-at-a-time interview. Use when the user asks to grill, or to resolve a mapped decision branch. Do not use for ordinary implementation, code review, or broad project intake.
 ---
 
 # Grill
 
-Stress-test a concrete plan before implementation.
+Reach shared understanding on a plan, decision, or open question before implementation — developing the options where none exist yet, and stress-testing them where they do.
 
 This skill does not ingest broad project context, initialize an Agent Operating System, create issues, or manage living docs. Use `intake`, `init-agent-os`, `write-issues`, or `maintain-living-docs` for those workflows.
 
@@ -25,13 +25,18 @@ Before grilling, read relevant existing artifacts when available:
 - `LANGUAGE-MAP.md` if multiple language contexts exist.
 - Relevant durable docs under `docs/`, including living docs and ADRs.
 - The linked Decision Map and Decision Issue when the Grilling Session is resolving a mapped branch.
-- The specific plan, feature, design, or architecture proposal being grilled.
+- The specific plan, feature, design, decision, or architecture question being grilled.
 
-If the user has not provided a concrete plan or design to grill, ask them to provide one or suggest running `intake` first.
+The subject may be a concrete proposal, or an open decision with no proposal yet — a mapped Decision Issue is often the latter. Both are in scope:
+
+- **A proposal exists.** Stress-test it: attack its assumptions, boundaries, and failure modes.
+- **No proposal yet.** Develop the options first — surface the credible candidates and recommend one — then stress-test the emerging choice. Do not ask the user to bring a plan; developing options from the constraints is the work.
+
+Route away only when the subject is bigger than a single design to grill: `intake` for broad project context, or `map-decisions` when the work holds several dependent decisions.
 
 ## Grilling posture
 
-Start as a collaborative skeptic. Escalate when ambiguity, contradiction, or risk remains.
+When there is no proposal yet, first act as an option developer: lay out the credible options with a recommendation before pressing on them. Then start as a collaborative skeptic, and escalate when ambiguity, contradiction, or risk remains.
 
 Push especially hard on:
 
