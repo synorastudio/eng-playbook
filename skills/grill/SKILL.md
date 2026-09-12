@@ -107,6 +107,15 @@ When the session owns a linked Decision Issue, record its accepted resolution an
 
 Do not update living docs, create Feature Issues, or initialize Agent OS files from this skill unless the user explicitly asks to switch workflows.
 
+## Contribute back to the map
+
+A branch can surface a question conversation cannot settle: it needs the higher fidelity of a prototype, away-from-keyboard research, or it is a substantial new decision in its own right. When the session is resolving a linked Decision Map, hand such a question back to the map rather than forcing an answer or resolving it here.
+
+- Apply `map-decisions`' "substantial decision" bar first. A minor uncertainty still takes a recommendation and resolves in the session; only a question that genuinely needs its own resolution mode or owner graduates to the map.
+- Name the handoff precisely: the question, why conversation cannot settle it, the `resolution` label it should carry (`prototype` or `research`), and whether it blocks the current branch.
+- If it blocks the current branch, mark that branch deferred and stop pressing it; the new decision must resolve first. If it is independent, carry on.
+- Do not create the Decision Issue or wire its dependencies here. `map-decisions` owns the map and mints the branch and its `blockedBy` edge when control returns to it. Record the deferral and the handed-back question in the session summary so nothing is lost.
+
 ## Completion criteria
 
 Complete the grilling session when:
@@ -118,4 +127,4 @@ Complete the grilling session when:
 - ADR-worthy decisions have been identified.
 - Each remaining uncertainty has an owner or a named next workflow.
 
-End with a compact decision summary, explicit deferrals, doc changes, ADR candidates, and the next recommended action. Return to `map-decisions` when other mapped branches remain. Suggest `write-issues` when the settled scope is ready to become Feature Issues.
+End with a compact decision summary, explicit deferrals, any branches handed back to the map, doc changes, ADR candidates, and the next recommended action. Return to `map-decisions` when other mapped branches remain, or when a handed-back branch needs to be minted onto the map. Suggest `write-issues` when the settled scope is ready to become Feature Issues.
