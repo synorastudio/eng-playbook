@@ -1,6 +1,6 @@
 ---
 name: grill
-description: Run a Grilling Session over a plan, decision, or open question, developing options where none exist yet and stress-testing them where they do, through a one-question-at-a-time interview. Use when the user asks to grill, or to resolve a mapped decision branch. Do not use for ordinary implementation, code review, or broad project intake.
+description: Run a Grilling Session over a plan, decision, or open question, developing options where none exist yet and stress-testing them where they do, through a round-based design-tree interview. Use when the user asks to grill, or to resolve a mapped decision branch. Do not use for ordinary implementation, code review, or broad project intake.
 ---
 
 # Grill
@@ -13,7 +13,9 @@ This skill does not ingest broad project context, initialize an Agent Operating 
 
 Interview the user relentlessly about every aspect of the plan until there is shared understanding.
 
-Walk down every branch of the design tree, resolving dependencies between decisions one by one. Ask one question at a time. For each question, provide your recommended answer when you have enough context to do so.
+Map the work as a design tree, where every decision branches into the decisions that depend on it. Work the tree in rounds. The frontier is every decision whose prerequisites are already settled — the questions answerable now without guessing at answers you have not heard yet. Ask the whole frontier in one round: number each question and give your recommended answer when you have enough context. Then wait for the user's answers before opening the next round.
+
+A question whose answer depends on another still open in this round belongs to a later round, not this one. Each round of answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round.
 
 If a question can be answered by inspecting the repo or existing docs, inspect those instead of asking.
 
@@ -58,17 +60,17 @@ Work from broad decisions to dependent details:
 
 1. Clarify the target outcome.
 2. Identify the main design branches.
-3. Pick the branch that blocks the most downstream decisions.
-4. Ask the next decision-forcing question.
-5. Resolve or explicitly defer that branch.
-6. Move to the next dependent branch.
-7. Continue until no major branch is vague enough to threaten implementation.
+3. Compute the frontier: every branch whose prerequisites are already settled.
+4. Ask that whole frontier as one round of numbered, decision-forcing questions, each with a recommendation.
+5. On the user's answers, resolve or explicitly defer each branch in the round.
+6. Recompute the frontier — newly unblocked branches enter it — and ask the next round.
+7. Continue until no branch is vague enough to threaten implementation.
 
-Do not batch a long questionnaire. Ask one question, wait, then continue.
+Group only the currently answerable frontier into a round. Never batch a question that depends on an answer still open in this round, and never pad a round with questions the tree has not yet unblocked.
 
 ## Handle each turn
 
-When the user replies with a question, uncertainty, a proposed alternative, or a prompt like "thoughts?", stay on the current branch. Answer the user's question, refine the recommendation, and wait for an explicit resolution before asking the next design-tree question.
+When the user replies with a question, uncertainty, a proposed alternative, or a prompt like "thoughts?", stay on the current round. Answer the user's question, refine the recommendation, and wait for an explicit resolution before opening the next round.
 
 Treat these as signals to pause progression:
 
@@ -77,7 +79,7 @@ Treat these as signals to pause progression:
 - The user proposes another framing or doc location.
 - The user says to hold the next question.
 
-Only move to the next branch when the current decision is accepted, rejected, explicitly deferred, or clearly resolved by the user's response.
+Only open the next round when every decision in the current round is accepted, rejected, explicitly deferred, or clearly resolved by the user's response.
 
 ## Update docs during grilling
 
