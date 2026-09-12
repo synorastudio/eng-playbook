@@ -15,7 +15,7 @@ SynoraStudio tracks execution in Linear. A Professional Project's issues follow 
   - `bug`: a defect fix.
   - `chore`: maintenance that fits no feature.
 - A decision issue also carries a `resolution` label saying how it resolves, which signals the workflow to use, resolved through it rather than ad hoc:
-  - `grilling`: a Grilling Session, one question at a time with the user.
+  - `grilling`: a Grilling Session that works the design tree in rounds with the user, each round asking the questions whose prerequisites are already settled.
   - `prototype`: a throwaway artifact the user reacts to.
   - `research`: away-from-keyboard digging that records its sources and conclusions.
   - A decision settled in conversation carries no `resolution` label.
